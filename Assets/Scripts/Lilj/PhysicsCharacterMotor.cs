@@ -49,7 +49,7 @@ public class PhysicsCharacterMotor : MonoBehaviour
 		protected set { m_Grounded = value; }
 	}
 
-	public Vector3 Velocity { get{ return GetComponent<Rigidbody>().velocity; } }
+	public Vector3 Velocity { get{ return GetComponent<Rigidbody>().linearVelocity; } }
 	
 	public bool mJumpFlag = false;
 #if UNITY_EDITOR
@@ -108,7 +108,7 @@ public class PhysicsCharacterMotor : MonoBehaviour
 			return;
 		if(!mGliderMode)
 		{
-			Vector3 velocity = GetComponent<Rigidbody>().velocity;
+			Vector3 velocity = GetComponent<Rigidbody>().linearVelocity;
 			if (grounded) velocity = Util.ProjectOntoPlane(velocity, transform.up);
 			
 			Vector3 opDir =  desiredVelocity;
@@ -126,7 +126,7 @@ public class PhysicsCharacterMotor : MonoBehaviour
 			}
 			else if(grounded && ExStop)
 			{
-				Vector3 curVec = GetComponent<Rigidbody>().velocity;
+				Vector3 curVec = GetComponent<Rigidbody>().linearVelocity;
 				curVec.y = 0;
 				if(curVec.sqrMagnitude > PETools.PEMath.Epsilon)
 					GetComponent<Rigidbody>().AddForce(-SpeedReduce * curVec, ForceMode.VelocityChange);
@@ -136,10 +136,10 @@ public class PhysicsCharacterMotor : MonoBehaviour
 			
 			// Apply drag
 			if(mInWater)
-				GetComponent<Rigidbody>().AddForce(-FluidDragF * GetComponent<Rigidbody>().velocity.sqrMagnitude *  GetComponent<Rigidbody>().velocity.normalized
+				GetComponent<Rigidbody>().AddForce(-FluidDragF * GetComponent<Rigidbody>().linearVelocity.sqrMagnitude *  GetComponent<Rigidbody>().linearVelocity.normalized
 					, ForceMode.Acceleration);
 			else
-				GetComponent<Rigidbody>().AddForce(-AreaDragF *  GetComponent<Rigidbody>().velocity.sqrMagnitude *  GetComponent<Rigidbody>().velocity.normalized
+				GetComponent<Rigidbody>().AddForce(-AreaDragF *  GetComponent<Rigidbody>().linearVelocity.sqrMagnitude *  GetComponent<Rigidbody>().linearVelocity.normalized
 					, ForceMode.Acceleration);
 
 			// Apply gravity
@@ -160,7 +160,7 @@ public class PhysicsCharacterMotor : MonoBehaviour
 		
 		if(!GetComponent<Rigidbody>().isKinematic && collisionInfo.gameObject.layer == Pathea.Layer.AIPlayer)
 		{
-			GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, 0, GetComponent<Rigidbody>().velocity.y);
+			GetComponent<Rigidbody>().linearVelocity = new Vector3(GetComponent<Rigidbody>().linearVelocity.x, 0, GetComponent<Rigidbody>().linearVelocity.y);
 		}
 	}
 

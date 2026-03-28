@@ -17,7 +17,7 @@ public class testEffectTarget : MonoBehaviour {
 			transform.position = new Vector3(transform.position.x, -transform.position.y, transform.position.z);
 
 		if(speed > 0f)
-			transform.GetComponent<Rigidbody>().velocity = new Vector3(Random.value, Random.value, Random.value).normalized * speed;
+			transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(Random.value, Random.value, Random.value).normalized * speed;
 	}
 	
 

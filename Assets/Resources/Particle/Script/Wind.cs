@@ -12,6 +12,6 @@ public class Wind : MonoBehaviour
     }
     void Update()
     {
-        GetComponent<Rigidbody>().velocity += speed * Time.deltaTime;
+        GetComponent<Rigidbody>().linearVelocity += speed * Time.deltaTime;
     }
 }

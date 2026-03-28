@@ -495,8 +495,8 @@ public static class CreationMgr
 			// 添加刚体
 			var rigidbody = product.AddComponent<Rigidbody>();
 			rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-			rigidbody.drag = 0;
-			rigidbody.angularDrag = Kit.Million;
+			rigidbody.linearDamping = 0;
+			rigidbody.angularDamping = Kit.Million;
 			rigidbody.mass = Kit.Million;
 			rigidbody.centerOfMass = Vector3.zero;
 

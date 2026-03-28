@@ -4325,7 +4325,7 @@ public class StroyManager : MonoBehaviour
                             {
                                 if (npcNum[i] == 20000)
                                 {
-                                    if (PeCreature.Instance.mainPlayer.transform.FindChild("DummyTransform/spiderWeb") == null)
+                                    if (PeCreature.Instance.mainPlayer.transform.Find("DummyTransform/spiderWeb") == null)
                                     {
                                         GameObject spiderWeb = Instantiate(obj) as GameObject;
                                         spiderWeb.transform.parent = PETools.PEUtil.GetChild(PeCreature.Instance.mainPlayer.transform, "DummyTransform");
@@ -4335,7 +4335,7 @@ public class StroyManager : MonoBehaviour
                                 }
                                 else
                                 {
-                                    if (EntityMgr.Instance.Get(npcNum[i]).gameObject.transform.FindChild("DummyTransform/spiderWeb") == null)
+                                    if (EntityMgr.Instance.Get(npcNum[i]).gameObject.transform.Find("DummyTransform/spiderWeb") == null)
                                     {
                                         GameObject spiderWeb = Instantiate(obj) as GameObject;
                                         spiderWeb.transform.parent = PETools.PEUtil.GetChild(EntityMgr.Instance.Get(npcNum[i]).transform, "DummyTransform");
@@ -4352,7 +4352,7 @@ public class StroyManager : MonoBehaviour
                         {
                             if (npcNum[i] == 20000)
                             {
-                                Transform trans = PeCreature.Instance.mainPlayer.transform.FindChild("DummyTransform/spiderWeb");
+                                Transform trans = PeCreature.Instance.mainPlayer.transform.Find("DummyTransform/spiderWeb");
                                 GameObject o;
                                 if (trans != null)
                                 {
@@ -4363,7 +4363,7 @@ public class StroyManager : MonoBehaviour
                             }
                             else
                             {
-                                Transform trans = EntityMgr.Instance.Get(npcNum[i]).gameObject.transform.FindChild("DummyTransform/spiderWeb");
+                                Transform trans = EntityMgr.Instance.Get(npcNum[i]).gameObject.transform.Find("DummyTransform/spiderWeb");
                                 GameObject o;
                                 if (trans != null)
                                 {

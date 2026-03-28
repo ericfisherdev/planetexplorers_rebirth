@@ -97,7 +97,7 @@ namespace Pathea
                     float baseHeight = PeMappingMgr.Instance.GetTerrainHeight(Entity.position);
 
                     bool isHeight = Entity.position.y - baseHeight > 30.0f;
-                    bool isRunning = carrier.rigidbody != null && carrier.rigidbody.velocity.sqrMagnitude > 1f * 1f;
+                    bool isRunning = carrier.rigidbody != null && carrier.rigidbody.linearVelocity.sqrMagnitude > 1f * 1f;
 
                     m_UpperAir = isHeight && isRunning;
                 }

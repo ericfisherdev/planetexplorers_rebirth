@@ -352,10 +352,10 @@ public class AssetsLoader : MonoBehaviour
 	                GameObject go = Instantiate(asset, req.Prs.Position(), req.Prs.Rotation()) as GameObject;
 	                if (go != null)
 	                {
-						Profiler.BeginSample("AssetsLoader:Instantiate "+assetPathName);
+						UnityEngine.Profiling.Profiler.BeginSample("AssetsLoader:Instantiate "+assetPathName);
 	                    go.transform.localScale = req.Prs.Scale();
 	                    req.OnFinish(go);
-	                    Profiler.EndSample();
+	                    UnityEngine.Profiling.Profiler.EndSample();
 	                }
 				}
             }

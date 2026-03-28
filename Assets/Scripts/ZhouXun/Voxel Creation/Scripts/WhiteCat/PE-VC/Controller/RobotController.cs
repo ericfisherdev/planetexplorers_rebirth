@@ -187,7 +187,7 @@ namespace WhiteCat
 					UpdateBehaviour();
 
 					// 修改拖尾参数
-					_trail.time = Mathf.Clamp(rigidbody.velocity.sqrMagnitude, 0f, 2f);
+					_trail.time = Mathf.Clamp(rigidbody.linearVelocity.sqrMagnitude, 0f, 2f);
 				}
 			}
 		}
@@ -322,14 +322,14 @@ namespace WhiteCat
 
 			// 更新速度
 			targetVelocity = Vector3.RotateTowards(
-				rigidbody.velocity,
+				rigidbody.linearVelocity,
 				targetVelocity,
 				Time.deltaTime * PEVCConfig.instance.robotVelocityRotateSpeed,
 				Time.deltaTime * PEVCConfig.instance.robotVelocityChangeSpeed);
 
 			float swingTime01 = (Time.timeSinceLevelLoad % PEVCConfig.instance.robotSwingPeriod) / PEVCConfig.instance.robotSwingPeriod;
 
-			rigidbody.velocity = targetVelocity + Mathf.Sin(swingTime01 * 2f * Mathf.PI) * PEVCConfig.instance.robotSwingRange * Vector3.up;
+			rigidbody.linearVelocity = targetVelocity + Mathf.Sin(swingTime01 * 2f * Mathf.PI) * PEVCConfig.instance.robotSwingRange * Vector3.up;
 
 			// 目标旋转
 			Quaternion targetRotation;

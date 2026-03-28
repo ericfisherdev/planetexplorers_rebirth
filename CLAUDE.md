@@ -280,7 +280,29 @@ Use these entry points:
 Do not make direct repo edits outside a GSD workflow unless the user explicitly asks to bypass it.
 <!-- GSD:workflow-end -->
 
+## Jira Integration
 
+When creating Jira tasks in the PER project on `ericfisherdev.atlassian.net`:
+
+- **Always use Tasks** (never Stories) for implementation work
+- **Always use Epics** to group tasks by phase or feature area
+- **Link tasks in dependency chains** using "is blocked by" / "blocks" relationships
+- **Every task description must include all three sections:**
+  1. **Overview** — what this task does, wave/dependency info, requirement ID
+  2. **Implementation Plan** — numbered steps, specific files, concrete replacement patterns
+  3. **Acceptance Criteria** — grep-verifiable commands with expected outputs
+- Use markdown formatting for descriptions (auto-converted to ADF by jira-tools)
+
+## Branch and PR Naming
+
+All worktree branches and pull requests follow these conventions:
+
+- **Branch format:** `type/JIRA-KEY-short-description` (lowercase, hyphenated)
+  - Examples: `feature/PER-2-remove-unityscript-files`, `fix/PER-7-crafting-null-ref`
+  - Types: `feature`, `fix`, `refactor`, `chore`, `docs`
+- **PR title format:** `type: JIRA-KEY Short description` (sentence case)
+  - Examples: `feature: PER-2 Remove UnityScript files`, `fix: PER-7 Fix crafting null reference`
+- **Always create draft PRs** targeting `ericfisherdev/planetexplorers_rebirth`
 
 <!-- GSD:profile-start -->
 ## Developer Profile

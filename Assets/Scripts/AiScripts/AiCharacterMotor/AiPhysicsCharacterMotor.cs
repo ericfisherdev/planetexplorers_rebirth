@@ -12,7 +12,7 @@ public class AiPhysicsCharacterMotor : AiCharacterMotor
         get
         {
             if (GetComponent<Rigidbody>() != null)
-                return GetComponent<Rigidbody>().velocity;
+                return GetComponent<Rigidbody>().linearVelocity;
             else
                 return base.velocity;
         }
@@ -130,7 +130,7 @@ public class AiPhysicsCharacterMotor : AiCharacterMotor
 
     protected virtual void UpdateVelocity()
     {
-        Vector3 velocity = GetComponent<Rigidbody>().velocity;
+        Vector3 velocity = GetComponent<Rigidbody>().linearVelocity;
         if (grounded) velocity = Util.ProjectOntoPlane(velocity, transform.up);
 
         // Calculate how fast we should be moving

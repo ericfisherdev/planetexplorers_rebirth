@@ -121,10 +121,10 @@ public class PEMotorAnimator : PEMotor
         }
         else
         {
-            if (desiredMovementEffect.sqrMagnitude < 0.9f * 0.9f && rigid.velocity.sqrMagnitude < 1f * 1f)
+            if (desiredMovementEffect.sqrMagnitude < 0.9f * 0.9f && rigid.linearVelocity.sqrMagnitude < 1f * 1f)
                 desiredMovementEffect = Vector3.zero;
 
-            Vector3 velocity = rigid.velocity;
+            Vector3 velocity = rigid.linearVelocity;
 
             if (grounded) velocity = Util.ProjectOntoPlane(velocity, transform.up);
 
@@ -158,7 +158,7 @@ public class PEMotorAnimator : PEMotor
     void OnDisable()
     {
         animator.applyRootMotion = false;
-        rigid.AddForce(-rigid.velocity, ForceMode.VelocityChange);
+        rigid.AddForce(-rigid.linearVelocity, ForceMode.VelocityChange);
     }
 }
 

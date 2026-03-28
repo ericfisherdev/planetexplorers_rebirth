@@ -6,7 +6,7 @@ using UnityEditor;
 
 namespace WhiteCat
 {
-    //lz-2016.06.21 用于本地化字段WorkShop中分类级别，暂时没有父子级关系需求，所以没加父子级关系处理
+    //lz-2016.06.21 锟斤拷锟节憋拷锟截伙拷锟街讹拷WorkShop锟叫凤拷锟洁级锟斤拷锟斤拷时没锟叫革拷锟接硷拷锟斤拷系锟斤拷锟斤拷锟斤拷锟斤拷没锟接革拷锟接硷拷锟斤拷系锟斤拷锟斤拷
     public class WorkShopFilter
     {
         private int m_ID;
@@ -89,7 +89,7 @@ namespace WhiteCat
 		[Header("Common")] ////////////////////////////////////////////////////////////////
 
 		public GameObject canvasObject;
-		public PhysicMaterial physicMaterial;
+		public PhysicsMaterial physicMaterial;
 		public Material lineMaterial;
 		public Material handleMaterial;
 		public LayerMask creationDraggingLayerMask;

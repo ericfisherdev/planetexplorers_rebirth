@@ -141,7 +141,7 @@ namespace WhiteCat
 					product = Vector3.Cross(forward, product);
 					product = transform.InverseTransformDirection(product);
 					float angle = -Mathf.Atan2(product.x, product.y) * Mathf.Rad2Deg;
-					angle -= inputX * PEVCConfig.instance.motorcycleBiasAngle * Mathf.Clamp01(Mathf.Abs(Vector3.Dot(rigidbody.velocity, forward)) * 0.1f);
+					angle -= inputX * PEVCConfig.instance.motorcycleBiasAngle * Mathf.Clamp01(Mathf.Abs(Vector3.Dot(rigidbody.linearVelocity, forward)) * 0.1f);
 
 					product = rigidbody.angularVelocity;
 					rigidbody.angularVelocity = product + (1f - _wheelRangeWidth - _wheelRangeWidth) * (
@@ -172,7 +172,7 @@ namespace WhiteCat
 			motorTorque /= _motorWheels.Length;
 
             var rotateFactor = PEVCConfig.instance.speedToRotateFactor.Evaluate(
-                Vector3.Project(rigidbody.velocity, transform.forward).magnitude);
+                Vector3.Project(rigidbody.linearVelocity, transform.forward).magnitude);
 
 			for (int i = 0; i < _wheels.Length; i++)
 			{
@@ -199,7 +199,7 @@ namespace WhiteCat
 
 			// 运动方向与朝向在一定范围内时用户按反方向需要转换为刹车
 
-			float dot = Vector3.Dot(rigidbody.velocity, transform.forward);
+			float dot = Vector3.Dot(rigidbody.linearVelocity, transform.forward);
 			float inputTarget = 0f;
 
 			if ((inputY < 0 && dot > 1) || (inputY > 0 && dot < -1))
@@ -213,7 +213,7 @@ namespace WhiteCat
 				// 速度极小且静止时打开手刹
 				if(!brake && !isJetting && Mathf.Abs(inputY) < 0.01f)
 				{
-					if(rigidbody.velocity.sqrMagnitude < 0.05f)
+					if(rigidbody.linearVelocity.sqrMagnitude < 0.05f)
 					{
 						brake = true;
 					}
@@ -253,7 +253,7 @@ namespace WhiteCat
 				{
 					rect.y += 22f;
 					EditorGUI.DrawRect(rect, back);
-					GUI.Label(rect, string.Format(" {0:00.0} m/s", Vector3.Dot(rigidbody.velocity, transform.forward)));
+					GUI.Label(rect, string.Format(" {0:00.0} m/s", Vector3.Dot(rigidbody.linearVelocity, transform.forward)));
 
 					foreach (var wheel in _wheels)
 					{

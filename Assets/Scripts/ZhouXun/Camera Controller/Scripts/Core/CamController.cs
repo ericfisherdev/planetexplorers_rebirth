@@ -404,7 +404,7 @@ public class CamController : MonoBehaviour
 #if UNITY_5
 		Cursor.visible = true;
 #else		
-		Screen.showCursor = true;
+		Cursor.visible = true;
 #endif
 	}
 
@@ -487,7 +487,7 @@ public class CamController : MonoBehaviour
 #if UNITY_5
 			Cursor.visible = true;
 #else			
-			Screen.showCursor = true;
+			Cursor.visible = true;
 #endif
 		}
 	}

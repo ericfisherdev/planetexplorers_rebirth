@@ -165,7 +165,7 @@ namespace WhiteCat
 
 			// 应用浮力
 
-			float buoyancyFactor = (1f - Mathf.Clamp(rigidbody.velocity.y, 0, 10f) * 0.1f) * PEVCConfig.instance.buoyancyFactor;
+			float buoyancyFactor = (1f - Mathf.Clamp(rigidbody.linearVelocity.y, 0, 10f) * 0.1f) * PEVCConfig.instance.buoyancyFactor;
 
 			float amplitude = 0.16f * underWaterFactor * (1f - underWaterFactor);
             buoyancyFactor *= Mathf.Sin(Time.timeSinceLevelLoad * 3f) * amplitude + (1f - amplitude);

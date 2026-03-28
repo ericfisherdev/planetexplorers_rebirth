@@ -39,7 +39,7 @@ class testEffectVLS : MonoBehaviour
 	}
 	public void FixedUpdate (){
 		timeNow += Time.deltaTime;
-		velocity = transform.GetComponent<Rigidbody>().velocity;
+		velocity = transform.GetComponent<Rigidbody>().linearVelocity;
 		if(velocity.magnitude > maxv)
 			maxv = velocity.magnitude;
 		if(timeNow >= lifeTime)

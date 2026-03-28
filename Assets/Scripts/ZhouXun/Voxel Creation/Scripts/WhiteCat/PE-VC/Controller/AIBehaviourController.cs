@@ -338,9 +338,9 @@ namespace WhiteCat
 
 			_netVelocity = new NetData<Vector3>
 			(
-				last => (rigidbody.velocity - last).sqrMagnitude >= PEVCConfig.instance.minSyncSqrSpeed,
-				() => rigidbody.velocity,
-				value => rigidbody.velocity = value
+				last => (rigidbody.linearVelocity - last).sqrMagnitude >= PEVCConfig.instance.minSyncSqrSpeed,
+				() => rigidbody.linearVelocity,
+				value => rigidbody.linearVelocity = value
 			);
 
 			_netAngularVelocity = new NetData<Vector3>
