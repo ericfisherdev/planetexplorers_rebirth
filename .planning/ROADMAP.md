@@ -49,11 +49,13 @@ Plans:
   2. uLink and uLobby stubs define all referenced networking types as no-ops
   3. Stubs exist for FMOD, FinalIK, A* Pathfinding Pro, Behave, and Steamworks.NET
   4. Native LZ4 DLL replaced with a managed C# LZ4 implementation that passes basic compress/decompress
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md -- NGUI stub library (UILabel, UISprite, UIPanel, UIButton, tweens, layout, events)
+- [ ] 02-02-PLAN.md -- uLink, uLobby, and Steamworks.NET networking/platform stubs
+- [ ] 02-03-PLAN.md -- FinalIK, A* Pathfinding, Behave, and FMOD gameplay system stubs
+- [ ] 02-04-PLAN.md -- Managed C# LZ4 implementation replacing native DLL
 
 ### Phase 3: Clean Compilation
 **Goal**: The entire codebase compiles with zero errors and the project enters Play mode without crashes
@@ -81,7 +83,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- Neutralize OpenCL dependency and replace native LZ4 with managed C#
+- [ ] 04-01-PLAN.md -- Neutralize OpenCL dependency and verify managed LZ4 integration
 - [ ] 04-02-PLAN.md -- Wire Voxelform2 procedural terrain generation and chunk rendering
 - [ ] 04-03-PLAN.md -- Verify Block45 building system and visual terrain checkpoint
 
@@ -173,7 +175,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6/7 (parallel eligible
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Unity 6+ Migration | 0/4 | Planning complete | - |
-| 2. Proprietary Plugin Stubs | 0/0 | Not started | - |
+| 2. Proprietary Plugin Stubs | 0/4 | Planning complete | - |
 | 3. Clean Compilation | 0/3 | Planning complete | - |
 | 4. Terrain & World Generation | 0/3 | Planning complete | - |
 | 5. Player & Game Loop Bootstrap | 0/0 | Not started | - |
