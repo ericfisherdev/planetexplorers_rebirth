@@ -83,30 +83,30 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ENV-01 | TBD | Pending |
-| ENV-02 | TBD | Pending |
-| ENV-03 | TBD | Pending |
-| ENV-04 | TBD | Pending |
-| CORE-01 | TBD | Pending |
-| CORE-02 | TBD | Pending |
-| CORE-03 | TBD | Pending |
-| CORE-04 | TBD | Pending |
-| GAME-01 | TBD | Pending |
-| GAME-02 | TBD | Pending |
-| GAME-03 | TBD | Pending |
-| GAME-04 | TBD | Pending |
-| UI-01 | TBD | Pending |
-| UI-02 | TBD | Pending |
-| UI-03 | TBD | Pending |
-| PLAT-01 | TBD | Pending |
-| PLAT-02 | TBD | Pending |
-| PLAT-03 | TBD | Pending |
+| ENV-01 | Phase 1 | Pending |
+| ENV-02 | Phase 2 | Pending |
+| ENV-03 | Phase 3 | Pending |
+| ENV-04 | Phase 2 | Pending |
+| CORE-01 | Phase 4 | Pending |
+| CORE-02 | Phase 5 | Pending |
+| CORE-03 | Phase 5 | Pending |
+| CORE-04 | Phase 3 | Pending |
+| GAME-01 | Phase 6 | Pending |
+| GAME-02 | Phase 7 | Pending |
+| GAME-03 | Phase 7 | Pending |
+| GAME-04 | Phase 6 | Pending |
+| UI-01 | Phase 8 | Pending |
+| UI-02 | Phase 8 | Pending |
+| UI-03 | Phase 8 | Pending |
+| PLAT-01 | Phase 9 | Pending |
+| PLAT-02 | Phase 9 | Pending |
+| PLAT-03 | Phase 9 | Pending |
 
 **Coverage:**
 - v1 requirements: 18 total
-- Mapped to phases: 0
-- Unmapped: 18 (pending roadmap creation)
+- Mapped to phases: 18
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-28*
-*Last updated: 2026-03-28 after initial definition*
+*Last updated: 2026-03-28 after roadmap creation*
