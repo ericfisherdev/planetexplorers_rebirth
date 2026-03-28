@@ -145,12 +145,14 @@ Plans:
   2. In-game HUD shows health, stamina, and minimap updating in real-time
   3. Inventory screen opens, displays items, and supports drag-and-drop equipping
   4. Crafting UI displays available recipes and allows crafting operations
-**Plans**: TBD
-**UI hint**: yes
+**Plans**: 5 plans
 
 Plans:
-- [ ] 08-01: TBD
-- [ ] 08-02: TBD
+- [ ] 08-01-PLAN.md -- NGUI-to-uGUI bridge layer (functional UILabel, UISprite, UIButton, UISlider, etc.)
+- [ ] 08-02-PLAN.md -- Main menu screen (New Game, Load Game, Quit)
+- [ ] 08-03-PLAN.md -- In-game HUD (health, stamina, minimap, hotbar)
+- [ ] 08-04-PLAN.md -- Inventory screen with drag-and-drop equipping
+- [ ] 08-05-PLAN.md -- Crafting UI with recipe browsing and crafting operations
 
 ### Phase 9: Platform Builds & Persistence
 **Goal**: The game saves/loads state and ships as standalone executables on Linux and Windows
@@ -182,5 +184,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6/7 (parallel eligible
 | 5. Player & Game Loop Bootstrap | 0/3 | Planning complete | - |
 | 6. Combat & AI Systems | 0/4 | Planning complete | - |
 | 7. Crafting & Inventory Systems | 0/3 | Planning complete | - |
-| 8. UI Implementation | 0/0 | Not started | - |
+| 8. UI Implementation | 0/5 | Planning complete | - |
 | 9. Platform Builds & Persistence | 0/3 | Planning complete | - |
