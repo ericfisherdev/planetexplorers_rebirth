@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -88,7 +89,7 @@ public class GlobalBehaviour : MonoBehaviour
 	void LateUpdate()
 	{
 		PeCamera.Update();
-		currentSceneName = Application.loadedLevelName;
+		currentSceneName = SceneManager.GetActiveScene().name;
 		SurfExtractorsMan.PostProc();
 	}
 }

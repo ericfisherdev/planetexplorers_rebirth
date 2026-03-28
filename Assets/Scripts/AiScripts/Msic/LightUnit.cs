@@ -58,7 +58,7 @@ public class LightUnit : MonoBehaviour
                 break;
             case LightType.Point:
                 return PETools.PEUtil.GetRandomPositionOnGround(m_Position, pos - m_Position, 1.5f*lamp.range, 3.0f*lamp.range, -75.0f, 75.0f);
-            case LightType.Area:
+            case LightType.Rectangle:
                 //float radius = Mathf.Max(light.areaSize.x, light.areaSize.y);
                 //return PETools.PEUtil.GetRandomPositionOnGround(m_Position, pos - m_Position, 1.5f*radius, 3.0f*radius, -75.0f, 75.0f);
                 return Vector3.zero;
@@ -84,7 +84,7 @@ public class LightUnit : MonoBehaviour
                 return false;
             case LightType.Point:
                 return PETools.PEUtil.SqrMagnitude(m_Position, point) <= lamp.range*lamp.range;
-            case LightType.Area:
+            case LightType.Rectangle:
                 //Vector3 v = transform.InverseTransformPoint(point);
                 //return Mathf.Abs(v.x) <= light.areaSize.x && Mathf.Abs(v.y) <= light.areaSize.y;
                 return false;

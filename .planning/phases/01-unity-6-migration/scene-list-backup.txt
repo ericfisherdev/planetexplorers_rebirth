@@ -1,0 +1,14 @@
+# Scene list from original EditorBuildSettings.asset (Unity 5.2.4f1)
+# Re-add these in Unity 6 via File > Build Settings after first project open
+# Order matters -- index 0 is the default scene loaded on startup
+
+0: Assets/Scenes/GameStart.unity
+1: Assets/Scenes/GameRoleCustom.unity
+2: Assets/Scenes/GameMainMenu.unity
+3: Assets/Scenes/GameLobby.unity
+4: Assets/Scenes/MLoginScene.unity
+5: Assets/Scenes/PeGame.unity
+6: Assets/Scenes/Intro.unity
+7: Assets/Scenes/GameTheEnd.unity
+8: Assets/Scenes/GameCredits.unity
+9: Assets/Scenes/GameED.unity

@@ -41,7 +41,7 @@ namespace WhiteCat
 			// 应用力
 			if (VFVoxelWater.self.IsInWater(_pivot.position))
 			{
-				float  speed = Vector3.Dot(_controller.rigidbody.velocity, _controller.transform.forward);
+				float  speed = Vector3.Dot(_controller.rigidbody.linearVelocity, _controller.transform.forward);
 				float torque = Mathf.Clamp(speed, -4f, 4f) * 0.25f;
 				torque = Mathf.Sign(torque) * torque * torque * _steerFactor * _controller.inputX;
                 _controller.rigidbody.AddRelativeTorque(0, torque *_controller.speedScale, 0);

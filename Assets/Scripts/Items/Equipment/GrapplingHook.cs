@@ -154,7 +154,7 @@ public class GrapplingHook : Gun
 		if(null != pcM)
 		{
 			if(!pcM.GetComponent<Rigidbody>().isKinematic)
-				pcM.GetComponent<Rigidbody>().velocity = Vector3.zero;
+				pcM.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 			mClimpOffset -= Time.fixedDeltaTime;
 			if(mClimpOffset< 0f && pcM.grounded)
 			{

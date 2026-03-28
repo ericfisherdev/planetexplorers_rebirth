@@ -145,7 +145,7 @@ public class MineAndSpade : Equipment
 
 				mOpCube.Enable = Vector3.Distance(mSkillRunner.transform.position + Vector3.up, hitInfo.point) < 3f
 					&& voxel.Volume > 0
-					&& mSkillRunner.GetComponent<Rigidbody>().velocity.sqrMagnitude < 9;
+					&& mSkillRunner.GetComponent<Rigidbody>().linearVelocity.sqrMagnitude < 9;
 				if(mOpCube.Enable)
 					mTarget = new VFTerrainTarget(hitInfo.point, nearestPos, ref voxel);
 			}

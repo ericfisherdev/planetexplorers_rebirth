@@ -88,36 +88,12 @@ public class ParticleScaler : MonoBehaviour
 
 	void ScaleLegacySystems(float scaleFactor)
 	{
-#if UNITY_EDITOR 
-		//get all emitters we need to do scaling on
-		ParticleEmitter[] emitters = GetComponentsInChildren<ParticleEmitter>();
-
-		//get all animators we need to do scaling on
-		ParticleAnimator[] animators = GetComponentsInChildren<ParticleAnimator>();
-
-		//apply scaling to emitters
-		foreach (ParticleEmitter emitter in emitters)
-		{
-			emitter.minSize *= scaleFactor;
-			emitter.maxSize *= scaleFactor;
-			emitter.worldVelocity *= scaleFactor;
-			emitter.localVelocity *= scaleFactor;
-			emitter.rndVelocity *= scaleFactor;
-
-			//some variables cannot be accessed through regular script, we will acces them through a serialized object
-			SerializedObject so = new SerializedObject(emitter);
-
-			so.FindProperty("m_Ellipsoid").vector3Value *= scaleFactor;
-			so.FindProperty("tangentVelocity").vector3Value *= scaleFactor;
-			so.ApplyModifiedProperties();
-		}
-
-		//apply scaling to animators
-		foreach (ParticleAnimator animator in animators)
-		{
-			animator.force *= scaleFactor;
-			animator.rndForce *= scaleFactor;
-		}
+#if UNITY_EDITOR
+		// TODO(phase-4): Restore full legacy particle scaling -- simplified from ParticleEmitter/ParticleAnimator
+		// Original code scaled emitter minSize, maxSize, worldVelocity, localVelocity, rndVelocity,
+		// m_Ellipsoid, tangentVelocity, and animator force/rndForce.
+		// Modern ParticleSystem scaling is handled by ScaleShurikenSystems above.
+		// Legacy ParticleEmitter/ParticleAnimator components no longer exist in Unity 6+.
 #endif
 	}
 

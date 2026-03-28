@@ -31,13 +31,13 @@ class testEffectIMP : MonoBehaviour
 			else if(impt == impType.FOUNTAIN)
 				speedVector = new Vector3(Random.value - 0.5f, Random.value * 0.5f + 0.5f, Random.value - 0.5f).normalized * speed.magnitude;
 			speedY = Vector3.zero;
-			this.GetComponent<Rigidbody>().velocity = speedVector;
+			this.GetComponent<Rigidbody>().linearVelocity = speedVector;
 		}else{
 			speedY += Vector3.down * gravity * Time.deltaTime;
-			this.GetComponent<Rigidbody>().velocity = speedVector + speedY;
+			this.GetComponent<Rigidbody>().linearVelocity = speedVector + speedY;
 		}
 		if(followRotate)
-			this.transform.rotation = Quaternion.FromToRotation(Vector3.forward, this.GetComponent<Rigidbody>().velocity);
+			this.transform.rotation = Quaternion.FromToRotation(Vector3.forward, this.GetComponent<Rigidbody>().linearVelocity);
 		if (selfRotate != Vector3.zero) 
 		{
 			rotateAngle += rotateSpeed * Time.deltaTime;

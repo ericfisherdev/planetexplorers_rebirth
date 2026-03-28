@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -533,11 +534,11 @@ public class SPPoint : MonoBehaviour
         }
         else
         {
-            if (Application.loadedLevelName.Equals(GameConfig.MainSceneName))
+            if (SceneManager.GetActiveScene().name.Equals(GameConfig.MainSceneName))
             {
                 return GetPathIDStory();
             }
-            else if (Application.loadedLevelName.Equals(GameConfig.AdventureSceneName))
+            else if (SceneManager.GetActiveScene().name.Equals(GameConfig.AdventureSceneName))
             {
                 return GetPathIDAdventure();
             }

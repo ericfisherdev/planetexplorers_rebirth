@@ -65,7 +65,7 @@ namespace VehiclePhysics
 				float w = window_rect.width - 20;
 				GUI.BeginGroup(window_rect);
 
-				Vector3 velxz = rigid.velocity;
+				Vector3 velxz = rigid.linearVelocity;
 				velxz.y = 0;
 				GUI.Label(new Rect(6, 6, w, 18), "Vehicle:", UnityEditor.EditorStyles.boldLabel);
 				GUI.Label(new Rect(10, 26, w, 18), "Current speed:", UnityEditor.EditorStyles.miniLabel);

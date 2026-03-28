@@ -137,7 +137,7 @@ namespace WhiteCat
 					case Direction.Forward:
 					case Direction.Back:
 						{
-							forceScale = Mathf.Clamp(Vector3.Dot(_controller.rigidbody.velocity,
+							forceScale = Mathf.Clamp(Vector3.Dot(_controller.rigidbody.linearVelocity,
 								_currentRotateSpeed > 0 ? transform.forward : -transform.forward), 0f, 20f);
 							forceScale = 1f - 0.0025f * forceScale * forceScale;
 

@@ -106,7 +106,7 @@ namespace Pathea
 					}
 				}
             }
-            //50¶ÖÒÔ15Ã×/ÃëËÙ¶È×²»÷µÄÉËº¦Ëõ·ÅÎª1 50 * 15 * 15 = 11250
+            //50ï¿½ï¿½ï¿½ï¿½15ï¿½ï¿½/ï¿½ï¿½ï¿½Ù¶ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½Îª1 50 * 15 * 15 = 11250
             else if(go.layer == Layer.AIPlayer || go.layer == Layer.Player)
             {
                 PeEntity target = go.GetComponentInParent<PeEntity>();
@@ -121,7 +121,7 @@ namespace Pathea
 
                         float damageScale = Mathf.Clamp(mass * speed * scale, 0.0f, 2.0f);
                         //Debug.LogError("Mass:" + mass + " Speed:" + speed + " Scale:" + damageScale);
-                        if (m_RigidBody == null || m_RigidBody.velocity.sqrMagnitude < 5.0f*5.0f || damageScale < 0.01)
+                        if (m_RigidBody == null || m_RigidBody.linearVelocity.sqrMagnitude < 5.0f*5.0f || damageScale < 0.01)
                             damageScale = 0.0f;
                         else
                         {
@@ -151,7 +151,7 @@ namespace Pathea
                 }
             }
 
-            //50¶ÖÒÔ15Ã×/ÃëËÙ¶È×²»÷µÄÉËº¦Ëõ·ÅÎª1 50 * 15 * 15 = 11250
+            //50ï¿½ï¿½ï¿½ï¿½15ï¿½ï¿½/ï¿½ï¿½ï¿½Ù¶ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½Îª1 50 * 15 * 15 = 11250
             if (   go.layer == Layer.VFVoxelTerrain 
                 || go.layer == Layer.TreeStatic 
                 //|| go.layer == Layer.NearTreePhysics
@@ -180,7 +180,7 @@ namespace Pathea
                         float speed = colInfo.relativeVelocity.sqrMagnitude;
 
                         float damageScale = Mathf.Clamp(mass * speed * scale, 0.0f, 2.0f);
-                        Vector3 v = m_RigidBody.velocity;
+                        Vector3 v = m_RigidBody.linearVelocity;
                         float curSpeed = Mathf.Sqrt(v.x*v.x + v.z*v.z) * 3.6f;
                         //Debug.LogError("Mass:" + mass + " Speed:" + speed + " Scale:" + damageScale);
                         if (curSpeed < 45f || damageScale < 0.01)

@@ -83,8 +83,6 @@ public class VCAsymmetricFixedPartData : VCFixedPartData, IVCMultiphaseComponent
 		{
 			if ( r is TrailRenderer )
 				r.enabled = true;
-			else if ( r is ParticleRenderer )
-				r.enabled = true;
 			else if ( r is ParticleSystemRenderer )
 				r.enabled = true;
 			else if ( r is LineRenderer )

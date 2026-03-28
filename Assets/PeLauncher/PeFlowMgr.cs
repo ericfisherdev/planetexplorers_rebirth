@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
 using System;
@@ -12,7 +13,7 @@ namespace Pathea
 
         bool LoadUnityScene(string unitySceneName)
         {
-            Application.LoadLevel(unitySceneName);
+            SceneManager.LoadScene(unitySceneName);
             return true;
         }
 
