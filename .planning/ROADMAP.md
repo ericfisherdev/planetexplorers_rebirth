@@ -63,11 +63,12 @@ Plans:
   1. `dotnet build` or Unity compilation produces zero errors across all ~700+ scripts
   2. Networking code paths route through single-player stubs (no live network calls)
   3. Project enters Play mode in the Unity editor without null-reference crashes at startup
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md -- Fix conditional compilation blocks and Unity Standard Assets image effect references
+- [ ] 03-02-PLAN.md -- Wire networking for single-player operation
+- [ ] 03-03-PLAN.md -- Iterative compilation error triage and Play mode verification
 
 ### Phase 4: Terrain & World Generation
 **Goal**: The voxel world generates and renders visibly in the editor and at runtime
@@ -169,7 +170,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6/7 (parallel eligible
 |-------|----------------|--------|-----------|
 | 1. Unity 6+ Migration | 0/4 | Planning complete | - |
 | 2. Proprietary Plugin Stubs | 0/0 | Not started | - |
-| 3. Clean Compilation | 0/0 | Not started | - |
+| 3. Clean Compilation | 0/3 | Planning complete | - |
 | 4. Terrain & World Generation | 0/0 | Not started | - |
 | 5. Player & Game Loop Bootstrap | 0/0 | Not started | - |
 | 6. Combat & AI Systems | 0/0 | Not started | - |
