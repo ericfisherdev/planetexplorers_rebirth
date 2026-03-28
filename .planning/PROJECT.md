@@ -42,7 +42,7 @@ The game launches, loads a world, and lets you play the core gameplay loop (expl
 ## Context
 
 - **Source origin:** Officially open-sourced C# by Pathea Games (October 2019), third-party plugins intentionally stripped
-- **Engine:** Unity 5.2.4f1 (no native Linux editor — requires Windows VM or dual boot for development)
+- **Engine:** Migrating from Unity 5.2.4f1 to modern Unity (6+) for Linux editor support
 - **Codebase state:** ~700+ C# scripts, many referencing proprietary plugins (uLink, uLobby, NGUI, various Unity extensions) that need replacement
 - **Key systems:** Voxel terrain (VFVoxel), creation system (CreationSystem), networking (uLink/uLobby), UI (NGUI), AI (Pathea AI), inventory, crafting, combat
 - **Platform:** Arch Linux development environment, targeting Linux and Windows builds
@@ -50,7 +50,7 @@ The game launches, loads a world, and lets you play the core gameplay loop (expl
 
 ## Constraints
 
-- **Engine version**: Unity 5.2.4f1 — must track down and install this legacy version
+- **Engine version**: Upgrading from Unity 5.2.4f1 to modern Unity (6+) — significant API migration but enables Linux editor and modern tooling
 - **Proprietary plugins**: uLink, uLobby, NGUI, and other paid plugins must be replaced with open-source alternatives
 - **No original assets**: May need placeholder art/audio if original assets aren't available
 - **Compilation first**: Must achieve clean compilation before any gameplay work
@@ -59,7 +59,7 @@ The game launches, loads a world, and lets you play the core gameplay loop (expl
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Stay on Unity 5.2.4f1 | Minimize code changes vs upgrading to modern Unity | — Pending |
+| Upgrade to modern Unity (6+) | Unity 5.2 has no Linux editor, is 11 years old, limits plugin ecosystem | — Pending |
 | Replace proprietary plugins with OSS | Original plugins are not freely available | — Pending |
 | Single-player first | Reduce complexity — networking adds massive scope | — Pending |
 | Target Linux + Windows | Developer is on Linux, Windows has broader audience | — Pending |
