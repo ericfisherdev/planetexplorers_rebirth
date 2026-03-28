@@ -78,11 +78,12 @@ Plans:
   1. Voxelform2 terrain generates a visible landscape when a new game starts
   2. Block45 voxel chunks render with correct geometry (no invisible or corrupted terrain)
   3. Player camera can look around and see generated terrain extending to the horizon
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
+- [ ] 04-01-PLAN.md -- Neutralize OpenCL dependency and replace native LZ4 with managed C#
+- [ ] 04-02-PLAN.md -- Wire Voxelform2 procedural terrain generation and chunk rendering
+- [ ] 04-03-PLAN.md -- Verify Block45 building system and visual terrain checkpoint
 
 ### Phase 5: Player & Game Loop Bootstrap
 **Goal**: A player entity spawns into the generated world and can move around
@@ -172,7 +173,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6/7 (parallel eligible
 | 1. Unity 6+ Migration | 0/4 | Planning complete | - |
 | 2. Proprietary Plugin Stubs | 0/0 | Not started | - |
 | 3. Clean Compilation | 0/3 | Planning complete | - |
-| 4. Terrain & World Generation | 0/0 | Not started | - |
+| 4. Terrain & World Generation | 0/3 | Planning complete | - |
 | 5. Player & Game Loop Bootstrap | 0/0 | Not started | - |
 | 6. Combat & AI Systems | 0/0 | Not started | - |
 | 7. Crafting & Inventory Systems | 0/3 | Planning complete | - |
