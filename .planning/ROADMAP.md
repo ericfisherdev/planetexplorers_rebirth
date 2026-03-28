@@ -12,7 +12,7 @@ This roadmap takes the open-sourced Planet Explorers codebase from a non-compili
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Unity 6+ Migration** - Migrate project structure and APIs from Unity 5.2.4f1 to Unity 6+
+- [x] **Phase 1: Unity 6+ Migration** - Migrate project structure and APIs from Unity 5.2.4f1 to Unity 6+
 - [ ] **Phase 2: Proprietary Plugin Stubs** - Create stub DLLs/sources for all missing proprietary dependencies
 - [ ] **Phase 3: Clean Compilation** - Achieve zero-error build with networking stubbed for single-player
 - [ ] **Phase 4: Terrain & World Generation** - Get voxel terrain generating and rendering in-engine
@@ -38,7 +38,7 @@ Plans:
 - [x] 01-01-PLAN.md -- Remove UnityScript files and clean ProjectSettings for Unity 6
 - [x] 01-02-PLAN.md -- Batch-fix deprecated scene management APIs, WWW, and kernel32 P/Invoke
 - [x] 01-03-PLAN.md -- Replace legacy particle system classes and FindObjectsOfType
-- [ ] 01-04-PLAN.md -- Open project in Unity 6 editor and verify migration
+- [x] 01-04-PLAN.md -- Open project in Unity 6 editor and verify migration
 
 ### Phase 2: Proprietary Plugin Stubs
 **Goal**: Every proprietary type reference in the codebase resolves to a stub, eliminating missing-type errors

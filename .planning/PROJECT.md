@@ -12,11 +12,11 @@ The game launches, loads a world, and lets you play the core gameplay loop (expl
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ Project migrated from Unity 5.2.4f1 to Unity 6000.3.12f1 — Phase 1
 
 ### Active
 
-- [ ] Project compiles against Unity 5.2.4f1 without errors
+- [ ] Project compiles with zero errors on modern Unity
 - [ ] Proprietary plugins (uLink, uLobby, NGUI) replaced with open-source alternatives
 - [ ] Networking code stubbed/stripped for single-player operation
 - [ ] Standalone Linux build launches and reaches main menu
@@ -82,4 +82,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-28 after initialization*
+*Last updated: 2026-03-28 after Phase 1 completion*
