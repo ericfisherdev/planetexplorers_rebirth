@@ -123,11 +123,12 @@ Plans:
   2. Player can equip weapons and armor that affect gameplay stats
   3. Player can open the replication crafting interface and craft items from recipes
   4. Crafted items appear in inventory and are usable
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 07-01: TBD
-- [ ] 07-02: TBD
+- [ ] 07-01-PLAN.md -- Item data loading pipeline and inventory storage (ItemMgr, ItemPackage, PlayerPackageCmpt)
+- [ ] 07-02-PLAN.md -- Equipment system with stat buff application (EquipmentCmpt, SkEntity integration)
+- [ ] 07-03-PLAN.md -- Replication crafting system and world item pickup (Replicator, LootItemMgr)
 
 ### Phase 8: UI Implementation
 **Goal**: All essential game UI screens work, replacing NGUI stubs with functional uGUI equivalents
@@ -174,6 +175,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6/7 (parallel eligible
 | 4. Terrain & World Generation | 0/0 | Not started | - |
 | 5. Player & Game Loop Bootstrap | 0/0 | Not started | - |
 | 6. Combat & AI Systems | 0/0 | Not started | - |
-| 7. Crafting & Inventory Systems | 0/0 | Not started | - |
+| 7. Crafting & Inventory Systems | 0/3 | Planning complete | - |
 | 8. UI Implementation | 0/0 | Not started | - |
 | 9. Platform Builds & Persistence | 0/3 | Planning complete | - |
