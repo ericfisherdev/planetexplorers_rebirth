@@ -109,11 +109,13 @@ Plans:
   2. Player can perform ranged attacks (projectile weapons) that hit targets
   3. NPCs/creatures spawn, idle, patrol, and aggro toward the player
   4. Creatures use behavior tree AI to chase, attack, and retreat appropriately
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 06-01: TBD
-- [ ] 06-02: TBD
+- [ ] 06-01-PLAN.md -- Wire SkillSystem damage pipeline and melee attack triggers
+- [ ] 06-02-PLAN.md -- Make behavior tree runtime functional (BTLauncher, BTResolver, BehaveCmpt)
+- [ ] 06-03-PLAN.md -- Wire ranged combat projectile system (bullets, arrows, trajectories)
+- [ ] 06-04-PLAN.md -- Wire AI spawning, enemy detection, and full combat behavior loop
 
 ### Phase 7: Crafting & Inventory Systems
 **Goal**: Player can collect items, manage inventory, equip gear, and craft new items
@@ -175,7 +177,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6/7 (parallel eligible
 | 3. Clean Compilation | 0/3 | Planning complete | - |
 | 4. Terrain & World Generation | 0/3 | Planning complete | - |
 | 5. Player & Game Loop Bootstrap | 0/0 | Not started | - |
-| 6. Combat & AI Systems | 0/0 | Not started | - |
+| 6. Combat & AI Systems | 0/4 | Planning complete | - |
 | 7. Crafting & Inventory Systems | 0/3 | Planning complete | - |
 | 8. UI Implementation | 0/0 | Not started | - |
 | 9. Platform Builds & Persistence | 0/3 | Planning complete | - |
