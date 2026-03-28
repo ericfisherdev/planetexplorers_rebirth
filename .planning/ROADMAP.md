@@ -96,11 +96,12 @@ Plans:
   2. WASD/arrow keys move the player through the terrain
   3. Mouse controls the camera (look, rotate) with expected FPS-style behavior
   4. Player interacts with terrain collision (stands on ground, cannot walk through solid voxels)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
+- [ ] 05-01-PLAN.md -- Bootstrap player entity creation with simplified spawn pipeline
+- [ ] 05-02-PLAN.md -- Implement WASD movement with CharacterController and terrain collision
+- [ ] 05-03-PLAN.md -- Implement third-person camera with mouse look and player follow
 
 ### Phase 6: Combat & AI Systems
 **Goal**: Player can fight enemies that behave with basic intelligence
@@ -178,7 +179,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6/7 (parallel eligible
 | 2. Proprietary Plugin Stubs | 0/4 | Planning complete | - |
 | 3. Clean Compilation | 0/3 | Planning complete | - |
 | 4. Terrain & World Generation | 0/3 | Planning complete | - |
-| 5. Player & Game Loop Bootstrap | 0/0 | Not started | - |
+| 5. Player & Game Loop Bootstrap | 0/3 | Planning complete | - |
 | 6. Combat & AI Systems | 0/4 | Planning complete | - |
 | 7. Crafting & Inventory Systems | 0/3 | Planning complete | - |
 | 8. UI Implementation | 0/0 | Not started | - |
