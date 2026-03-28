@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A faithful recreation of the original Planet Explorers game, built from the decompiled Unity 4.x C# source code. The goal is to get the full core gameplay loop — exploration, building, crafting, and combat — running as standalone builds on Linux and Windows, starting with single-player.
+A faithful recreation of the original Planet Explorers game, built from the officially open-sourced Unity 5.2.4f1 C# source code (released by Pathea Games in 2019). The goal is to get the full core gameplay loop — exploration, building, crafting, and combat — running as standalone builds on Linux and Windows, starting with single-player.
 
 ## Core Value
 
@@ -16,7 +16,7 @@ The game launches, loads a world, and lets you play the core gameplay loop (expl
 
 ### Active
 
-- [ ] Project compiles against Unity 4.x without errors
+- [ ] Project compiles against Unity 5.2.4f1 without errors
 - [ ] Proprietary plugins (uLink, uLobby, NGUI) replaced with open-source alternatives
 - [ ] Networking code stubbed/stripped for single-player operation
 - [ ] Standalone Linux build launches and reaches main menu
@@ -36,13 +36,13 @@ The game launches, loads a world, and lets you play the core gameplay loop (expl
 - Multiplayer/networking — deferred until single-player is stable
 - Story mode scripting — focus on sandbox gameplay first
 - Mobile or console builds — Linux and Windows only
-- Unity engine upgrade — staying on Unity 4.x to minimize porting work
+- Unity engine upgrade — staying on Unity 5.2.4f1 to minimize porting work
 - Original proprietary assets (music, textures) — use placeholders if originals unavailable
 
 ## Context
 
-- **Source origin:** Decompiled C# from the original Planet Explorers game by Pathea Games
-- **Engine:** Unity 4.x (original version the game shipped with)
+- **Source origin:** Officially open-sourced C# by Pathea Games (October 2019), third-party plugins intentionally stripped
+- **Engine:** Unity 5.2.4f1 (no native Linux editor — requires Windows VM or dual boot for development)
 - **Codebase state:** ~700+ C# scripts, many referencing proprietary plugins (uLink, uLobby, NGUI, various Unity extensions) that need replacement
 - **Key systems:** Voxel terrain (VFVoxel), creation system (CreationSystem), networking (uLink/uLobby), UI (NGUI), AI (Pathea AI), inventory, crafting, combat
 - **Platform:** Arch Linux development environment, targeting Linux and Windows builds
@@ -50,7 +50,7 @@ The game launches, loads a world, and lets you play the core gameplay loop (expl
 
 ## Constraints
 
-- **Engine version**: Unity 4.x — must track down and install this legacy version
+- **Engine version**: Unity 5.2.4f1 — must track down and install this legacy version
 - **Proprietary plugins**: uLink, uLobby, NGUI, and other paid plugins must be replaced with open-source alternatives
 - **No original assets**: May need placeholder art/audio if original assets aren't available
 - **Compilation first**: Must achieve clean compilation before any gameplay work
@@ -59,7 +59,7 @@ The game launches, loads a world, and lets you play the core gameplay loop (expl
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Stay on Unity 4.x | Minimize code changes vs upgrading to modern Unity | — Pending |
+| Stay on Unity 5.2.4f1 | Minimize code changes vs upgrading to modern Unity | — Pending |
 | Replace proprietary plugins with OSS | Original plugins are not freely available | — Pending |
 | Single-player first | Reduce complexity — networking adds massive scope | — Pending |
 | Target Linux + Windows | Developer is on Linux, Windows has broader audience | — Pending |
