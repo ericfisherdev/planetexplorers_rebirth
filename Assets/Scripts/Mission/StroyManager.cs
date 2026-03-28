@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using ItemAsset;
@@ -3705,7 +3706,7 @@ public class StroyManager : MonoBehaviour
             else
             {
                 DestroyObject(mcTalk.gameObject);
-                Application.LoadLevel("GameED");
+                SceneManager.LoadScene("GameED");
             }
         }
     }

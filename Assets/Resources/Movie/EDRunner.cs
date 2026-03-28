@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class EDRunner : MonoBehaviour 
@@ -25,7 +26,7 @@ public class EDRunner : MonoBehaviour
 	{
 		if(PeInput.Get(PeInput.LogicFunction.OptionsUI) || !mMovie.isPlaying)
 		{
-            Application.LoadLevel("GameCredits");
+            SceneManager.LoadScene("GameCredits");
         }
 	}
 }
