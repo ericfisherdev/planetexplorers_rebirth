@@ -35,7 +35,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 4 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Remove UnityScript files and clean ProjectSettings for Unity 6
+- [x] 01-01-PLAN.md -- Remove UnityScript files and clean ProjectSettings for Unity 6
 - [ ] 01-02-PLAN.md -- Batch-fix deprecated scene management APIs, WWW, and kernel32 P/Invoke
 - [ ] 01-03-PLAN.md -- Replace legacy particle system classes and FindObjectsOfType
 - [ ] 01-04-PLAN.md -- Open project in Unity 6 editor and verify migration
