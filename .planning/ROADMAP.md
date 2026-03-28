@@ -153,11 +153,12 @@ Plans:
   2. Player can load a saved game and resume with all state intact
   3. Linux standalone build launches, reaches main menu, and plays through the core loop
   4. Windows standalone build launches, reaches main menu, and plays through the core loop
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 09-01: TBD
-- [ ] 09-02: TBD
+- [ ] 09-01-PLAN.md -- Audit and fix save/load persistence system for Unity 6 and cross-platform
+- [ ] 09-02-PLAN.md -- Create modern build pipeline for Linux x64 and Windows x64
+- [ ] 09-03-PLAN.md -- Verify builds and end-to-end save/load on both platforms
 
 ## Progress
 
@@ -174,4 +175,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6/7 (parallel eligible
 | 6. Combat & AI Systems | 0/0 | Not started | - |
 | 7. Crafting & Inventory Systems | 0/0 | Not started | - |
 | 8. UI Implementation | 0/0 | Not started | - |
-| 9. Platform Builds & Persistence | 0/0 | Not started | - |
+| 9. Platform Builds & Persistence | 0/3 | Planning complete | - |
