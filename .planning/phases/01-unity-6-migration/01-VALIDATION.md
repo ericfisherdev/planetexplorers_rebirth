@@ -2,7 +2,7 @@
 phase: 1
 slug: unity-6-migration
 status: draft
-nyquist_compliant: false
+nyquist_compliant: true
 wave_0_complete: false
 created: 2026-03-28
 ---
@@ -36,11 +36,16 @@ created: 2026-03-28
 
 ## Per-Task Verification Map
 
-| Task ID | Plan | Wave | Requirement | Test Type | Automated Command | File Exists | Status |
-|---------|------|------|-------------|-----------|-------------------|-------------|--------|
-| 01-01-01 | 01 | 1 | ENV-01 | manual | Open in Unity 6 editor | N/A | pending |
-| 01-02-01 | 02 | 1 | ENV-01 | grep | `grep -r "\.rigidbody\b\|\.collider\b\|\.renderer\b" Assets/ --include="*.cs"` | N/A | pending |
-| 01-03-01 | 03 | 2 | ENV-01 | manual | Check ProjectSettings regenerated | N/A | pending |
+| Task ID | Plan | Wave | Requirement | Test Type | Automated Command | Status |
+|---------|------|------|-------------|-----------|-------------------|--------|
+| 01-01-T1 | 01 | 1 | ENV-01 | grep | `find Assets/ -name "*.js" -not -name "*.json" 2>/dev/null \| wc -l` | pending |
+| 01-01-T2 | 01 | 1 | ENV-01 | grep | `ls ProjectSettings/*.asset 2>/dev/null \| wc -l` | pending |
+| 01-02-T1 | 02 | 1 | ENV-01 | grep | `grep -r "Application\.LoadLevel\|Application\.loadedLevelName\|Application\.isLoadingLevel\|Application\.levelCount" Assets/ --include="*.cs" \| grep -v "^.*//.*Application\." \| wc -l` | pending |
+| 01-02-T2 | 02 | 1 | ENV-01 | grep | `grep -r "kernel32\.dll\|new WWW(" Assets/ --include="*.cs" \| wc -l` | pending |
+| 01-03-T1 | 03 | 2 | ENV-01 | grep | `grep -r "ParticleEmitter\|ParticleAnimator" Assets/ --include="*.cs" \| grep -v "ParticleSystem" \| grep -v "//" \| wc -l` | pending |
+| 01-03-T2 | 03 | 2 | ENV-01 | grep | `grep -r "FindObjectsOfType\|FindObjectOfType" Assets/ --include="*.cs" \| grep -v "FindObjectsByType\|FindFirstObjectByType" \| grep -v "//" \| wc -l` | pending |
+| 01-04-T1 | 04 | 3 | ENV-01 | manual | Open project in Unity 6 editor, verify no import-blocking errors | pending |
+| 01-04-T2 | 04 | 3 | ENV-01 | grep | `echo "UnityScript: $(find Assets/ -name '*.js' -not -name '*.json' 2>/dev/null \| wc -l), LoadLevel: $(grep -r 'Application\.LoadLevel' Assets/ --include='*.cs' 2>/dev/null \| grep -v '//' \| wc -l), LegacyParticle: $(grep -r '\bParticleEmitter\b\|\bParticleAnimator\b' Assets/ --include='*.cs' 2>/dev/null \| grep -v '//' \| wc -l), kernel32: $(grep -r 'kernel32\.dll' Assets/ --include='*.cs' 2>/dev/null \| wc -l), WWW: $(grep -r '\bnew WWW(' Assets/ --include='*.cs' 2>/dev/null \| wc -l)"` | pending |
 
 *Status: pending / green / red / flaky*
 
@@ -59,7 +64,7 @@ created: 2026-03-28
 
 | Behavior | Requirement | Why Manual | Test Instructions |
 |----------|-------------|------------|-------------------|
-| Project opens in Unity 6 editor | ENV-01 | Requires Unity GUI | Open project, check Console window for blocking errors |
+| Project opens in Unity 6 editor | ENV-01 | Requires Unity GUI | Open project, check Console window for blocking errors (01-04-T1) |
 | ProjectSettings configured correctly | ENV-01 | Binary settings files | Inspect Edit > Project Settings panels |
 | Shaders compile | ENV-01 | Requires GPU context | Check Console for shader errors after open |
 
@@ -67,11 +72,11 @@ created: 2026-03-28
 
 ## Validation Sign-Off
 
-- [ ] All tasks have automated verify or Wave 0 dependencies
-- [ ] Sampling continuity: no 3 consecutive tasks without automated verify
-- [ ] Wave 0 covers all MISSING references
-- [ ] No watch-mode flags
-- [ ] Feedback latency < 60s
-- [ ] `nyquist_compliant: true` set in frontmatter
+- [x] All tasks have automated verify or Wave 0 dependencies
+- [x] Sampling continuity: no 3 consecutive tasks without automated verify
+- [x] Wave 0 covers all MISSING references
+- [x] No watch-mode flags
+- [x] Feedback latency < 60s
+- [x] `nyquist_compliant: true` set in frontmatter
 
 **Approval:** pending
