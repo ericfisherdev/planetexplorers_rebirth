@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Networking;
 using System;
 using System.IO;
 using System.Linq;
@@ -295,15 +296,15 @@ public class AssetsLoader : MonoBehaviour
 				{
 					if (bAssetBundle)
 					{
-						WWW www = WWW.LoadFromCacheOrDownload("file://" + assetBundlePath + assetPathName, AssetsPool.s_Version);
-						yield return www;
-	                    if (www.error != null)
+						UnityWebRequest www = UnityWebRequestAssetBundle.GetAssetBundle("file://" + assetBundlePath + assetPathName, (uint)AssetsPool.s_Version, 0);
+						yield return www.SendWebRequest();
+						if (www.result != UnityWebRequest.Result.Success)
 						{
-	                        Debug.LogError(www.error);
+							Debug.LogError(www.error);
 						}
-	                    else
-	                    {
-	                        AssetBundle assetBundle = www.assetBundle;
+						else
+						{
+							AssetBundle assetBundle = DownloadHandlerAssetBundle.GetContent(www);
 							AssetBundleRequest request = assetBundle.LoadAssetAsync(Path.GetFileNameWithoutExtension(assetPathName), typeof(GameObject));
 							yield return request;
 
