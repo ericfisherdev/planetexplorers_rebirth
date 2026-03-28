@@ -32,11 +32,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. Project opens in Unity 6+ editor without import-blocking errors (missing plugin errors are expected and acceptable)
   2. All C# scripts use modern Unity API calls (no deprecated 5.x API usage remaining)
   3. Project settings (physics, rendering, input) are configured for Unity 6+ defaults
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Remove UnityScript files and clean ProjectSettings for Unity 6
+- [ ] 01-02-PLAN.md -- Batch-fix deprecated scene management APIs, WWW, and kernel32 P/Invoke
+- [ ] 01-03-PLAN.md -- Replace legacy particle system classes and FindObjectsOfType
+- [ ] 01-04-PLAN.md -- Open project in Unity 6 editor and verify migration
 
 ### Phase 2: Proprietary Plugin Stubs
 **Goal**: Every proprietary type reference in the codebase resolves to a stub, eliminating missing-type errors
@@ -164,7 +166,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6/7 (parallel eligible
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Unity 6+ Migration | 0/0 | Not started | - |
+| 1. Unity 6+ Migration | 0/4 | Planning complete | - |
 | 2. Proprietary Plugin Stubs | 0/0 | Not started | - |
 | 3. Clean Compilation | 0/0 | Not started | - |
 | 4. Terrain & World Generation | 0/0 | Not started | - |
