@@ -277,7 +277,7 @@ public class VFVoxelChunkGo : MonoBehaviour,IRecyclable
     //}
 	void OutputGameObject<T>() where T : Component
 	{
-		foreach (GameObject obj in UnityEngine.Object.FindObjectsOfType(typeof(GameObject)))
+		foreach (GameObject obj in UnityEngine.Object.FindObjectsByType(typeof(GameObject), FindObjectsSortMode.None))
 		{
 			if (obj.GetComponent<T>() != null)
 			{

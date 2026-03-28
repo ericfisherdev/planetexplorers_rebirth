@@ -18,7 +18,7 @@ namespace WhiteCat
 
 		static T GetInstance()
 		{
-			T[] instances = FindObjectsOfType<T>();
+			T[] instances = FindObjectsByType<T>(FindObjectsSortMode.None);
 
 			if (instances.Length == 0)
 			{
