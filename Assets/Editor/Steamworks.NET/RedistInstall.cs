@@ -8,14 +8,8 @@ public class RedistInstall {
 	static RedistInstall() {
 		CopyFile("Assets/Plugins/Steamworks.NET/redist", "steam_appid.txt", false);
 
-		// We only need to copy the dll into the project root on <= Unity 5.0
-#if UNITY_EDITOR_WIN && (!UNITY_5 || UNITY_5_0)
-	#if UNITY_EDITOR_64
-		CopyFile("Assets/Plugins/x86_64", "steam_api64.dll", true);
-	#else
-		CopyFile("Assets/Plugins/x86", "steam_api.dll", true);
-	#endif
-#endif
+		// DLL copy into project root was only needed on Unity <= 5.0.
+		// Unity 6 handles native plugin resolution automatically.
 	}
 
 	static void CopyFile(string path, string filename, bool bCheckDifference) {
