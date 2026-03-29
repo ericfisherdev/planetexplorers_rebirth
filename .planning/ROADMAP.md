@@ -68,7 +68,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01-PLAN.md -- Fix conditional compilation blocks and Unity Standard Assets image effect references
+- [x] 03-01-PLAN.md -- Fix conditional compilation blocks and Unity Standard Assets image effect references
 - [ ] 03-02-PLAN.md -- Wire networking for single-player operation
 - [ ] 03-03-PLAN.md -- Iterative compilation error triage and Play mode verification
 
