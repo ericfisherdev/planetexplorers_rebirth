@@ -15,8 +15,8 @@ public class particleFactory : MonoBehaviour {
 	GameObject obj;
 	void Start () {
 		obj = Instantiate(unit, transform.position, transform.rotation) as GameObject;
-		obj.GetComponent<ParticleSystem>().startColor = color;
-		obj.GetComponent<ParticleSystem>().startRotation = Vector3.Angle(transform.forward,Vector3.forward) / 57.29578f * Mathf.Sign(transform.forward.x);
+		{ var main = obj.GetComponent<ParticleSystem>().main; main.startColor = color; }
+		{ var main = obj.GetComponent<ParticleSystem>().main; main.startRotation = Vector3.Angle(transform.forward,Vector3.forward) / 57.29578f * Mathf.Sign(transform.forward.x); }
 		obj.transform.parent = transform;
 	}
 	

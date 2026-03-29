@@ -115,7 +115,7 @@ public class PeViewStudio : MonoBehaviour
 				renderer.gameObject.AddComponent<MeshFilter>().sharedMesh = mesh;
 				var meshRenderer = renderer.gameObject.AddComponent<MeshRenderer>();
 				meshRenderer.sharedMaterials = renderer.sharedMaterials;
-				meshRenderer.useLightProbes = false;
+				meshRenderer.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
 
 				renderer.enabled = false;
 				DestroyImmediate(renderer);

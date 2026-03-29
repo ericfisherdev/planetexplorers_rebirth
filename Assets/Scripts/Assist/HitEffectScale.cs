@@ -36,7 +36,7 @@ public class HitEffectScale : MonoBehaviour
 
                 for (int i = 0; i < childs.Length; i++)
                 {
-                    childs[i].startSize *= (m_Scale * 0.5f);
+                    { var main = childs[i].main; main.startSize = main.startSize.constant * (m_Scale * 0.5f); }
                 }
             }
         }

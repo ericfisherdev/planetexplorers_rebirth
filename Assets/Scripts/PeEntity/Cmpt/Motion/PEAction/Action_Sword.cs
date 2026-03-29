@@ -181,7 +181,7 @@ namespace Pathea
 			{
 				for(int i = 0; i < m_EffectHelper.particleSystems.Length; i++)
 					if(null != m_EffectHelper.particleSystems[i])
-						m_EffectHelper.particleSystems[i].playbackSpeed = anim.speed;
+						{ var main = m_EffectHelper.particleSystems[i].main; main.simulationSpeed = anim.speed; }
 			}
 		}
 

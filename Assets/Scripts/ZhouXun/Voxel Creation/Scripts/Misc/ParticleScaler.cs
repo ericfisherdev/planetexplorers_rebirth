@@ -52,9 +52,9 @@ public class ParticleScaler : MonoBehaviour
 
 		foreach (ParticleSystem system in systems)
 		{
-			system.startSpeed *= scaleFactor;
-			system.startSize *= scaleFactor;
-			system.gravityModifier *= scaleFactor;
+			{ var main = system.main; main.startSpeed = main.startSpeed.constant * scaleFactor; }
+			{ var main = system.main; main.startSize = main.startSize.constant * scaleFactor; }
+			{ var main = system.main; main.gravityModifier = main.gravityModifier.constant * scaleFactor; }
 
 			//some variables cannot be accessed through regular script, we will acces them through a serialized object
 			SerializedObject so = new SerializedObject(system);

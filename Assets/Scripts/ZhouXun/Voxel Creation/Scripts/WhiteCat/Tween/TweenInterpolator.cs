@@ -397,11 +397,13 @@ namespace WhiteCat
 			_lastTime = UnityEditor.EditorApplication.timeSinceStartup;
 
 			UnityEditor.EditorApplication.update += UpdateInEditor;
-			UnityEditor.EditorApplication.playmodeStateChanged += EndUpdateInEditor;
+			UnityEditor.EditorApplication.playModeStateChanged += EndUpdateInEditor;
 		}
 
 
-		void EndUpdateInEditor()
+		void EndUpdateInEditor() { EndUpdateInEditor(default); }
+
+		void EndUpdateInEditor(UnityEditor.PlayModeStateChange state)
 		{
 			Restore();
 			_normalizedTime = 0;
@@ -415,7 +417,7 @@ namespace WhiteCat
 			_isPlayingInEditor = false;
 
 			UnityEditor.EditorApplication.update -= UpdateInEditor;
-			UnityEditor.EditorApplication.playmodeStateChanged -= EndUpdateInEditor;
+			UnityEditor.EditorApplication.playModeStateChanged -= EndUpdateInEditor;
 		}
 
 

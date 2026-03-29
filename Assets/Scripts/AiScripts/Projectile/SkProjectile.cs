@@ -553,7 +553,7 @@ namespace Pathea.Projectile
 				Renderer renderer = renderers[i];
 				ParticleSystem particle = renderer.GetComponent<ParticleSystem>();
 				if(null != particle)
-					particle.enableEmission = false;
+					{ var em = particle.emission; em.enabled = false; }
 				if(renderer is LineRenderer || renderer is TrailRenderer || renderer is ParticleSystemRenderer)
 					continue;
 				renderer.enabled = false;
@@ -834,7 +834,7 @@ namespace Pathea.Projectile
 		{
 			ParticleSystem[] ParticleSystems = bufferEffect.GetComponentsInChildren<ParticleSystem>();
 			for(int i = 0; i < ParticleSystems.Length; ++i)
-				ParticleSystems[i].enableEmission = false;
+				{ var em = ParticleSystems[i].emission; em.enabled = false; }
 			bufferEffect.gameObject.AddComponent<DestroyTimer>().m_LifeTime = bufferEffectTime;
 		}
 
