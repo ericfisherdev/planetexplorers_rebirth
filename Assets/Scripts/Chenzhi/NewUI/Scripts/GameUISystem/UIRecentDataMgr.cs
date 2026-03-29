@@ -176,13 +176,9 @@ public class UIRecentDataMgr : MonoBehaviour
         try
         {
             using (FileStream _fileStream = new FileStream(FilePath, FileMode.Open, FileAccess.Read))
+            using (BinaryReader _br = new BinaryReader(_fileStream))
             {
-                BinaryReader _br = new BinaryReader(_fileStream);
-
                 ReadData(_br);
-
-                _br.Close();
-                _fileStream.Close();
             }
             return true;
         }

@@ -47,7 +47,8 @@ public class NAudioPlayer
             case SupportFormatType.flac:
                 return new FlacReader(memoryStream);
             default:
-                return null;
+                Debug.LogWarning("NAudioPlayer: unsupported audio format '" + type + "', returning silent stream");
+                return new SilentWaveStream();
         }
     }
 
@@ -64,6 +65,16 @@ public class NAudioPlayer
         }
         return outputStream;
     }
+}
+
+/// <summary>Zero-length WaveStream returned for unsupported audio formats so callers get a valid object instead of null.</summary>
+internal class SilentWaveStream : WaveStream
+{
+    private static readonly WaveFormat _format = new WaveFormat(44100, 1);
+    public override WaveFormat WaveFormat => _format;
+    public override long Length => 0;
+    public override long Position { get; set; }
+    public override int Read(byte[] buffer, int offset, int count) => 0;
 }
 
 /* From http://answers.unity3d.com/questions/737002/wav-byte-to-audioclip.html */
