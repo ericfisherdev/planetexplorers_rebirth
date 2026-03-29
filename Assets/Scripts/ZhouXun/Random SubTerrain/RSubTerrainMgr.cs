@@ -320,13 +320,7 @@ public class RSubTerrainMgr : MonoBehaviour
 					GlobalPrototypeTPHInfo[i] = new RTreePlaceHolderInfo (bc.center, bc.size.y * 0.5f, bc.size.x * 0.5f + bc.size.z * 0.5f);
 				else
 					GlobalPrototypeTPHInfo[i] = null;
-				//Collider[] cs = go.GetComponents<Collider>(); 
-#if !UNITY_5
-				foreach ( Collider c in cs )
-				{
-					c.isTrigger = true;
-				}
-#endif
+				//Collider[] cs = go.GetComponents<Collider>();
 				go.name = "Prototype [" + i.ToString() + "]'s Collider";
 				go.SetActive(false);
 				GlobalPrototypeColliders[i] = go;
