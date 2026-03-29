@@ -15,14 +15,12 @@ namespace Behave.Runtime
 	{
 		bool m_Attacked;
 		int m_Index;
-		float m_LastSwitchTime;
 		float m_LastAttackTime;
 		//float m_LastSightTime;
 		float m_StartAttackTime;
 		float m_LastRetreatTime;
 		float m_LastChangeTime;
         float m_StartDefenceTime;
-		IWeapon m_Weapon;
 		AttackMode m_Mode;
 		Vector3 m_Local;
 		Vector3 m_RetreatLocal;

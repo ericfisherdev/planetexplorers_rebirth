@@ -699,9 +699,6 @@ namespace Behave.Runtime
 		}
 		Data m_Data;
 
-		float mStarTime;
-		Vector3 mDirPostion;
-		Vector3 mDir;
 		PeEntity mTarget = null;
 		//string mNowAction;
 		//bool mHasAction;
@@ -1494,7 +1491,6 @@ namespace Behave.Runtime
 		Vector3 mWanderPos;
 
 		//Vector3 avaidPos;
-		float avaidStatTime;
 		//float avaidTime = 2.0f;
 
 		BehaveResult Init(Tree sender)

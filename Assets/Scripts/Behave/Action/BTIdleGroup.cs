@@ -117,9 +117,6 @@ namespace Behave.Runtime.Action
 
         Data m_Data;
 
-        Enemy m_Escape;
-        Enemy m_Threat;
-
         Vector3 GetPatrolPosition(Tree sender)
         {
             BehaveGroup group = sender.ActiveAgent as BehaveGroup;

@@ -357,7 +357,6 @@ namespace Behave.Runtime
     [BehaveAction(typeof(BRMoveToPoint), "RMoveToPoint")]
     public class BRMoveToPoint : BTNormal
     {
-        Vector3 m_Position;
 
         BehaveResult Init(Tree sender)
         {
@@ -427,8 +426,7 @@ namespace Behave.Runtime
 	[BehaveAction(typeof(BRRTalkMove), "RTalkMove")]
 	public class BRRTalkMove : BTNormal
 	{
-		Vector3 m_Position;
-		
+
 		BehaveResult Init(Tree sender)
 		{
 			RQTalkMove request = GetRequest(EReqType.TalkMove) as RQTalkMove;
@@ -1235,7 +1233,6 @@ namespace Behave.Runtime
 
 		//static float t = 0.1f;
         RQSalvation m_Salvation;
-		Vector3 SalvatPos;
 		Interaction_Carry carry;
         BehaveResult Init(Tree sender)
         {

@@ -1831,7 +1831,6 @@ namespace Behave.Runtime.Action
         int m_Index;
         float m_LastRetreatTime;
         float m_CanAttackModeTime;
-        IWeapon m_Weapon;
         AttackMode m_Mode;
         Vector3 m_Local;
         Vector3 m_RetreatLocal;

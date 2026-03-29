@@ -1435,7 +1435,6 @@ namespace Behave.Runtime
         FarmWorkInfo m_Work;
         FarmWorkInfo m_CurWork;
 
-        Vector3 WalkPos;
         Data m_Data;
 
         bool Reached(FarmWorkInfo work)
@@ -1662,7 +1661,6 @@ namespace Behave.Runtime
 
         FarmWorkInfo m_Work;
         FarmWorkInfo m_CurWork;
-        Vector3 WalkPos;
 
         Data m_Data;
         bool mCanWater;
@@ -1880,7 +1878,6 @@ namespace Behave.Runtime
 
         FarmWorkInfo m_Work;
         FarmWorkInfo m_CurWork;
-        Vector3 WalkPos;
         bool mCanWater;
         Data m_Data;
 
@@ -2097,7 +2094,6 @@ namespace Behave.Runtime
 
         FarmWorkInfo m_Work;
         FarmWorkInfo m_CurWork;
-        Vector3 WalkPos;
         bool mCanWater;
         Data m_Data;
 
@@ -2283,7 +2279,6 @@ namespace Behave.Runtime
 
         FarmWorkInfo m_Work;
         FarmWorkInfo m_CurWork;
-        Vector3 WalkPos;
         bool mCanWater;
         Data m_Data;
 
@@ -2557,8 +2552,6 @@ namespace Behave.Runtime
     [BehaveAction(typeof(BTNpcBaseGuard), "NpcBaseGuard")]
     public class BTNpcBaseGuard : BTNormal
     {
-        Vector3 m_CurWanderPos;
-
         bool GetWanderPos(out Vector3 guardPos)
         {
             if (BaseEntities != null)
@@ -3057,7 +3050,6 @@ namespace Behave.Runtime
         //float m_StartTime = 0.0f;
 
         float m_WaitingTime = 0.0f;
-        Vector3 m_WaitingPos;
         //string mWaitAnim = "BreathOnOperatingTable";
         Vector3 GetPosition(Vector3 pos)
         {
@@ -3343,7 +3335,6 @@ namespace Behave.Runtime
         //PEPatients m_pePatitents;
 
         float mWaitingTime = 0.0f;
-        Vector3 m_WaitingPos;
         Vector3 GetPosition(Vector3 pos)
         {
             return PEUtil.GetRandomPosition(pos, 10.0f, 10.0f) + Vector3.up * 2.0f;
@@ -3587,16 +3578,13 @@ namespace Behave.Runtime
 
         bool IsReadyTent;
         bool HasReached;
-        bool HasLay;
         //bool IsInHospital;
         CSMedicalTent m_CSMedicalTent;
-        Vector3 m_TentPos;
         //Vector3 m_Moveposition;
         Sickbed m_sickbed;
         float m_Roate;
 
         float m_waitingTime;
-        Vector3 m_WaitingPos;
         Vector3 GetPosition(Vector3 pos)
         {
             return PEUtil.GetRandomPositionOnGroundForWander(pos, 15.0f, 6.0f) + Vector3.up * 2.0f;
@@ -4175,7 +4163,6 @@ namespace Behave.Runtime
             [BehaveAttribute]
             public int LineType;
         }
-        Data m_Data;
         ChatTeamDb m_chatTeamDb;
         BehaveResult Init(Tree sender)
         {
@@ -4245,9 +4232,6 @@ namespace Behave.Runtime
         }
 
         Data m_Data;
-
-        Enemy m_Escape;
-        Enemy m_Threat;
 
 
         bool DoingRelax()

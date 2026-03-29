@@ -808,8 +808,6 @@ namespace Behave.Runtime.Action
         bool m_Arrived;
 
         Vector3 m_TargetPosition;
-        Vector3 m_EndPosition;
-        Vector3 m_FaceDirection;
 
         BehaveResult Init(Tree sender)
         {
@@ -966,7 +964,6 @@ namespace Behave.Runtime.Action
         }
 
         Data m_Data;
-        float m_StartTime;
 
         Vector3 GetRandomPos(Transform root)
         {

@@ -199,10 +199,6 @@ namespace Behave.Runtime
 	[BehaveAction(typeof(BTDefend), "Defend")]
 	public class BTDefend : BTNormal
 	{
-		class Data
-		{
-		}
-		Data m_Data;
 		BehaveResult Tick(Tree sender)
 		{
 //			if(!GetData<Data>(sender, ref m_Data))
@@ -215,10 +211,6 @@ namespace Behave.Runtime
 	[BehaveAction(typeof(BTAssist0), "Assist0")]
 	public class BTAssist0 : BTNormal
 	{
-		class Data
-		{
-		}
-		Data m_Data;
 		BehaveResult Tick(Tree sender)
 		{
 			//			if(!GetData<Data>(sender, ref m_Data))
@@ -232,10 +224,6 @@ namespace Behave.Runtime
 	[BehaveAction(typeof(BTChoiceEnemy), "ChoiceEnemy")]
 	public class BTChoiceEnemy : BTNormal
 	{
-		class Data
-		{
-		}
-		Data m_Data;
 		BehaveResult Tick(Tree sender)
 		{
 			if(entity.NpcCmpt == null)
@@ -755,14 +743,12 @@ namespace Behave.Runtime
 
 		}
 
-		Data m_Data;
 		//float startTime = 0.0f;
 		//float waitTime = 3.0f;
 
 		ItemObject m_BetterAtkObj;
 		//AttackMode m_Atkmode;
 
-		ItemObject m_BetterDefObj;
 		BehaveResult Tick(Tree sender)
 		{
 			if(entity.NpcCmpt.EqSelect.BetterAtkObj == null)

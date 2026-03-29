@@ -49,9 +49,6 @@ namespace Behave.Runtime.Action
 
         Data m_Data;
 
-        Enemy m_Escape;
-        Enemy m_Threat;
-
         public static float _IK_Aim_Time0 = 5.0f;
         public static float _Ik_Aim_Time1 = 8.0f;
         public static float _Ik_Aim_Time2 = 3.0f;
@@ -434,9 +431,6 @@ namespace Behave.Runtime.Action
         }
 
         Data m_Data;
-
-        Enemy m_Escape;
-        Enemy m_Threat;
 
         Vector3 m_PatrolPosition;
         float m_LastFollowTime;
@@ -1183,7 +1177,7 @@ namespace Behave.Runtime.Action
 		
 		Vector3 GetAvoidPos(Vector3 dirtion)
 		{
-            //AVAÓªµØ ²»ÄÜ¼ì²â¹ý¸ß
+            //AVAÓªï¿½ï¿½ ï¿½ï¿½ï¿½Ü¼ï¿½ï¿½ï¿½ï¿½ï¿½
             float upd = IsNpcCampsite ? 15.0f : 128.0f;
             float downd = IsNpcCampsite ? 18.0f : 256.0f;
 

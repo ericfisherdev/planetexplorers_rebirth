@@ -90,14 +90,6 @@ namespace Behave.Runtime.Action
 //		bool specialRecurse = false;
 //		float specialRecurseTime = 5.0f;
 //		float specialRecursestartTime;
-		class Data
-		{
-
-		}
-		
-		Data m_Data;
-		
-
 		float hideStarTime = 0.0f;
 		float HIDE_TIME = 1.0f;
 		FindHidePos mfind;
