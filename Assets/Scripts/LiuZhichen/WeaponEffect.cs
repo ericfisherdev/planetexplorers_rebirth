@@ -15,12 +15,6 @@ public class WeaponEffect : MonoBehaviour {
     //Player player;
 	//AiObject aiObject;
 
-	void Start()
-	{
-        //player = VCUtils.GetComponentOrOnParent<Player>(gameObject);
-		//aiObject = VCUtils.GetComponentOrOnParent<AiObject>(gameObject);
-	}
-
 	void LateUpdate () 
 	{
         ImpactEffectByCollision();

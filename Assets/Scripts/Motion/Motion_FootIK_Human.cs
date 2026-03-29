@@ -15,14 +15,8 @@ public class Motion_FootIK_Human : MonoBehaviour
 	public float	BodyOffset = 0.05f;
 	public float	FootOffset = 0f;
 	
-	float	LeftFootIKHeight;
-	float	RightFootIKHeight;
-	float	BodyIKHeight;
-	
 	public Animator	mAnimator;
-	PhysicsCharacterMotor mPhyMotor;
-	
-	bool	UPD;
+
 	//Vector3 leftFootPos = Vector3.zero;
 	//Vector3 rightFootPos = Vector3.zero;
 	//Vector3 bodyPos = Vector3.zero;

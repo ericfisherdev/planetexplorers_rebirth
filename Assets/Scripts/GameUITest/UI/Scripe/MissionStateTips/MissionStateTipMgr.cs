@@ -52,16 +52,5 @@ public class MissionStateTipMgr : MonoBehaviour
         instance = this;
         //mParentIndex = 0;
     }
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     #endregion
 }

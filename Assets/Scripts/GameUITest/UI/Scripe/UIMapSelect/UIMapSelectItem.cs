@@ -9,7 +9,9 @@ public class UIMapSelectItem : MonoBehaviour
 	[SerializeField] UISprite mBg_map;
 
 	[SerializeField] GameObject mTexSelected;
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
 	[SerializeField] UILabel mLbPathvalve;
+#pragma warning restore CS0169
 	//[SerializeField] UITexture mTexSelected;
 
 	public delegate void ItemOnDbClick(object sender);

@@ -16,7 +16,6 @@ public class GetMiniMap : MonoBehaviour
 	int mNumOneside;
 	Texture2D mMinimap;
 	
-	GameObject 	mCameraObj;
 	Camera 		mCamera;
 	
 	GameObject	mFloowObj;

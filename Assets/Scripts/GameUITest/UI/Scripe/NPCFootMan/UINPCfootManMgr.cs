@@ -182,10 +182,8 @@ public class UINPCfootManMgr : MonoBehaviour
     //    }
     //}
 
-    float m_deathTime;
     //float m_DelayTime = 100000.0f;
     public bool m_dead;
-    SkAliveEntity m_deadNpc;
     //void OnNpcDead(SkEntity skSelf, SkEntity skCaster)
     //{
     //    m_DelayTime = 100000.0f;

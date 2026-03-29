@@ -24,7 +24,6 @@ public class AreaBattleManager : MonoBehaviour
 	public int 	 	mEnemyTotal;		// EnemyNum of this battle
 	int				mFreeEnemyNum;		// EnemyNum has not been generated
 	public int		mEnemyMax;			// Max EnemyNum in the sametime
-	int				mCurrentEnemyNum;	// EnemyNum already in the battle
 		
 	public float	mEnemyRecoverPS;	// if mCurrentEnemyNum < mEnemyMax how many enemy convert from
 	float			mReadyEnemyNum;
@@ -50,8 +49,6 @@ public class AreaBattleManager : MonoBehaviour
 //	List<BattleUnit>	mEnemyList;
 //	List<BattleUnit>	mUnactiveEnemyList;
 	
-	List<BattleUnit>	mEnergyUnitList;
-	List<BattleUnit>	mAmmoUnitList;
 	
 	public bool			mStart = false;
 	

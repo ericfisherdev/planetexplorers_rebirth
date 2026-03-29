@@ -8,10 +8,12 @@ public class UIRobotManger : MonoBehaviour
 {
     [SerializeField]
     UIRobotItem mRobot;
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     UIGrid mServantGrid;
     [SerializeField]
     UIGrid mRobotGrid;
+#pragma warning restore CS0169
 
     [SerializeField]
     Transform Centent = null;
