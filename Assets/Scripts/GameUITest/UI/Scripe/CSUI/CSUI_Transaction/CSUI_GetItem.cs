@@ -66,11 +66,6 @@ public class CSUI_GetItem : MonoBehaviour {
 		}
 	}
 
-	void Start ()
-	{
-	
-	}
-
 	public void SetCurrentNum(int MaxNum)
 	{
 		mCurrentNum = MaxNum;

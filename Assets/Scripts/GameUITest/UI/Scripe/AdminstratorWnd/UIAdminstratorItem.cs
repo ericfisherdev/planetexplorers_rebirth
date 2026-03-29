@@ -100,13 +100,6 @@ public class UIAdminstratorItem : MonoBehaviour
 			//mForbidenBtn.SetActive(false);
 		}	
 	}
-    void Update ()
-	{
-		//IntShow();
-		//ReFlshForBidden();
-		//RefalshPrivileges();
-	}
-
 	public  void PrivilegesShow(bool IS,bool Not)
 	{
 		mISPrivilegesBg.SetActive(IS);

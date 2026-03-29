@@ -10,8 +10,10 @@ public class OptionUIHintFadeCtrl : MonoBehaviour
 
     [SerializeField]
     OptionUIHintCtrl mHintCtrl;
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     List<UISprite> spriteList;
+#pragma warning restore CS0169
 
     enum EPhase
     {

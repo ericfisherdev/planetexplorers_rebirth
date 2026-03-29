@@ -38,14 +38,4 @@ public class CSUI_MemberItemLocal : MonoBehaviour
 
 
 
-    void Start()
-    {
-
-    }
-
-
-    void Update()
-    {
-
-    }
 }

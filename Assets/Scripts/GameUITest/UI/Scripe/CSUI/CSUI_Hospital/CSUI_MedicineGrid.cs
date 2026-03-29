@@ -8,8 +8,10 @@ public class CSUI_MedicineGrid : MonoBehaviour
 
     public bool m_CanDragMedicine = true;
 
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     private Grid_N m_GridPrefab;
+#pragma warning restore CS0169
 
 
     public Grid_N m_Grid;
@@ -116,15 +118,6 @@ public class CSUI_MedicineGrid : MonoBehaviour
 
 
 
-    void Awake()
-    {
-        //m_Grid = Instantiate(m_GridPrefab) as Grid_N;
-        //m_Grid.transform.parent = transform;
-        //m_Grid.transform.localPosition = Vector3.zero;
-        //m_Grid.transform.localScale = Vector3.one;
-        //m_Grid.transform.localRotation = Quaternion.identity;
-    }
-
     void Start()
     {
         m_Grid.SetItemPlace(ItemPlaceType.IPT_Hospital, 0);
@@ -133,11 +126,6 @@ public class CSUI_MedicineGrid : MonoBehaviour
         m_Grid.onRemoveOriginItem = onRemoveOriginItem;
     }
 
-
-    void Update()
-    {
-
-    }
 
 
     public delegate void MedicineDragDel(Grid_N grid);

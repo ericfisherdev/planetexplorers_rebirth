@@ -97,16 +97,6 @@ public class CSUI_PlanMgr : MonoBehaviour {
 	{
 		mInstance = this;
 	}
-	void Start () 
-	{
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-
 	#region interFace
 	PageType PageTye;
 

@@ -37,11 +37,6 @@ public class CSUI_CampItem : MonoBehaviour {
 		ChoseBg.SetActive(false);
 	}
 
-	void Start () 
-	{
-	
-	}
-
 	public void SetCampName(string Name)
 	{
 		if(Name.Length<15)
@@ -79,9 +74,4 @@ public class CSUI_CampItem : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 }

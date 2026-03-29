@@ -9,10 +9,12 @@ public class CSUI_TrainLearnPageCtrl : MonoBehaviour
     GameObject mLearnSkillGrid;
     [SerializeField]
     GameObject mUpgradeGrid;
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     UICheckbox m_LearnSkillCk;
     [SerializeField]
     UICheckbox m_UpgradeCk;
+#pragma warning restore CS0169
 
     [SerializeField]
     UITexture mInstructorFace;

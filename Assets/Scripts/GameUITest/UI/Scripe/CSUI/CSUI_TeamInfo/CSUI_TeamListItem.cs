@@ -37,18 +37,6 @@ public class CSUI_TeamListItem : MonoBehaviour
     public delegate void OnAgreementBtn(bool _isAgree, PlayerNetwork _mPnet);
     public event OnAgreementBtn OnAgreementBtnEvent;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SetActive(bool isActive)
     {
         mBoxCollider.enabled = isActive;

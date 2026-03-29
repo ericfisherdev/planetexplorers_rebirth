@@ -38,11 +38,12 @@ public class CSUI_TrainMgr : MonoBehaviour
     UIGrid m_TraineeSkillRoot;
     [SerializeField]
     UIGrid m_InstructorSkillRoot;
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     UIPopupList uip;
     [SerializeField]
     UILabel uipLabel;
-
+#pragma warning restore CS0169
 
     public enum TypeEnu // 学员和教练枚举
     {
@@ -932,6 +933,7 @@ public class CSUI_TrainMgr : MonoBehaviour
 
 
 
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     GameObject m_LearnSkillPage;//技能学习节点
     [SerializeField]
@@ -946,8 +948,7 @@ public class CSUI_TrainMgr : MonoBehaviour
     UITexture mTraineeFace_Stats;
     [SerializeField]
     UITexture mTraineeFace_Skill;
-
-
+#pragma warning restore CS0169
 
     //private CSPersonnel mTraineeStats = new CSPersonnel();//属性提升的学员
     //private CSPersonnel mInstructorStats = new CSPersonnel();//属性提升的教官
@@ -1129,10 +1130,12 @@ public class CSUI_TrainMgr : MonoBehaviour
 
     }
 
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     UILabel mLbMoney;
     [SerializeField]
     UILabel mLbPrivatePageText;
+#pragma warning restore CS0169
 
     #endregion
 

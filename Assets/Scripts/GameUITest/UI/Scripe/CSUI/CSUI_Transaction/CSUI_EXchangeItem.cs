@@ -78,11 +78,6 @@ public class CSUI_EXchangeItem : MonoBehaviour {
 		}
 	}
 
-	void Start () 
-	{
-	
-	}
-
 	public void SetIcon (string  icon)
 	{
 		mItemSprit.spriteName = icon;
