@@ -5,16 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
-using System.Runtime.InteropServices;
+// System.Runtime.InteropServices removed -- no longer using DllImport for LZ4
 
 public static class LSubTerrExport
 {
-    #region LZ4_EXTERN
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_compress(byte[] source, byte[] dest, int isize);
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_uncompress(byte[] source, byte[] dest, int osize);
-    #endregion
+    // LZ4 native DllImport removed -- now using ManagedLZ4 (Assets/Stubs/LZ4/ManagedLZ4.cs)
 	public static readonly string s_orgnFilePath = PeGrassDataIO_Story.originalSubTerrainDir + "subter.dat";
 	public static readonly string s_mergedFilePath = PeGrassDataIO_Story.originalSubTerrainDir + "subter.~dat";
 	
@@ -68,7 +63,7 @@ public static class LSubTerrExport
 				if ( raw_data.Length > 4 )
 				{
 					byte[] _buf = new byte [Mathf.CeilToInt((raw_data.Length + 8) * 1.1f)];
-					int size = LZ4_compress(raw_data, _buf, raw_data.Length);
+					int size = ManagedLZ4.LZ4_compress(raw_data, _buf, raw_data.Length);
 					node_data = new byte [size];
 					Array.Copy(_buf, node_data, size);
 					// Change the uncomp, len
