@@ -10,16 +10,20 @@ public class UIHealthBar : MonoBehaviour
     //[SerializeField]
     //bool bPlayEffect = true;
 
+#pragma warning disable CS0169
     [SerializeField]
-    UISprite mSprBg;
+    UISprite mSprBg; // Inspector-wired
+#pragma warning restore CS0169
     [SerializeField]
     UIFilledSprite mSprBgNormal;
     [SerializeField]
     UIFilledSprite mSprBgAdd;
     [SerializeField]
     UIFilledSprite mSprBgMinus;
+#pragma warning disable CS0169
     [SerializeField]
-    UIHpSpecularHandler handler;
+    UIHpSpecularHandler handler; // Inspector-wired
+#pragma warning restore CS0169
 
     public float Value { get { return mValue; } set { mValue = value; } }
 

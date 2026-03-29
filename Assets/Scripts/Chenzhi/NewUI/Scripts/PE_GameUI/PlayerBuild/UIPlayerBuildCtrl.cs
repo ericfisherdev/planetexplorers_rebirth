@@ -95,8 +95,10 @@ public class UIPlayerBuildCtrl : MonoBehaviour
     BoxCollider mBtnFemaleCollider;
     [SerializeField]
     Camera mUICamera;
+#pragma warning disable CS0169
     [SerializeField]
-    GameObject mUIMapSelect;
+    GameObject mUIMapSelect; // Inspector-wired
+#pragma warning restore CS0169
 
     [HideInInspector]
     public bool haschanged = false;
@@ -121,7 +123,6 @@ public class UIPlayerBuildCtrl : MonoBehaviour
 
 
 
-    bool mInitEnd;
     Vector3 mBodyCamPos;
     int mCameraState = 0;
     UIPlayerBuildMoveCtrl mMoveCtrl;

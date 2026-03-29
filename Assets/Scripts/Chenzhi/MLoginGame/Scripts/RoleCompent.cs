@@ -11,13 +11,4 @@ public class RoleCompent : MonoBehaviour {
 	//public MeshRenderer m_boxMashRender;
 	
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

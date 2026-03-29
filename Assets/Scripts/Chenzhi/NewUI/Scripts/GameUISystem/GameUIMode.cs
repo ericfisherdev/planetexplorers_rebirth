@@ -13,12 +13,6 @@ public class GameUIMode : MonoBehaviour
 		curUIMode = UIMode.um_base;
 	}
 
-	void Start()
-	{
-
-	}
-
-
 	bool _init = false;
 	void Init()
 	{

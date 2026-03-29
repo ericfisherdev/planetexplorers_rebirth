@@ -209,16 +209,4 @@ public class UIRailLine : MonoBehaviour
 			mSprCar.transform.localEulerAngles = new Vector3(180,0, Mathf.Atan2(carAng.x,carAng.z) * Mathf.Rad2Deg);
 	}
 
-	// Use this for initialization
-	void Start () 
-	{
-//		List<Vector2> testVector = new List<Vector2>();
-//		testVector.Add(new Vector2 (-40,-15));
-//		testVector.Add(new Vector2 (0,0));
-//		testVector.Add(new Vector2 (30,20));
-//		testVector.Add(new Vector2 (70,90));
-//		Init(0,testVector);
-	}
-
-
 }

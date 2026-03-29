@@ -71,7 +71,6 @@ public class UINPCTalk : UIBaseWidget
 
     public List<NpcTalkInfo> m_NpcTalkList = new List<NpcTalkInfo>();
     private int m_CurTalkIdx;
-    private AudioSource m_Audio;
     private bool m_bMutex;
     private List<int> m_SelectMissionList = new List<int>();
     public int m_selectMissionSource;

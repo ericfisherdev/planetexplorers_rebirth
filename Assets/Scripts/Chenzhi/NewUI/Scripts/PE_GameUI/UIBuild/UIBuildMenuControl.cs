@@ -434,11 +434,6 @@ public class UIBuildMenuControl : UIStaticWnd
 
 	}
 
-	void OnDisable ()
-	{
-		//_checkedBox = null;
-
-	}
 	#endregion
 	
 

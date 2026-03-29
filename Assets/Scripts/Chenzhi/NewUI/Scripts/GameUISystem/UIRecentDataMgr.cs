@@ -101,7 +101,9 @@ public class UIRecentDataMgr : MonoBehaviour
         FilePath += "UIRencent.urds";
 
         if (!File.Exists(FilePath))
-            File.Create(FilePath);
+        {
+            using (File.Create(FilePath)) { }
+        }
 
         try
         {
@@ -127,8 +129,9 @@ public class UIRecentDataMgr : MonoBehaviour
 
         try
         {
-
+#pragma warning disable CA2000 // BinaryReader wraps shared mFileStream; disposing it would close the stream
             BinaryReader _br = new BinaryReader(mFileStream);
+#pragma warning restore CA2000
             _br.BaseStream.Seek(0, SeekOrigin.Begin);
             ReadData(_br);
 
@@ -145,7 +148,9 @@ public class UIRecentDataMgr : MonoBehaviour
     {
         try
         {
+#pragma warning disable CA2000 // BinaryWriter wraps shared mFileStream; disposing it would close the stream
             BinaryWriter bw = new BinaryWriter(mFileStream);
+#pragma warning restore CA2000
             bw.Seek(0, SeekOrigin.Begin);
             SaveData(bw);
             return true;
@@ -199,11 +204,9 @@ public class UIRecentDataMgr : MonoBehaviour
         try
         {
             using (FileStream fileStream = new FileStream(FilePath, FileMode.Create, FileAccess.Write))
+            using (BinaryWriter bw = new BinaryWriter(fileStream))
             {
-                BinaryWriter bw = new BinaryWriter(fileStream);
                 SaveData(bw);
-                bw.Close();
-                fileStream.Close();
             }
 
             return;

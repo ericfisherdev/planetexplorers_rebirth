@@ -52,7 +52,7 @@ public class UIMinMapCtrl : UIStaticWnd
     public Vector2 mMapSize;
     public float mMapAlpha;
     public float mMapBright;
-    //lz-2016.09.06 ¹ÖÎï¹¥³ÇÐ§¹û
+    //lz-2016.09.06 ï¿½ï¿½ï¿½ï¹¥ï¿½ï¿½Ð§ï¿½ï¿½
     [SerializeField]
     protected MaplabelMonsterSiegeEffect m_SiegeEffectPrefab;
     [SerializeField]
@@ -62,7 +62,6 @@ public class UIMinMapCtrl : UIStaticWnd
     [SerializeField]
     private UIButton m_MinMapHideBtn;
 
-    bool mShowBigMap;
     //float mUpdateSubInfoTime = 0.9f;
     //float mUpdateSubInfoElapseTime = 1;
 
@@ -73,7 +72,7 @@ public class UIMinMapCtrl : UIStaticWnd
 
     Pathea.PeTrans mView;
     List<UIMapLabel> m_CurrentMapLabelList = new List<UIMapLabel>();
-    protected Queue<UIMapLabel> m_MapLabelPool = new Queue<UIMapLabel>(); //Log:lz-2016.04.18 Õâ¸öUIPoolÓÃÀ´ÓÅ»¯MapLabel,±ÜÃâ·´¸´ÊµÀýºÍÏú»Ù
+    protected Queue<UIMapLabel> m_MapLabelPool = new Queue<UIMapLabel>(); //Log:lz-2016.04.18 ï¿½ï¿½ï¿½UIPoolï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½MapLabel,ï¿½ï¿½ï¿½â·´ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     List<UIMapArrow> mMapArrowList = new List<UIMapArrow>();
     private bool m_MinMapIsHide;
 
@@ -192,7 +191,7 @@ public class UIMinMapCtrl : UIStaticWnd
         m_MinMapPosTween.to = new Vector3(xOffset, 0,0);
     }
 
-    Dictionary<int, List<MissionLabel>> npc_receiveSubmit = new Dictionary<int, List<MissionLabel>>();  //ÈÎÎñ±êÊ¾ÔÚÐ¡µØÍ¼ÉÏµÄÏÔÊ¾ÓÅÏÈ¼¶
+    Dictionary<int, List<MissionLabel>> npc_receiveSubmit = new Dictionary<int, List<MissionLabel>>();  //ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ð¡ï¿½ï¿½Í¼ï¿½Ïµï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½È¼ï¿½
     enum ReceiveSubmit
     {
         nothing = 0,
@@ -222,7 +221,7 @@ public class UIMinMapCtrl : UIStaticWnd
             return ReceiveSubmit.nothing;
     }
 
-    void MinMapMissionLabelRealation(MissionLabel tmp,bool add)             //Ð¡µØÍ¼ÏÔÊ¾ÈÎÎñ±êÊ¾µÄÓÅÏÈ¼¶¹ØÏµ
+    void MinMapMissionLabelRealation(MissionLabel tmp,bool add)             //Ð¡ï¿½ï¿½Í¼ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½Ïµ
     {
         if (add)
         {
@@ -498,11 +497,11 @@ public class UIMinMapCtrl : UIStaticWnd
         }
     }
 
-    /// <summary> lz-2016.10.09 ³¢ÊÔÌí¼Ó¹ÖÎï¹¥³ÇÌØÐ§</summary>
+    /// <summary> lz-2016.10.09 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¹ï¿½ï¿½ï¹¥ï¿½ï¿½ï¿½ï¿½Ð§</summary>
     void TryAddMonsterSiegeEffect(UIMapLabel uiLabel)
     {
         ILabel label = uiLabel._ILabel;
-        //lz-2016.09.06 Èç¹ûÊÇ¹ÖÎï¹¥³Ç£¬¾ÍÌí¼ÓÒ»¸ö¹¥³ÇÐ§¹û
+        //lz-2016.09.06 ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¹¥ï¿½Ç£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½
         if (null != label && label is MonsterBeaconMark)
         {
             MonsterBeaconMark mark = label as MonsterBeaconMark;
@@ -519,11 +518,11 @@ public class UIMinMapCtrl : UIStaticWnd
         }
     }
 
-    /// <summary> lz-2016.10.09 ³¢ÊÔÒÆ³ý¹ÖÎï¹¥³ÇÌØÐ§</summary>
+    /// <summary> lz-2016.10.09 ï¿½ï¿½ï¿½ï¿½ï¿½Æ³ï¿½ï¿½ï¿½ï¿½ï¹¥ï¿½ï¿½ï¿½ï¿½Ð§</summary>
     void TryRemoveMonsterSiegeEffect(UIMapLabel uiLabel)
     {
         ILabel label = uiLabel._ILabel;
-        //lz-2016.09.06 Èç¹ûÊÇ¹ÖÎï¹¥³Ç£¬¾ÍÒÆ³ýµôÐ§¹û
+        //lz-2016.09.06 ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¹¥ï¿½Ç£ï¿½ï¿½ï¿½ï¿½Æ³ï¿½ï¿½ï¿½Ð§ï¿½ï¿½
         if (null != label && label is MonsterBeaconMark)
         {
             MonsterBeaconMark mark = label as MonsterBeaconMark;
@@ -782,12 +781,12 @@ public class UIMinMapCtrl : UIStaticWnd
                         mapLabel.gameObject.SetActive(false);
                 }
 
-                //lz-2016.06.15 npcÊÇÈÎÎñ¸úËæ×Å»òÕßÆÍ´Ó¾Í²»ÏÔÊ¾Ð¡µØÍ¼ÈÎÎñÏà¹ØÍ¼±ê
+                //lz-2016.06.15 npcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½ï¿½ï¿½ï¿½Í´Ó¾Í²ï¿½ï¿½ï¿½Ê¾Ð¡ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½
                 if(mapLabel.type== ELabelType.Mission)
                 {
-                    //lz-2016.06.16 ÈÎÎñÇøÓò±êÀàÐÍµÄÈÎÎñÍ¼±ê²»Òþ²Ø£¬npc¶ÔÏó¸ÄÎªUIMapLabelËùÔÚµÄnpc¶ÔÏó£¬¶ø²»ÊÇÈÎÎñµÄ¹éÊônpc¶ÔÏó
+                    //lz-2016.06.16 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ê²»ï¿½ï¿½ï¿½Ø£ï¿½npcï¿½ï¿½ï¿½ï¿½ï¿½ÎªUIMapLabelï¿½ï¿½ï¿½Úµï¿½npcï¿½ï¿½ï¿½ó£¬¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½npcï¿½ï¿½ï¿½ï¿½
                     MissionLabel missionLabel = (MissionLabel)mapLabel._ILabel;
-                    //lz-2016.10.12 ÕâÀïÄÜreturn£¬return»á½áÊøÑ­»·£¬µ¼ÖÂºóÃæµÄLabel²»ÄÜÕý³£±éÀú¼ì²â
+                    //lz-2016.10.12 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½returnï¿½ï¿½returnï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âºï¿½ï¿½ï¿½ï¿½Labelï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     if (missionLabel.m_type != MissionLabelType.misLb_target && mapLabel.NpcID != -1)
                     {
                         PeEntity entity = EntityMgr.Instance.Get(mapLabel.NpcID);
@@ -804,7 +803,7 @@ public class UIMinMapCtrl : UIStaticWnd
                     }
                 }
 
-                //lz-2018.01.03 ¶ÓÓÑ¸üÐÂ³¯Ïò½Ç¶È
+                //lz-2018.01.03 ï¿½ï¿½ï¿½Ñ¸ï¿½ï¿½Â³ï¿½ï¿½ï¿½Ç¶ï¿½
                 if (PeGameMgr.IsMulti && mapLabel._ILabel.GetIcon() == MapIcon.AllyPlayer)
                 {
                     MapCmpt mapCmpt = (mapLabel._ILabel as MapCmpt);
@@ -855,7 +854,7 @@ public class UIMinMapCtrl : UIStaticWnd
 
     void OnOpenWorldMap()
     {
-        //lz-2016.06.24 Îâ¸çËµÐ¡µØÍ¼°´ÏÂÊó±ê×ó¼ü´ò¿ªÊÀ½çµØÍ¼£¬ÓÒ¼ü²»²Ù×÷
+        //lz-2016.06.24 ï¿½ï¿½ï¿½ËµÐ¡ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ò¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (Input.GetMouseButtonUp(0)&&GameUI.Instance != null && GameUI.Instance.mUIWorldMap != null && PeGameMgr.playerType != PeGameMgr.EPlayerType.Tutorial)
             GameUI.Instance.mUIWorldMap.Show();
     }
@@ -914,7 +913,7 @@ public class UIMinMapCtrl : UIStaticWnd
         return false;
     }
 
-    /// <summary>»ñÈ¡Ð¡µØÍ¼×é¼þµÄÕûÌå¿í¶È </summary>
+    /// <summary>ï¿½ï¿½È¡Ð¡ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </summary>
     public float GetMinMapWidth()
     {
         return mSpLeftBg.transform.localScale.x + mSpCenterBg.transform.localScale.x + mSpRightBg.transform.localScale.x;
@@ -935,12 +934,12 @@ public class UIMinMapCtrl : UIStaticWnd
     [SerializeField]
     private Transform m_ConversationsTutorialParent;
 
-    /// <summary>lz-2016.11.03 ÏÔÊ¾Õâ¸öÐ¡µØÍ¼µÄTutorial</summary>
+    /// <summary>lz-2016.11.03 ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Í¼ï¿½ï¿½Tutorial</summary>
     public void ShowMapTutorial()
     {
         if (PeGameMgr.IsTutorial)
         {
-            //lz-2016.11.07 µ¯ÌáÊ¾µÄÊ±ºòÈç¹ûÐ¡µØÍ¼Òþ²Ø×Å£¬¾Íµ¯³öÀ´
+            //lz-2016.11.07 ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½
             if (m_MinMapIsHide)
                 HideMapBtnOnClick(m_MinMapHideBtn.gameObject);
             GameObject go = Instantiate(m_MapTutorialPrefab.gameObject);
@@ -951,12 +950,12 @@ public class UIMinMapCtrl : UIStaticWnd
         }
     }
 
-    /// <summary>lz-2016.11.03 ÏÔÊ¾ÈÎÎñ×·×Ù°´Å¥µÄTutorial</summary>
+    /// <summary>lz-2016.11.03 ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½×·ï¿½Ù°ï¿½Å¥ï¿½ï¿½Tutorial</summary>
     public void ShowMissionTrackTutorial()
     {
         if (PeGameMgr.IsTutorial)
         {
-            //lz-2016.11.07 µ¯ÌáÊ¾µÄÊ±ºòÈç¹ûÐ¡µØÍ¼Òþ²Ø×Å£¬¾Íµ¯³öÀ´
+            //lz-2016.11.07 ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½
             if (m_MinMapIsHide)
                 HideMapBtnOnClick(m_MinMapHideBtn.gameObject);
             GameObject go = Instantiate(m_MissionLogTutorialPrefab.gameObject);
@@ -964,17 +963,17 @@ public class UIMinMapCtrl : UIStaticWnd
             go.transform.localPosition = Vector3.zero;
             go.transform.localScale = Vector3.one;
             go.transform.localRotation = Quaternion.identity;
-            //lz-2016.11.07 ÈÎÎñ×·×ÙTutorialÏÔÊ¾½áÊøµÄÊ±ºòÏÔÊ¾¶Ô»°»ØËÝ°´Å¥µÄTutorial
+            //lz-2016.11.07 ï¿½ï¿½ï¿½ï¿½×·ï¿½ï¿½Tutorialï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ô»ï¿½ï¿½ï¿½ï¿½Ý°ï¿½Å¥ï¿½ï¿½Tutorial
             go.GetComponent<UIWndTutorialTip_N>().DeleteEvent = ShowConversationsBtnTutorial;
         }
     }
 
-    /// <summary>lz-2016.11.03 ÏÔÊ¾¶Ô»°»ØËÝ°´Å¥µÄTutorial</summary>
+    /// <summary>lz-2016.11.03 ï¿½ï¿½Ê¾ï¿½Ô»ï¿½ï¿½ï¿½ï¿½Ý°ï¿½Å¥ï¿½ï¿½Tutorial</summary>
     private void ShowConversationsBtnTutorial()
     {
         if (PeGameMgr.IsTutorial)
         {
-            //lz-2016.11.07 µ¯ÌáÊ¾µÄÊ±ºòÈç¹ûÐ¡µØÍ¼Òþ²Ø×Å£¬¾Íµ¯³öÀ´
+            //lz-2016.11.07 ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½
             if (m_MinMapIsHide)
                 HideMapBtnOnClick(m_MinMapHideBtn.gameObject);
             GameObject go = Instantiate(m_ConversationsTutorialPrefab.gameObject);

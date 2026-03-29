@@ -499,8 +499,10 @@ public class InGameAidCtrl: MonoBehaviour
     private Transform m_ContentParent;
     [SerializeField]
     private UIPanel m_Panel;
+#pragma warning disable CS0169
     [SerializeField]
-    private UIScrollBar m_ScrollBar;
+    private UIScrollBar m_ScrollBar; // Inspector-wired
+#pragma warning restore CS0169
     [SerializeField]
     private GameObject m_LabelPrefab;
     [SerializeField]

@@ -9,7 +9,9 @@ public class PlayerBuildGirdItem : MonoBehaviour
 	[SerializeField] UISprite mIcon;
 	[SerializeField] UITexture mTexture;
 	[SerializeField] UITexture mTexSelected;
-	[SerializeField] UISprite mbg;	
+#pragma warning disable CS0169
+	[SerializeField] UISprite mbg; // Inspector-wired
+#pragma warning restore CS0169
 
 	[HideInInspector] public int mIndex = 0;
 	[HideInInspector] public Type mType = Type.Type_Null;
