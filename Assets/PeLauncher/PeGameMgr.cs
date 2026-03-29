@@ -49,6 +49,7 @@ namespace Pathea
 
         public static GamePasue PasueEvent;
 
+        // Default to single-player mode so all IsMulti checks safely no-op at startup
         static EPlayerType mPlayerType = EPlayerType.Single;
         static ESceneMode mSceneMode = ESceneMode.Story;
         static EGameType mGameType = EGameType.Cooperation;
@@ -107,7 +108,7 @@ namespace Pathea
                 MultiPlayerTypeLoader multiPlayerTypeLoader = MultiPlayerTypeArchiveMgr.Instance.multiScenario;
 
 				// ???????????????????????????????????????????????BUG?????????
-				// Ó°Ïì¶àÈË³ý¹ÊÊÂÄ£Ê½ÍâµÄÆäËüÄ£Ê½£¬ÔÚÍË³öµ½´óÌüºóÎÞ·¨½øÈëÓÎÏ·BUG¡£ÔÝÊ±ÆÁ±Î
+				// Ó°ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·BUGï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 
                 //if (!string.IsNullOrEmpty(yirdName))
                 //{

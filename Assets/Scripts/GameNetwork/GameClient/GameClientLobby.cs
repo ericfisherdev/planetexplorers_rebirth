@@ -29,6 +29,8 @@ public class GameClientLobby : LobbyInterface
 
     void Start()
     {
+        if (!Pathea.PeGameMgr.IsMulti) return;
+
         Lobby.AddListener(this);
         Lobby.OnConnected += Lobby_OnConnected;
         Lobby.OnDisconnected += Lobby_OnDisconnected;
@@ -66,7 +68,7 @@ public class GameClientLobby : LobbyInterface
             case LobbyConnectionError.RSAPublicKeyMismatch:
                 MessageBox_N.ShowOkBox(PELocalization.GetString(8000034));
                 break;
-            //lz-2016.10.31 ·­ÒëÁ¬½Ó´íÎóÂë
+            //lz-2016.10.31 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½
             case LobbyConnectionError.CreateSocketOrThreadFailure:
                 MessageBox_N.ShowOkBox(PELocalization.GetString(8000860));
                 break;
@@ -120,6 +122,7 @@ public class GameClientLobby : LobbyInterface
 
 	public static void ConnectToLobby()
 	{
+		if (!Pathea.PeGameMgr.IsMulti) return;
 		if (Lobby.connectionStatus == LobbyConnectionStatus.Disconnected)
 		{
 			Lobby.publicKey = new PublicKey(@"<RSAKeyValue><Modulus>njj4wBQW593lzN1CMkd/soo6yiz4Q1pOzGjGqq0GwR1S/PKdKiNxdyWFING69FGf6V6Almf5oVHXmoN0LNfIDUOw1Lfsq3hORXkUuz2L2dMp98RkkfKprQ+S4w0Y/HRVmp9kEO2PxSqxTwoCcaq/g65XcXs1lhGF26PQRv//pAk=</Modulus><Exponent>EQ==</Exponent></RSAKeyValue>");
