@@ -234,7 +234,7 @@ public class CSUI_Personnel : MonoBehaviour
                 m_NpcInstructor.gameObject.SetActive(false);
             }
 
-            //lz-2016.09.20 npcÔÚÈÎÎñÖÐµÄÊ±ºòÌáÊ¾ÔÚÈÎÎñÖÐ£¬²»ÄÜÕý³£¹¤×÷
+            //lz-2016.09.20 npcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (npc.m_Occupation != CSConst.potDweller)
             {
                bool canwork = NpcTypeDb.CanRun(npc.NPC.NpcCmpt.NpcControlCmdId,ENpcControlType.Work);
@@ -317,19 +317,19 @@ public class CSUI_Personnel : MonoBehaviour
             bool oldIsChecked = npc_grids_list[index].gameObject.GetComponent<UICheckbox>().isChecked;
             DestroyImmediate(npc_grids_list[index].gameObject);
             npc_grids_list.RemoveAt(index);
-            //lz-2016.08.29 É¾³ýºóÒªË¢ÐÂµ±Ç°Ó¦¸ÃÏÔÊ¾µÄ·¶Î§£¬±ÜÃâºóÃæ»¹ÓÐ¼¸ÅÅ»áÁô¿ÕµÄÇé¿ö
+            //lz-2016.08.29 É¾ï¿½ï¿½ï¿½ï¿½ÒªË¢ï¿½Âµï¿½Ç°Ó¦ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ä·ï¿½Î§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ»¹ï¿½Ð¼ï¿½ï¿½Å»ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½
             GridRange();
 
-            //lz-2016.08.29 ÖØÐ´É¾³ýÒ»¸önpc£¬Ñ¡ÖÐ×ªÒÆ·½·¨
+            //lz-2016.08.29 ï¿½ï¿½Ð´É¾ï¿½ï¿½Ò»ï¿½ï¿½npcï¿½ï¿½Ñ¡ï¿½ï¿½×ªï¿½Æ·ï¿½ï¿½ï¿½
             if (oldIsChecked)
             {
                 if (npc_grids_list.Count > 0)
                 {
                     int startIndex = mGridPageIndex * NPC_GRID_COUNT;
                     int EndIndex = Mathf.Min(startIndex+NPC_GRID_COUNT - 1, npc_grids_list.Count-1);
-                    //1.É¾³ýÒ»¸önpc£¬ËüµÄindex»á±»ºóÃæÌæ´ú£¬Èç¹û´æÔÚ²¢Ã»ÓÐ³¬³öÏÔÊ¾·¶Î§¾ÍÑ¡ÖÐÌæ´úµÄ£¬³¬³öµÄ»°ÏÞÖÆÔÚ×î´ó»òÕß×îÐ¡
+                    //1.É¾ï¿½ï¿½Ò»ï¿½ï¿½npcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½indexï¿½á±»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½Ã»ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Î§ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡
                     int newIndex = 0;
-                    //lz-2016.10.23 ´íÎó #5077 Êý×éÔ½½ç
+                    //lz-2016.10.23 ï¿½ï¿½ï¿½ï¿½ #5077 ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½
                     if (startIndex >= EndIndex)
                         newIndex = EndIndex;
                     else
@@ -366,15 +366,11 @@ public class CSUI_Personnel : MonoBehaviour
 
     void OnEnable()
     {
-        //lz-2016.10.08 ½çÃæÖØÐÂ¼¤»îµÄÊ±ºòË¢ÐÂUI
+        //lz-2016.10.08 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ë¢ï¿½ï¿½UI
         UpdateNPCRef(m_ActiveNpcGrid == null ? null : m_ActiveNpcGrid.m_Npc);
     }
 
 
-
-    void OnDisable()
-    {
-    }
 
     void Awake()
     {
@@ -700,7 +696,7 @@ public class CSUI_Personnel : MonoBehaviour
         foreach (CSUI_NPCGrid grid0 in npc_grids_list)
         {
             grid0.gameObject.SetActive(false);
-            //lz-2016.07.05 ·­Ò³µÄÊ±ºò°ÑÑ¡ÖÐ×´Ì¬È¥µô
+            //lz-2016.07.05 ï¿½ï¿½Ò³ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½×´Ì¬È¥ï¿½ï¿½
             grid0.OnActivate(false);
         }
 
@@ -710,7 +706,7 @@ public class CSUI_Personnel : MonoBehaviour
                 break;
 
             npc_grids_list[i].gameObject.SetActive(true);
-            //lz-2016.07.05 ·­Ò³µÄÊ±ºòÈç¹ûÕâÒ»Ò³ÓÐ±»Ñ¡ÖÐµÄgrid£¬¾Í°ÑÕâ¸ö¸ñ×ÓÉèÎªÑ¡ÖÐ×´Ì¬
+            //lz-2016.07.05 ï¿½ï¿½Ò³ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ò³ï¿½Ð±ï¿½Ñ¡ï¿½Ðµï¿½gridï¿½ï¿½ï¿½Í°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÑ¡ï¿½ï¿½×´Ì¬
             if (npc_grids_list[i] == m_ActiveNpcGrid)
             {
                 npc_grids_list[i].OnActivate(true);

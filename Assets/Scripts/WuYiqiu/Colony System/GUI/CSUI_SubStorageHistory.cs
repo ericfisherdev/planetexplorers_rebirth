@@ -70,12 +70,6 @@ public class CSUI_SubStorageHistory : MonoBehaviour
 			onReposition();
 	}
 
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{
@@ -86,8 +80,5 @@ public class CSUI_SubStorageHistory : MonoBehaviour
 		}
 	}
 
-	void LateUpdate ()
-	{
-
-	}
 }
+

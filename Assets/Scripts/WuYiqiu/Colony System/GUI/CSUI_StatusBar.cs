@@ -21,12 +21,6 @@ public class CSUI_StatusBar : MonoBehaviour
 	{
 		s_Instance = null;
 	}
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

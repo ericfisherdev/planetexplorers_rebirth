@@ -26,9 +26,10 @@ public class CSUI_StorageMain : MonoBehaviour
     [SerializeField]
     private UILabel m_SplitNumLb;
     [SerializeField]
-
     //luwei
+#pragma warning disable CS0169
     private UIAtlas m_ButtonAtlas;
+#pragma warning restore CS0169
     public UIAtlas mNewUIAtlas;
 
     private List<Grid_N> m_Grids;
@@ -205,7 +206,7 @@ public class CSUI_StorageMain : MonoBehaviour
     }
 
     /// <summary>
-    /// lz-2016.10.26 ÓÃÀ´¼ì²âÄ³¸öItemÊÇ²»ÊÇÍæ¼ÒÕýÔÚ²Ù×÷µÄ¶«Î÷
+    /// lz-2016.10.26 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½Itemï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
     /// </summary>
     /// <returns></returns>
     public bool EqualUsingItem(ItemSample item, bool showUsingTip = true)
@@ -448,7 +449,7 @@ public class CSUI_StorageMain : MonoBehaviour
 
     void OnDropItem(Grid_N grid)
     {
-        //lz-2016.11.16 µ±Ç°°ü¹üÊý¾ÝÎª¿ÕµÄÊ±ºòÖ±½Ó·µ»Ø
+        //lz-2016.11.16 ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Õµï¿½Ê±ï¿½ï¿½Ö±ï¿½Ó·ï¿½ï¿½ï¿½
         if (CSUI_MainWndCtrl.Instance == null || grid == null|| null==m_CurPack)
             return;
 
@@ -544,7 +545,7 @@ public class CSUI_StorageMain : MonoBehaviour
                 ItemPackage.ESlotType dropType = ItemPackage.GetSlotType(dropItem.protoId);
                 ItemPackage.ESlotType dragType = ItemPackage.GetSlotType(dragItem.protoId);
 
-                //lz-2016.10.18 Èç¹ûÍÏ¶¯µÄItemºÍ·ÅÖÃµÄItemÊÇÍ¬Ò»ÀàÐÍ£¬¾ÍÖ±½Ó½»»»ItemObjÊý¾Ý
+                //lz-2016.10.18 ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½ï¿½Itemï¿½Í·ï¿½ï¿½Ãµï¿½Itemï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½Ö±ï¿½Ó½ï¿½ï¿½ï¿½ItemObjï¿½ï¿½ï¿½ï¿½
                 if (dropType == dragType && null != SelectItem_N.Instance.Grid)
                 {
                     if (SelectItem_N.Instance.Grid.onGridsExchangeItem != null)
@@ -555,7 +556,7 @@ public class CSUI_StorageMain : MonoBehaviour
                         SelectItem_N.Instance.SetItem(null);
                     }
                 }
-                //lz-2016.10.18 Èç¹û²»ÊÇÍ¬Ò»ÀàÐÍ£¬»òÕßÃ»ÓÐGrid£¬¾ÍÏÈÌí¼Ó£¬ºóÒÆ³ý
+                //lz-2016.10.18 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Gridï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½Æ³ï¿½
                 else if (pkg.package.CanAdd(dropItem))
                 {
                     pkg.package.AddItem(dropItem);
@@ -602,7 +603,7 @@ public class CSUI_StorageMain : MonoBehaviour
 
         if (grid.Item == null) return;
 
-        //lz-2016.10.26 ²»ÔÊÐí²Ù×÷ÕýÔÚ²Ù×÷µÄ¶«Î÷
+        //lz-2016.10.26 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
         if (EqualUsingItem(grid.Item, false)) return;
 
         switch (m_OpType)
@@ -670,7 +671,7 @@ public class CSUI_StorageMain : MonoBehaviour
 
         if (grid.ItemObj == null) return;
 
-        //lz-2016.10.26 ²»ÔÊÐí²Ù×÷ÕýÔÚ²Ù×÷µÄ¶«Î÷
+        //lz-2016.10.26 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
         if (EqualUsingItem(grid.Item, false)) return;
 
         if (GameConfig.IsMultiMode)
@@ -693,7 +694,7 @@ public class CSUI_StorageMain : MonoBehaviour
             }
             else
             {
-                //lz-2016.09.14 ÌáÊ¾±³°üÒÑÂú
+                //lz-2016.09.14 ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 PeTipMsg.Register(PELocalization.GetString(9500312), PeTipMsg.EMsgLevel.Warning);
             }
         }
@@ -828,7 +829,7 @@ public class CSUI_StorageMain : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.PageDown))
             BtnRightOnClick();
 
-        //lz-2016.10.26 Êó±êÓÒ¼üµã»÷È¡Ïû²Ù×÷
+        //lz-2016.10.26 ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if ((PeInput.Get(PeInput.LogicFunction.OpenItemMenu)|| Input.GetMouseButtonDown(1))&& !m_SplitWnd.activeSelf && m_OpGird == null)
         {
             m_OpType = 0;

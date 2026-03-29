@@ -11,12 +11,6 @@ public class CSUI_BuildingNum : MonoBehaviour
     public int m_Count;
 
     public int m_LimitCnt;
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

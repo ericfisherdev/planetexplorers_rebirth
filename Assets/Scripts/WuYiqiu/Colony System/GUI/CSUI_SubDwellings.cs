@@ -38,11 +38,6 @@ public class CSUI_SubDwellings : CSUI_Base
 	
 	#region UNITY_INNER
 	
-	void Awake ()
-	{
-
-	}
-	
 	// Use this for initialization
 	new void Start () 
 	{

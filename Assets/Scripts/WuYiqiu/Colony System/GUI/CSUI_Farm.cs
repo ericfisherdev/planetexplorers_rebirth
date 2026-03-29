@@ -395,7 +395,7 @@ public class CSUI_Farm : MonoBehaviour
         }
         else
         {
-            //lz-2016.10.14 ¿Õ¶ÔÏóbug
+            //lz-2016.10.14 ï¿½Õ¶ï¿½ï¿½ï¿½bug
             if (m_Farm != null)
             { 
                 m_Farm.Data.m_SequentialPlanting = active;
@@ -446,16 +446,6 @@ public class CSUI_Farm : MonoBehaviour
 
 #endif
 
-    void Awake()
-    {
-
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -479,7 +469,7 @@ public class CSUI_Farm : MonoBehaviour
     public void OnSeedsDropItemMulti(Grid_N grid, int m_Index)
     {
         ItemObject itemObj = SelectItem_N.Instance.ItemObj;
-        //lz-2017.02.27 ´íÎó #9130 crash bug
+        //lz-2017.02.27 ï¿½ï¿½ï¿½ï¿½ #9130 crash bug
         if (null != itemObj && null!=m_Entity && null!=m_Entity._ColonyObj && null!=m_Entity._ColonyObj._Network)
         {
             m_Entity._ColonyObj._Network.SetPlantSeed(m_Index, itemObj.instanceId);

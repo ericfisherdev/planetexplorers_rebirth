@@ -170,14 +170,6 @@ public class BuildingMan : MonoBehaviour
 
 	#region Unity_Inner_Func
 
-	void OnGUI ()
-	{
-//		if (GUI.Button(new Rect(200,200, 100, 35), "Brush"))
-//		{
-//			CreateBrush(EBrushType.IsoSelectBrush);
-//		}
-	}
-
 	void Awake()
 	{
 
@@ -189,10 +181,6 @@ public class BuildingMan : MonoBehaviour
 		patternMeshMat.renderQueue = 3000;
 	}
 
-	void OnDestroy()
-	{
-	}
-	
 	void Update()
 	{
 

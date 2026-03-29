@@ -50,7 +50,9 @@ public class CSUI_ToolMenuCtrl : MonoBehaviour
 	[SerializeField]
 	UISprite mMenuBg;
     [SerializeField]
+#pragma warning disable CS0169
     UIButton mHelpBtn;
+#pragma warning restore CS0169
 
 	void Start()
 	{
