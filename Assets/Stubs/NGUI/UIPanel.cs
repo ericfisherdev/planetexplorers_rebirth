@@ -34,7 +34,7 @@ public class UIPanel : UIRect
 
     public int sortingOrder { get; set; }
 
-    public float clipSoftness { get; set; }
+    public Vector2 clipSoftness { get; set; }
 
     public Vector4 clipRange
     {

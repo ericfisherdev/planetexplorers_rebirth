@@ -323,7 +323,8 @@ public class DHAssembler : MonoBehaviour {
 			}
 		}
 		m_productMf.mesh.CombineMeshes(combineList.ToArray());
-		m_productMf.mesh.Optimize();
+		m_productMf.mesh.OptimizeIndexBuffers();
+		m_productMf.mesh.OptimizeReorderVertexBuffer();
 		m_productGo.GetComponent<MeshRenderer>().material = m_material;
 	}
 	public static IEnumerator Chunk2Mesh(DHAssembler asm)
