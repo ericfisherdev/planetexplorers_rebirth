@@ -10,12 +10,16 @@ public class CSUI_NPCSoldier : MonoBehaviour
     //[SerializeField] CSUI_SoldierGuard   m_GuardInfoUI; //lz-2016.07.26 取消守卫UI
 
 	[SerializeField] UIPopupList  	m_ModeUI;
+#pragma warning disable CS0169
 	[SerializeField] UISprite		m_PatrolModeUI;
+#pragma warning restore CS0169
 	
 
 	#endregion
 
-	[SerializeField] CSUI_EntityState  m_EntityStatePrefab;
+	#pragma warning disable CS0169
+[SerializeField] CSUI_EntityState  m_EntityStatePrefab;
+#pragma warning restore CS0169
 
 	//private List<CSUI_EntityState>	m_EntitesState = new List<CSUI_EntityState>();
 
@@ -79,15 +83,6 @@ public class CSUI_NPCSoldier : MonoBehaviour
 		}
 	}
 
-	void OnDisable()
-	{
-
-	}
-
-	void Awake ()
-	{
-	}
-
 	void OnDestroy()
 	{
 		CSPersonnel.UnregisterOccupaChangedListener(OnOccupationChange);
@@ -99,12 +94,6 @@ public class CSUI_NPCSoldier : MonoBehaviour
 		_activate();
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-
 	void UpdateModeUI()
 	{
 		if (!m_Active)

@@ -165,7 +165,8 @@ public class CSRecordMgr
 			return;
 		
 		MemoryStream ms = new MemoryStream (buffer);
-		BinaryReader r = new BinaryReader (ms);
+		using (BinaryReader r = new BinaryReader (ms))
+		{
 		int version = r.ReadInt32();
 		
 		if ( VERSION != version )
@@ -419,9 +420,10 @@ public class CSRecordMgr
 		default:
 			break;
 		}
+		}
 	}
-	
-	
+
+
 	// <CETC> export type Data
 	public byte[] Export()
 	{

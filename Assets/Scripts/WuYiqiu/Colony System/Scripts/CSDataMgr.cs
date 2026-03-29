@@ -105,7 +105,8 @@ public static class CSDataMgr
 
         if (debugSwitch) Debug.Log("<color=yellow>" + "Start to Import CSDataMgr" + "</color>");
 		MemoryStream ms = new MemoryStream (buffer);
-		BinaryReader r = new BinaryReader (ms);
+		using (BinaryReader r = new BinaryReader (ms))
+		{
 		int version = r.ReadInt32();
         if (debugSwitch) Debug.Log("<color=yellow>" + "version:" + version + "</color>");
 		if ( CUR_VERSION != version )
@@ -124,14 +125,15 @@ public static class CSDataMgr
 				    dataInst.Import(r);
 				    m_DataInsts.Add(dataInst.m_ID, dataInst);
 			    }
-			
+
 			    CSClodMgr.Init();
 			    CSClodMgr.Instance.Import(r);
-			
+
 			    CSClodsMgr.Init();
 			    CSClodsMgr.Instance.Import(r);
 
 			    //CSSimulatorDataMgr.ImportMgrs(r, version);
+		}
 		}
 	}
 

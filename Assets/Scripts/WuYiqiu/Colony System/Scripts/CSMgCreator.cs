@@ -63,7 +63,9 @@ public class CSMgCreator : CSCreator
 	public event UpdateMoneyEvent UpdateMoneyListener;
 	
 	public delegate void StoreIdAddedEvent(List<int> storeIdList);
+#pragma warning disable CS0067
 	public event StoreIdAddedEvent StoreIdAddedListener;
+#pragma warning restore CS0067
 
 	public void RegistStoreIdAddedEvent(StoreIdAddedEvent addEvent){
 		StoreIdAddedListener-=addEvent;

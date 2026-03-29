@@ -79,10 +79,6 @@ public class CSUI_NPCFarmer : MonoBehaviour
         CSPersonnel.RegisterOccupaChangedListener(OnOccupationChange);
     }
 
-    void Awake()
-    {
-    }
-
     void OnDestroy()
     {
         CSPersonnel.UnregisterOccupaChangedListener(OnOccupationChange);

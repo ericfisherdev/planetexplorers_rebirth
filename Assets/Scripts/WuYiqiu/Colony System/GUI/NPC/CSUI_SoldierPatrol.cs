@@ -27,11 +27,6 @@ public class CSUI_SoldierPatrol : MonoBehaviour
 
 	private CSPersonnel m_OldRefNpc;
 
-	void OnEnable()
-	{
-
-	}
-
 	void OnDisable()
 	{
         ClearEntites();
@@ -48,12 +43,6 @@ public class CSUI_SoldierPatrol : MonoBehaviour
         m_EntitesState.Clear();
     }
 
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{

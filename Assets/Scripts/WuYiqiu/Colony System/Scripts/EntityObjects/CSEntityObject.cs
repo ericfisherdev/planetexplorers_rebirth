@@ -205,18 +205,6 @@ public abstract class CSEntityObject : GLBehaviour
 
     private float m_StartTime = 0;
 
-    protected void OnDestroy()
-    {
-        //		if (m_Simulator != null)
-        //			m_Simulator.IsValid = false;
-    }
-
-    protected void Awake()
-    {
-        //m_OrginMats = new List<List<Material>>();
-        //Mesh m;
-    }
-
     // Use this for initialization
     protected void Start()
     {

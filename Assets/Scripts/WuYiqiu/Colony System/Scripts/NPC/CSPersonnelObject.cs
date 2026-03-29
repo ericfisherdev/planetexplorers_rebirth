@@ -9,16 +9,5 @@ public class CSPersonnelObject : MonoBehaviour
 	{
 		//CSBehaveMgr.ClearBehaves(m_Personnel.ID);
 	}
-
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 }
+

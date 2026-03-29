@@ -5,12 +5,6 @@ public class OutLinesMesh : MonoBehaviour
 {
 	public Material mat;
 	
-	// Use this for initialization
-	void Start () 
-	{
-		//Camera.current.depthTextureMode = DepthTextureMode.Depth;
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{

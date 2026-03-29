@@ -132,9 +132,6 @@ public class CSUI_NPCGrid : MonoBehaviour
 
     #region UNITY_INNER
 
-    void Awake()
-    {
-    }
     // Use this for initialization
     void Start()
     {

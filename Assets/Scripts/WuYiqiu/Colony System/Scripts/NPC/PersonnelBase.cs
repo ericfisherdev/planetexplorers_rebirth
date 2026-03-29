@@ -95,8 +95,6 @@ public abstract class PersonnelBase
 		get { return Quaternion.identity;}
 		set {}
 	}
-	private CounterScript m_CounterScript;
-
 	public virtual string m_Name
 	{
 		get { return "Personnel"; }
