@@ -214,15 +214,5 @@ public class OutlineObject : MonoBehaviour
 		if (m_OpaqueMat != null)
 			DestroyImmediate(m_OpaqueMat);
 	}
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-
-	}
 }
+
