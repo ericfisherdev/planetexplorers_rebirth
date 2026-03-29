@@ -474,7 +474,6 @@ namespace AppearBlendShape
         public Color mHairColor;
 
 		Color mSubSkinColor = Color.black;
-		float mSubBodyWeight;
 
 		public Color subSkinColor{ set { mSubSkinColor = value; } }
 		public float[] subBodyWeight{ get { return mSubMorphWeightArray; } }

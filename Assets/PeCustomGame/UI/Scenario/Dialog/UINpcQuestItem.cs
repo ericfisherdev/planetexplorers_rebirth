@@ -4,7 +4,9 @@ using System;
 public class UINpcQuestItem : MonoBehaviour
 {
     [SerializeField] UILabel textLabel;
+#pragma warning disable CS0169 // titleIcon is wired via Unity Inspector
     [SerializeField] UISprite titleIcon;
+#pragma warning restore CS0169
 
     public int index;
 

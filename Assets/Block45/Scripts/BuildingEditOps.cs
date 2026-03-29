@@ -7,7 +7,6 @@ using System.IO;
 
 public class BuildingEditOps : MonoBehaviour {
 	GameObject cursorCubeGo = null;
-	GameObject RefPlaneManGo;
 	Block45CurMan b45Building = null;
 	//RefPlaneManager refPlaneMan;
 	private Block45OctDataSource _voxels = null;
@@ -16,18 +15,6 @@ public class BuildingEditOps : MonoBehaviour {
 		int currentRotation;
 		int currentMat;
 	// extended
-	void Awake()
-	{
-//		cursorCubeGo = GameObject.Find("CursorCube");
-//		cursorCubeGo.transform.localScale = new Vector3(Block45Constants._scale,Block45Constants._scale,Block45Constants._scale);
-		
-		//RefPlaneManGo = GameObject.Find("RefPlaneMan");
-		//refPlaneMan = RefPlaneManGo.GetComponent<RefPlaneManager>();
-		
-	}
-	void Start () {
-	
-	}
 	public void setShape(int val)
 	{
 		currentShape = val;

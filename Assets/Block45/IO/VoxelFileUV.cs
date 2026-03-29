@@ -18,8 +18,6 @@ public class VoxelFileUV {
 	
 	int chunkCount;
 	
-	int chunkRawDataLength; // length of an uncompressed raw chunk data
-	
 	int phase2StartOfs = 0;
 #region chunk offsets
 	IntVector3[] chunkCoords;

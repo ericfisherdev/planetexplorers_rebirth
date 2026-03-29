@@ -28,9 +28,5 @@ namespace PeAudio
 			FMODAudioSource.Destroy(audioSrc);
 		}
 		
-		void Update ()
-		{
-			
-		}
 	}
 }

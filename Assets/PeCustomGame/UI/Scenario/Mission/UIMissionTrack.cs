@@ -33,11 +33,6 @@ public class UIMissionTrack : MonoBehaviour
         missionInterpreter.Close();
     }
 
-    void OnDestroy()
-    {
-        //missionInterpreter.Close();
-    }
-
     public UIBaseWnd GetBaseWnd()
     {
         return missionUI;

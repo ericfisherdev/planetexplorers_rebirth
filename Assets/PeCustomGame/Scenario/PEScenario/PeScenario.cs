@@ -227,8 +227,8 @@ namespace PeCustom
                 _isNew = false;
 
                 using (MemoryStream ms_iso = new MemoryStream(data))
+                using (BinaryReader r = new BinaryReader(ms_iso))
                 {
-                    BinaryReader r = new BinaryReader(ms_iso);
 					r.ReadInt32();
                     m_Scenario.Import(r);
                     // TODO: 子系统的Import

@@ -115,8 +115,6 @@ namespace Pathea
 
         public class List
         {
-            string mDirName;
-
             List<ArchiveObj> mList;
 
             public List(int capacity)

@@ -457,8 +457,6 @@ public class Block45Building : MonoBehaviour {
 	List<B45ChunkData> chunkSaveList = new List<B45ChunkData>();
 	//byte[] chunkModifyFlags;
     //IntVector2 x-Ô­chunkModifyFlagsµÄidx£¬y-Ô­chunkModifyFlagsµÄvalue¡£IntVector3žúSubterÒ»Ñù¡£
-    Dictionary<IntVector3, byte[]> m_SaveBuffer;// = new Dictionary<IntVector3, byte[]>();
- 
 	public void AddChunkToSaveList(B45ChunkData vc)
 	{
 		if(!chunkSaveList.Contains(vc))
@@ -466,7 +464,6 @@ public class Block45Building : MonoBehaviour {
 			chunkSaveList.Add(vc);
 		}
 	}
-	VoxelFileMan vfile;
 
 //	IEnumerator	saveChunksInList()
 //	{

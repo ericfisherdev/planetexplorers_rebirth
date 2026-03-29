@@ -202,12 +202,11 @@ namespace PeCustom
         {
             byte[] data = null;
             using (MemoryStream ms_iso = new MemoryStream())
+            using (BinaryWriter w = new BinaryWriter(ms_iso))
             {
-                BinaryWriter w = new BinaryWriter(ms_iso);
                 Export(w);
 
                 data = ms_iso.ToArray();
-                ms_iso.Close();
             }
 
             return data;

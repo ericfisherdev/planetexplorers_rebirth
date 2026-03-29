@@ -401,9 +401,8 @@ namespace PeCustom
 		void SetData(byte[] data)
 		{
 			using ( MemoryStream ms_iso = new MemoryStream (data) )
+			using ( BinaryReader r = new BinaryReader (ms_iso) )
 			{
-				BinaryReader r = new BinaryReader (ms_iso);
-				
 				int version = r.ReadInt32();
 
 				switch(version)

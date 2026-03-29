@@ -30,8 +30,4 @@ public class UINpcSpeech : MonoBehaviour
         speechInterpreter.Init();
     }
 
-    void OnDestroy ()
-    {
-
-    }
 }
