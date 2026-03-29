@@ -93,12 +93,14 @@ public class NetworkInterface : uLink.MonoBehaviour
 
 	public static void Connect(string host, int remotePort, string password, params object[] objs)
 	{
+		if (!GameConfig.IsMultiMode) return;
 		if (uLink.Network.status == uLink.NetworkStatus.Disconnected)
 			uLink.Network.Connect(host, remotePort, password, objs);
 	}
 
 	public static void Connect(uLink.HostData host, string password, params object[] objs)
 	{
+		if (!GameConfig.IsMultiMode) return;
 		if (uLink.Network.status == uLink.NetworkStatus.Disconnected)
 			uLink.Network.Connect(host, password, objs);
 	}
