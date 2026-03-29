@@ -12,7 +12,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **ENV-01**: Project migrated from Unity 5.2.4f1 to Unity 6+
 - [ ] **ENV-02**: All proprietary plugins replaced with OSS alternatives or stubs (NGUI, uLink, uLobby, FMOD, FinalIK, A* Pro, Behave, Steamworks)
 - [ ] **ENV-03**: Project compiles with zero errors on modern Unity
-- [ ] **ENV-04**: Native LZ4 DLL replaced with managed C# implementation
+- [x] **ENV-04**: Native LZ4 DLL replaced with managed C# implementation
 
 ### Core Systems
 
@@ -86,7 +86,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ENV-01 | Phase 1 | Complete |
 | ENV-02 | Phase 2 | Pending |
 | ENV-03 | Phase 3 | Pending |
-| ENV-04 | Phase 2 | Pending |
+| ENV-04 | Phase 2 | Complete |
 | CORE-01 | Phase 4 | Pending |
 | CORE-02 | Phase 5 | Pending |
 | CORE-03 | Phase 5 | Pending |
