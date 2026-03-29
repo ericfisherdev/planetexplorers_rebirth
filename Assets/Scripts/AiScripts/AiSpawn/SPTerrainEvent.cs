@@ -24,7 +24,6 @@ public class SPTerrainEvent : NetworkInterface
     //List<IntVector2> requestList = new List<IntVector2>();
     List<IntVector4> mMeshNodes = new List<IntVector4>();
 
-    Transform staticPoints;
     SimplexNoise mNoise;
 
     public List<IntVector4> meshNodes

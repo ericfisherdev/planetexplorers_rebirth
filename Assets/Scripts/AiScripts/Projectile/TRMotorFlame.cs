@@ -8,7 +8,6 @@ public class TRMotorFlame : Trajectory
 	public float angleMin;
 	public float angleMax;
 	
-	Vector3 direction;
 	Vector3 vx;
 	Vector3 vy = Vector3.zero;
 

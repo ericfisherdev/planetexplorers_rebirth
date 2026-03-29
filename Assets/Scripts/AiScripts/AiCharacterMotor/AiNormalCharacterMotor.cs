@@ -42,7 +42,7 @@ public class AiNormalCharacterMotor : AiCharacterMotor
     {
         base.OnEnable();
         firstframe = true;
-        controller = GetComponent(typeof(CharacterController)) as CharacterController;
+        controller = GetComponent<CharacterController>();
     }
 
     private void AdjustToGravity()

@@ -63,14 +63,6 @@ public class AiBehave : AiBehaveTree, IAgent
         gameObject.layer = Pathea.Layer.Default;
     }
 
-    void OnDestroy()
-    {
-        //if (AiManager.Manager != null)
-        //{
-        //    AiManager.Manager.RemoveAiBehave(this);
-        //}
-    }
-
     void OnEnable()
     {
         ActiveBehaveTree(true);
@@ -156,6 +148,8 @@ public class AiBehave : AiBehaveTree, IAgent
 	}
 
     public BehaveResult Tick(Tree sender) { return BehaveResult.Success; }
+#pragma warning disable UNT0006 // Reset(Tree) is an IAgent interface method, not the Unity Reset message
     public void Reset(Tree sender) { }
+#pragma warning restore UNT0006
     public int SelectTopPriority(Tree sender, params int[] IDs) { return IDs[0]; }
 }

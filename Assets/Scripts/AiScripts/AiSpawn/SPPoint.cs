@@ -32,7 +32,6 @@ public class SPPoint : MonoBehaviour
     bool mRevisePosition;
     bool mWaitForSpawned;
     GameObject mClone;
-    Quaternion mRotation;
     IntVector4 mIndex;
     List<IntVector4> mNodes;
     SimplexNoise mNoise;

@@ -6,8 +6,7 @@ public class AiAnimatorMotor : AiCharacterMotor
 {
     public float timeScale = 1.0f;
 
-    private float m_startStuckTime;
-	private Animator animator;
+    private Animator animator;
 	
 	public override Vector3 velocity {
 		get {

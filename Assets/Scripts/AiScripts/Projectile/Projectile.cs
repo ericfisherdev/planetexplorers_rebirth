@@ -33,8 +33,6 @@ public class Projectile : SkillRunner
     bool mValid;
 	//float random1;
 
-    Trajectory mTrajectory;
-
     public virtual byte effectType { get { return 0; } }
 	
     public override bool IsController
@@ -143,10 +141,9 @@ public class Projectile : SkillRunner
         Invoke("Destruct", existTime);
     }
 
-    public void Update()
-    {
-
-    }
+#pragma warning disable UNT0001 // Update is empty but required as a base for subclass overrides
+    public void Update() { }
+#pragma warning restore UNT0001
 
     public virtual void DestroyProjectile()
     {
@@ -343,7 +340,7 @@ public class Projectile : SkillRunner
         if (collider.transform.IsChildOf(transform))
             return true;
 
-        if (collider.transform.tag == "WorldCollider")
+        if (collider.transform.CompareTag("WorldCollider"))
             return true;
 
         if (collider.isTrigger)
