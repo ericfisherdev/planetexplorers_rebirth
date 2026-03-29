@@ -358,10 +358,12 @@ public class BehaveGroup : MonoBehaviour, IBehave
     }
 
     #region IAgent
+#pragma warning disable UNT0006 // Reset(Tree) is an IAgent interface method, not the Unity Reset message
     public void Reset(Behave.Runtime.Tree sender)
     {
 
     }
+#pragma warning restore UNT0006
 
     public int SelectTopPriority(Behave.Runtime.Tree sender, params int[] IDs)
     {

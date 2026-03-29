@@ -11,8 +11,6 @@ public class PEHearing : PEPerception
 
     List<PeEntity> m_Entities;
 
-    int layer;
-
     ulong m_FrameCount;
 
     public List<PeEntity> Entities
@@ -99,8 +97,5 @@ public class PEHearing : PEPerception
         radius -= value;
     }
 
-    public void OnDrawGizmosSelected()
-    {
-        //Gizmos.DrawWireSphere(transform.position, radius);
-    }
 }
+

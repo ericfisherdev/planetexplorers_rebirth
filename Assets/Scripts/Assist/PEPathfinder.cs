@@ -124,7 +124,6 @@ public class PEPathfinder : MonoBehaviour
     protected Vector3 lastFoundWaypointPosition;
     protected float lastFoundWaypointTime = -9999;
 
-    float lastClearTime;
     Pathea.PeEntity entity;
     Vector3 searchPosition;
     int layer;
