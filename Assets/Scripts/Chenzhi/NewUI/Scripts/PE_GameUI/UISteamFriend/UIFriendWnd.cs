@@ -11,7 +11,9 @@ public class UIFriendWnd : UIStaticWnd
 	[SerializeField] TweenPosition mTweenPos;
 	[SerializeField] GameObject mOptionMenuPrefab;
 	[SerializeField] GameObject mInviteBoxPrefab;
-	[SerializeField] UICheckbox mTabSteamFriend;
+#pragma warning disable CS0169
+	[SerializeField] UICheckbox mTabSteamFriend; // Inspector-wired
+#pragma warning restore CS0169
 	[SerializeField] UICheckbox mTabRoomPlayer;
 
 	[HideInInspector]

@@ -49,17 +49,6 @@ public class UIInviteMsgbox : UIStaticWnd
 	}
 
 
-	void Update()
-	{
-//		mTimer.Update(Time.deltaTime);
-//		if (mTimer.Second <= 0)
-//		{
-//			Hide();
-//			if (mTimeOutFunc != null)
-//				mTimeOutFunc();
-//		}
-	}
-
 	bool isHide;
 	public override void Show ()
 	{

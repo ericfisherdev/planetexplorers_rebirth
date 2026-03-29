@@ -48,15 +48,6 @@ public class UIPageLocalCtrl : MonoBehaviour
 	}
 
 
-	// Update is called once per frame
-	void Update () 
-	{
-        
-	}
-
-
-
-
 	void GetLocalItem(string _isoPath)
 	{
 		mLocalIsoPath = _isoPath;

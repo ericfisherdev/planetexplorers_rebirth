@@ -112,18 +112,6 @@ public class UIGridItemCtrl : MonoBehaviour
         }
     }
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     ItemObject _itemObj = null;
 
     void OnTooltip(bool show)

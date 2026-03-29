@@ -93,7 +93,6 @@ public class UIGraphControl : MonoBehaviour
 	//private int mMaxLever_h = 0;
 	//private int mMaxLever_v = 0;
 
-	private float nodeIndex0Pos;
 
 
 	public void DrawGraph()
@@ -389,44 +388,6 @@ public class UIGraphControl : MonoBehaviour
 		return node;
 	}
 
-
-	void Awake()
-	{
-
-	}
-
-	// Use this for initialization
-	void Start () 
-	{
-//		GraphNode nd_00 = AddGraphItem(0,0,null ,5,15,"A","Icon");
-//
-//		GraphNode nd_10 = AddGraphItem(1,0,nd_00,5,15,"A","Icon");
-//		GraphNode nd_11 = AddGraphItem(1,1,nd_00,5,15,"A","Icon");
-//		GraphNode nd_12 = AddGraphItem(1,2,nd_00,5,15,"A","Icon");
-//		
-//		GraphNode nd_20 = AddGraphItem(2,0,nd_10,5,15,"A","Icon");
-//		GraphNode nd_21 = AddGraphItem(2,1,nd_10,5,15,"A","Icon");
-//		GraphNode nd_22 = AddGraphItem(2,2,nd_11,5,15,"A","Icon");
-//		GraphNode nd_23 = AddGraphItem(2,3,nd_11,5,15,"A","Icon");
-//		GraphNode nd_24 = AddGraphItem(2,4,nd_12,5,15,"A","Icon");
-//		GraphNode nd_25 = AddGraphItem(2,5,nd_12,5,15,"A","Icon");
-//		GraphNode nd_26 = AddGraphItem(2,6,nd_12,5,15,"A","Icon");
-//		GraphNode nd_27 = AddGraphItem(2,7,nd_12,5,15,"A","Icon");
-//		GraphNode nd_28 = AddGraphItem(2,8,nd_12,5,15,"A","Icon");
-//		GraphNode nd_29 = AddGraphItem(2,9,nd_12,5,15,"A","Icon");
-//		GraphNode nd_30 = AddGraphItem(3,0,nd_21,5,15,"A","Icon");
-
-
-
-
-//		DrawGraph();
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-
-	}
 
 	private int tempCount = 0;
 	void FixedUpdate()

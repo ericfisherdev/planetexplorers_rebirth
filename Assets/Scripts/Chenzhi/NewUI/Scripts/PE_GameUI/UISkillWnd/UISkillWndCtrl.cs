@@ -14,7 +14,9 @@ public class UISkillWndCtrl : UIBaseWnd
 	[SerializeField] UISlider mSliderExp; 
 
 	[SerializeField] UISkillTypeCtrl mSkillTypeCtrl;
-	[SerializeField] UILabel mInfo;
+#pragma warning disable CS0169
+	[SerializeField] UILabel mInfo; // Inspector-wired
+#pragma warning restore CS0169
 
 	List<UISkillType> mSkillTypeList = new List<UISkillType>();
 	List<UISkillType.SkillTypeData> mSkillTypeDatas = new List<UISkillType.SkillTypeData>();
@@ -235,7 +237,6 @@ public class UISkillWndCtrl : UIBaseWnd
 	
 
 
-	UISkillItem _prevLernItem;
 	void OnSkillItemLernClick(UISkillItem item)
 	{
 		SKTLearnResult r = _SkillMgr.SKTLearn(item.data._skillType);

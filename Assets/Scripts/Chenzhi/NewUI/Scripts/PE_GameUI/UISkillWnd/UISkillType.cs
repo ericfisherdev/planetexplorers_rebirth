@@ -20,7 +20,9 @@ public class UISkillType : MonoBehaviour
 	public SkillTypeData data { get { return mData;}  set { mData = value; Refresh();} }
 	public int mainType {get;set;}  // OnCreate Set SkillMainType._mainType 
 
-	[SerializeField] GameObject mSkillItemPrefab;
+#pragma warning disable CS0169
+	[SerializeField] GameObject mSkillItemPrefab; // Inspector-wired
+#pragma warning restore CS0169
 	[SerializeField] UISkillGrade mGrade_1;
 	[SerializeField] UISkillGrade mGrade_2;
 	[SerializeField] UISkillGrade mGrade_3;

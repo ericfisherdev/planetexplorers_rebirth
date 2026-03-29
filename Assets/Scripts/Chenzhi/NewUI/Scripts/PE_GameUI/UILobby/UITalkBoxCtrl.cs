@@ -78,21 +78,6 @@ public class UITalkBoxCtrl : MonoBehaviour
         RecoveryItems(m_CurChatItems.Count);
     }
 
-    // Use this for initialization
-    void Start()
-    {
-        //mScrollBar.onChange = OnScrollValueChage;
-
-
-        //-------------------- text code ----------------------------------------------
-        //		for (int i=0;i<100;i++)
-        //		{
-        //			AddMsg("User Name","just for text!","ffffff");
-        //		}
-        //------------------------------------------------------------------------------
-
-    }
-
     void OnScrollValueChage(UIScrollBar bar)
     {
         if ((Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")) > PETools.PEMath.Epsilon) || Input.GetMouseButtonDown(0))

@@ -74,8 +74,6 @@ public class UICompoundWndControl : UIBaseWnd
     private string m_AllStr = "";
     private ItemLabel.Root mRootType;//标识左边按钮的分类
     private int mItemType = 0;//标识上方下拉列表选项的分类
-    private AudioController m_CompoundAudioCtrl;
-
 	private Replicator mReplicator;
 	private Replicator replicator
 	{

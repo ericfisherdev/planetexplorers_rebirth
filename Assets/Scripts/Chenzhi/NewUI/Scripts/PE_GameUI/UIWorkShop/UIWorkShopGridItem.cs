@@ -46,7 +46,6 @@ public class UIWorkShopGridItem : MonoBehaviour
 
 	public int index = -1;
 
-    private bool m_DownLoad;    // Log:2016.05.17 已经下载标志
     private bool m_IsActiveLoading;
     //private bool m_ActiveUpDown;
     private string m_IsoFileName="";
@@ -227,13 +226,6 @@ public class UIWorkShopGridItem : MonoBehaviour
 
 			ActiveUpDown(false);
 		}
-
-	}
-
-
-	// Use this for initialization
-	void Start () 
-	{
 
 	}
 

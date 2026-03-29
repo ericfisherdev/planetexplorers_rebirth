@@ -8,8 +8,10 @@ using ItemAsset.SlotListHelper;
 
 public partial class UIServantWnd : UIBaseWnd
 {
+#pragma warning disable CS0169
     [SerializeField]
-    UIPlayerInfoScall mScall;
+    UIPlayerInfoScall mScall; // Inspector-wired
+#pragma warning restore CS0169
     [SerializeField]
     UITexture mEqTex;
     [SerializeField]
@@ -76,12 +78,14 @@ public partial class UIServantWnd : UIBaseWnd
     UILabel mLbEnergyBuff;
     [SerializeField]
     UILabel mLbAttack;
+#pragma warning disable CS0169
     [SerializeField]
-    UILabel mLbAttackBuff;
+    UILabel mLbAttackBuff; // Inspector-wired
+    [SerializeField]
+    UILabel mLbDefenseBuff; // Inspector-wired
+#pragma warning restore CS0169
     [SerializeField]
     UILabel mLbDefense;
-    [SerializeField]
-    UILabel mLbDefenseBuff;
     [SerializeField]
     UILabel mLbMoney;
     [SerializeField]
@@ -117,7 +121,7 @@ public partial class UIServantWnd : UIBaseWnd
     int mInteraction2GridCount = 10;
     int mPrivateItemGridCount = 10;
 
-    //lz-2016.10.19 ÊôÐÔ·â×°
+    //lz-2016.10.19 ï¿½ï¿½ï¿½Ô·ï¿½×°
     AttributeInfo AttrHpInfo = new AttributeInfo(AttribType.Hp, AttribType.HpMax);
     //AttributeInfo AttrStaminaInfo = new AttributeInfo(AttribType.Stamina, AttribType.StaminaMax);
     AttributeInfo AttrHungerInfo = new AttributeInfo(AttribType.Hunger, AttribType.HungerMax);
@@ -180,7 +184,7 @@ public partial class UIServantWnd : UIBaseWnd
         get { return m_NpcCmpt; }
         set
         {
-            //lz-2016.10.14 ±ÜÃâÉÏÒ»¸öm_NpcÉíÉÏµÄÊÂ¼þÃ»ÓÐÒÆ³ý
+            //lz-2016.10.14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½m_Npcï¿½ï¿½ï¿½Ïµï¿½ï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½Æ³ï¿½
             if (null != m_NpcCmpt&&null!= m_NpcCmpt.Entity)
             {
                 AbnormalConditionCmpt accOld = m_NpcCmpt.Entity.GetCmpt<AbnormalConditionCmpt>();
@@ -193,7 +197,7 @@ public partial class UIServantWnd : UIBaseWnd
 
             m_NpcCmpt = value;
 
-            //lz-2016.10.14 ÖØÐÂÌí¼ÓÊÂ¼þ
+            //lz-2016.10.14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
             if (null != m_NpcCmpt && null != m_NpcCmpt.Entity)
             {
                 AbnormalConditionCmpt accNew = m_NpcCmpt.Entity.GetCmpt<AbnormalConditionCmpt>();
@@ -519,7 +523,7 @@ public partial class UIServantWnd : UIBaseWnd
         }
     }
 
-    /// <summary> »ñÈ¡EquipmentCmpt</summary>
+    /// <summary> ï¿½ï¿½È¡EquipmentCmpt</summary>
     public EquipmentCmpt GetCurServantEquipCmpt()
     {
         return (npcCmpt == null) ? null : npcCmpt.Entity.equipmentCmpt;
@@ -565,11 +569,11 @@ public partial class UIServantWnd : UIBaseWnd
             }
         }
 
-        //lz-2016.06.08 Èç¹ûÓÐ²É¼¯¼¼ÄÜ£¬¾Í¼¤»îWork°´Å¥£¬Ã»ÓÐ¾ÍÒþ²Ø
+        //lz-2016.06.08 ï¿½ï¿½ï¿½ï¿½Ð²É¼ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Workï¿½ï¿½Å¥ï¿½ï¿½Ã»ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½
         mWorkBtn.gameObject.SetActive(npcCmpt.Npcskillcmpt.HasCollectSkill());
     }
 
-    //lz-2016.06.15 Èç¹ûnpcËÀÍö£¬Õâ¼¸¸ö°´Å¥¾Í²»ÄÜ²Ù×÷
+    //lz-2016.06.15 ï¿½ï¿½ï¿½npcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â¼¸ï¿½ï¿½ï¿½ï¿½Å¥ï¿½Í²ï¿½ï¿½Ü²ï¿½ï¿½ï¿½
     void UpdateOpBtnState()
     {
         bool active = (null != npcCmpt && !npcCmpt.Entity.IsDeath());
@@ -613,7 +617,7 @@ public partial class UIServantWnd : UIBaseWnd
         mSdHealth.sliderValue = (max <= 0) ? 0 : Convert.ToSingle(cur) / max;
         mLbHealthBuff.text = AttrHpInfo.GetBuffStr();
 
-        //lz-2016.11.1 npc²»ÏûºÄÌåÁ¦ºÍÑõÆø£¬È¥³ýÏÔÊ¾
+        //lz-2016.11.1 npcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½Ê¾
         //cur = AttrStaminaInfo.CurValue;
         //max = AttrStaminaInfo.MaxValue;
         //mLbStamina.text = AttrStaminaInfo.GetCur_MaxStr();
@@ -682,7 +686,7 @@ public partial class UIServantWnd : UIBaseWnd
 
     #region uievent
 
-    /// <summary>¸üÐÂÌ××°BuffÌáÊ¾</summary>
+    /// <summary>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°Buffï¿½ï¿½Ê¾</summary>
     void UpdateSuitBuffTips(List<SuitSetData.MatchData> datas)
     {
         string tips = "";
@@ -1037,7 +1041,7 @@ public partial class UIServantWnd : UIBaseWnd
     void AddNpcAbnormal(PEAbnormalType type)
     {
         AbnormalData data = AbnormalData.GetData(type);
-        //lz-2016.08.26 Òì³£×´Ì¬ÊÇ0µÄÍ¼±ê²»ÏÔÊ¾
+        //lz-2016.08.26 ï¿½ì³£×´Ì¬ï¿½ï¿½0ï¿½ï¿½Í¼ï¿½ê²»ï¿½ï¿½Ê¾
         if (null == data || data.iconName == "0")
             return;
         CSUI_BuffItem item = Instantiate(mAbnormalPrefab) as CSUI_BuffItem;
@@ -1053,7 +1057,7 @@ public partial class UIServantWnd : UIBaseWnd
     void RemoveNpcAbnormal(PEAbnormalType type)
     {
         AbnormalData data = AbnormalData.GetData(type);
-        //lz-2016.08.26 Òì³£×´Ì¬ÊÇ0µÄÍ¼±ê²»ÏÔÊ¾
+        //lz-2016.08.26 ï¿½ì³£×´Ì¬ï¿½ï¿½0ï¿½ï¿½Í¼ï¿½ê²»ï¿½ï¿½Ê¾
         if (null == data || data.iconName == "0")
             return;
         CSUI_BuffItem item = mAbnormalList.Find(i => i._icon == data.iconName);

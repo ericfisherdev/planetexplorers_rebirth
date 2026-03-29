@@ -16,12 +16,6 @@ public class UIWorkShopBtnCtrl : MonoBehaviour
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
-
 	void BtnWorkShopOnClick()
 	{
 		if (mWorkShopCtrl == null && GameConfig.IsMultiMode)

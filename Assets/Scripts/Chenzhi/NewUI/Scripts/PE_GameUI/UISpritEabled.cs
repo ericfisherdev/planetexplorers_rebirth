@@ -9,11 +9,7 @@ public class UISpritEabled : MonoBehaviour
 	public UISlicedSprite mSprite2;
 
 	bool IsShow = false;
-	// Use this for initialization
-	void Start () 
-	{
-	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{

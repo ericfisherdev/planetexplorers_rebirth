@@ -282,16 +282,6 @@ public class UIBuildWndItem : MonoBehaviour
 	#endregion
 
 	
-	void Awake()
-	{
-	}
-
-	// Use this for initialization
-	void Start () 
-	{
-
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{

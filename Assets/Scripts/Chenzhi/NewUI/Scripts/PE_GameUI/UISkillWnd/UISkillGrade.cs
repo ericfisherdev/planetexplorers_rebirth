@@ -7,9 +7,11 @@ public class UISkillGrade : MonoBehaviour
 {
 	public Transform mContent;
 	public UISprite mIcon;
-	[SerializeField] UISprite mLeftLine_h;
+#pragma warning disable CS0169
+	[SerializeField] UISprite mLeftLine_h; // Inspector-wired
+	[SerializeField] UISprite mRightLine_h; // Inspector-wired
+#pragma warning restore CS0169
 	[SerializeField] UISprite mLeftLine_v;
-	[SerializeField] UISprite mRightLine_h;
 	[SerializeField] UISprite mRightLine_v;
 
 	public Color enableColor = Color.white;
