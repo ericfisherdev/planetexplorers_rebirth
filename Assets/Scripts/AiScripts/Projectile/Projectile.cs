@@ -475,7 +475,7 @@ public class Projectile : SkillRunner
 	{
 		eff.transform.parent = transform.parent;
 		if(null != eff.GetComponent<ParticleSystem>())
-			eff.GetComponent<ParticleSystem>().enableEmission = false;
+			{ var em = eff.GetComponent<ParticleSystem>().emission; em.enabled = false; }
 		eff.AddComponent<DestroyTimer>();
 		eff.GetComponent<DestroyTimer>().m_LifeTime = bufferEffectLifetime;
 	}

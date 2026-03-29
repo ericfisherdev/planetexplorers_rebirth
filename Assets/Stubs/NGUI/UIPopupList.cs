@@ -32,7 +32,7 @@ public class UIPopupList : MonoBehaviour
     public Color backgroundColor = Color.white;
     public Color highlightColor = new Color(0.88f, 0.78f, 0.55f, 1f);
     public Position position = Position.Auto;
-    public Selection selection = Selection.OnPress;
+    public Selection openOn = Selection.OnPress;
     public UILabel textLabel;
     public bool isAnimated = true;
     public bool isLocalized;
@@ -44,6 +44,13 @@ public class UIPopupList : MonoBehaviour
     public List<EventDelegate> onChange = new List<EventDelegate>();
 
     public string value { get; set; }
+
+    /// <summary>Current selected item text. Alias for value.</summary>
+    public string selection
+    {
+        get { return value; }
+        set { this.value = value; }
+    }
 
     public object data
     {

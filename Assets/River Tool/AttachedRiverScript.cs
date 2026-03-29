@@ -302,7 +302,8 @@ public class AttachedRiverScript : MonoBehaviour
 		TangentSolver(newMesh);
 
 //		newMesh.RecalculateNormals();
-		newMesh.Optimize();
+		newMesh.OptimizeIndexBuffers();
+		newMesh.OptimizeReorderVertexBuffer();
 		MeshCollider mc = GetComponent<MeshCollider>();
 		if(mc != null)
 		{
@@ -333,7 +334,7 @@ public class AttachedRiverScript : MonoBehaviour
 	
 	/*
 	Derived from
-	Lengyel, Eric. “Computing Tangent Space Basis Vectors for an Arbitrary Mesh? Terathon Software 3D Graphics Library, 2001.
+	Lengyel, Eric. ï¿½Computing Tangent Space Basis Vectors for an Arbitrary Mesh? Terathon Software 3D Graphics Library, 2001.
 	http://www.terathon.com/code/tangent.html
 	*/
 

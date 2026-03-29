@@ -34,11 +34,12 @@ public class UIPanel : UIRect
 
     public int sortingOrder { get; set; }
 
-    public float clipSoftness { get; set; }
+    public Vector2 clipSoftness { get; set; }
 
-    public Vector2 clipRange
+    public Vector4 clipRange
     {
-        get { return new Vector2(baseClipRegion.x, baseClipRegion.y); }
+        get { return baseClipRegion; }
+        set { baseClipRegion = value; }
     }
 
     public static UIPanel Find(Transform trans) { return null; }

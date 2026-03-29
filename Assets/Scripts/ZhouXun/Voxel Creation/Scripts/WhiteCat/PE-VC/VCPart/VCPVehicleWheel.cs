@@ -102,8 +102,8 @@ namespace WhiteCat
             if (wheelCollider.isGrounded && Mathf.Abs(wheelCollider.rpm) > 5)
             {
                 if (!_dirtEffect.isPlaying) _dirtEffect.Play();
-                _dirtEffect.startSpeed = Mathf.Min(Mathf.Abs(wheelCollider.rpm * _rpmToStartSpeed), 5f);
-                _dirtEffect.emissionRate = Mathf.Min(Mathf.Abs(wheelCollider.rpm * _rpmToEmissionRate), 100f);
+                { var main = _dirtEffect.main; main.startSpeed = Mathf.Min(Mathf.Abs(wheelCollider.rpm * _rpmToStartSpeed), 5f); }
+                { var emission = _dirtEffect.emission; emission.rateOverTime = Mathf.Min(Mathf.Abs(wheelCollider.rpm * _rpmToEmissionRate), 100f); }
 
                 if (_lastDirection != wheelCollider.rpm > 0)
                 {
