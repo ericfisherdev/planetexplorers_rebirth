@@ -7,11 +7,11 @@ namespace Steamworks
 {
     public static class SteamAPI
     {
-        /// <summary>Initialize the Steam API. Returns true (stubbed) with a log warning.</summary>
+        /// <summary>Initialize the Steam API. Returns false (stubbed) to signal Steam is unavailable.</summary>
         public static bool Init()
         {
             Debug.LogWarning("[Steamworks Stub] SteamAPI.Init() called -- Steam integration is stubbed for standalone build.");
-            return true;
+            return false;
         }
 
         /// <summary>Shut down the Steam API. No-op in stub mode.</summary>

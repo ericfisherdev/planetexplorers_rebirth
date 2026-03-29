@@ -5,7 +5,7 @@ namespace Steamworks
 {
     public static class SteamUtils
     {
-        public static AppId_t GetAppID() { return new AppId_t(480); }
+        public static AppId_t GetAppID() { return new AppId_t(237870); }
 
         public static string GetIPCountry() { return "US"; }
 

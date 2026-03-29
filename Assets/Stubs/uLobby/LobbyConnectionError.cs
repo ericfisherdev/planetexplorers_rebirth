@@ -9,6 +9,9 @@ namespace uLobby
         Timeout,
         InvalidCredentials,
         ServerFull,
-        Banned
+        Banned,
+        RSAPublicKeyMismatch,
+        CreateSocketOrThreadFailure,
+        ConnectionTimeout
     }
 }

@@ -2,6 +2,11 @@
 
 namespace uLobby
 {
+    public class ServerInfoData
+    {
+        public uLink.BitStream GetRemainingBitStream() { return new uLink.BitStream(); }
+    }
+
     public class ServerInfo
     {
         public string name { get; set; }
@@ -11,6 +16,7 @@ namespace uLobby
         public int maxPlayers { get; set; }
         public string gameMode { get; set; }
         public string mapName { get; set; }
+        public ServerInfoData data { get; set; }
 
         public ServerInfo()
         {
@@ -18,6 +24,7 @@ namespace uLobby
             host = string.Empty;
             gameMode = string.Empty;
             mapName = string.Empty;
+            data = new ServerInfoData();
         }
     }
 }

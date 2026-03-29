@@ -19,6 +19,9 @@ namespace uLink
         /// <summary>Register a custom codec and array codec for type T. No-op in single-player.</summary>
         public static void AddAndMakeArray<T>(Action<BitStream, T> serializer, Func<BitStream, T> deserializer) { }
 
+        /// <summary>Compatibility overload: deserializer first, serializer second (matches call sites in CustomCodecRegister).</summary>
+        public static void AddAndMakeArray<T>(Func<BitStream, T> deserializer, Action<BitStream, T> serializer) { }
+
         /// <summary>Register a custom codec for a specific type. No-op in single-player.</summary>
         public static void Add(Type type, Delegate serializer, Delegate deserializer) { }
     }

@@ -5,7 +5,7 @@ using System;
 
 namespace Steamworks
 {
-    public class CallResult<T>
+    public class CallResult<T> : IDisposable
     {
         private Action<T, bool> _handler;
 

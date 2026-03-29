@@ -5,7 +5,7 @@ using System;
 
 namespace Steamworks
 {
-    public class Callback<T>
+    public class Callback<T> : IDisposable
     {
         private Action<T> _handler;
 

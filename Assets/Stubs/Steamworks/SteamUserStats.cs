@@ -5,7 +5,7 @@ namespace Steamworks
 {
     public static class SteamUserStats
     {
-        public static bool RequestCurrentStats() { return false; }
+        public static bool RequestCurrentStats() { return true; }
 
         public static bool GetStat(string pchName, out int pData) { pData = 0; return false; }
         public static bool GetStat(string pchName, out float pData) { pData = 0f; return false; }

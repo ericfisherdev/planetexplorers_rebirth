@@ -30,7 +30,7 @@ namespace uLink
         public bool ReadBoolean() { return false; }
         public byte ReadByte() { return 0; }
         public byte[] ReadBytes() { return new byte[0]; }
-        public byte[] ReadBytes(int count) { return new byte[count]; }
+        public byte[] ReadBytes(int count) { return new byte[count < 0 ? 0 : count]; }
         public sbyte ReadSByte() { return 0; }
         public char ReadChar() { return '\0'; }
         public short ReadInt16() { return 0; }

@@ -19,7 +19,7 @@ namespace Steamworks
 
         public static UGCQueryHandle_t CreateQueryAllUGCRequest(
             EUGCQuery eQueryType,
-            EUGCMatchingUGCType eMatchingeMatchingUGCTypeFileType,
+            EUGCMatchingUGCType eMatchingUGCType,
             AppId_t nCreatorAppID,
             AppId_t nConsumerAppID,
             uint unPage)

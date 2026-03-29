@@ -30,8 +30,8 @@ namespace uLink
         /// <summary>Current peer type. Server in single-player.</summary>
         public static NetworkPeerType peerType { get { return NetworkPeerType.Server; } }
 
-        /// <summary>Current network status. Disconnected in single-player.</summary>
-        public static NetworkStatus status { get { return NetworkStatus.Disconnected; } }
+        /// <summary>Current network status. Connected in single-player (consistent with isServer=true).</summary>
+        public static NetworkStatus status { get { return NetworkStatus.Connected; } }
 
         /// <summary>The local player.</summary>
         public static NetworkPlayer player { get { return new NetworkPlayer(); } }
@@ -72,10 +72,9 @@ namespace uLink
             return NetworkConnectionError.NoError;
         }
 
-        public static void Disconnect()
-        {
-            // No-op
-        }
+        public static void Disconnect() { }
+
+        public static void Disconnect(int timeout) { }
 
         public static void InitializeServer(int maxPlayers, int listenPort)
         {
@@ -106,7 +105,8 @@ namespace uLink
             int group,
             params object[] initialData)
         {
-            return null;
+            throw new System.NotImplementedException(
+                $"uLink stub: Network.Instantiate(\"{prefabName}\") not implemented — use UnityEngine.Object.Instantiate for single-player");
         }
 
         public static GameObject Instantiate(
@@ -117,7 +117,8 @@ namespace uLink
             int group,
             params object[] initialData)
         {
-            return null;
+            throw new System.NotImplementedException(
+                $"uLink stub: Network.Instantiate(owner, \"{prefabName}\") not implemented — use UnityEngine.Object.Instantiate for single-player");
         }
 
         // ---- RPC Methods (all no-ops) ----
