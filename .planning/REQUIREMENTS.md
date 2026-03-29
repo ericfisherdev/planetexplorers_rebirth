@@ -19,7 +19,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **CORE-01**: Voxel terrain generation and rendering operational (Voxelform2/Block45)
 - [ ] **CORE-02**: Player and entity spawning with game loop bootstrap
 - [ ] **CORE-03**: Player movement and camera controls functional
-- [ ] **CORE-04**: Networking code stubbed for single-player operation
+- [x] **CORE-04**: Networking code stubbed for single-player operation
 
 ### Gameplay
 
@@ -90,7 +90,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CORE-01 | Phase 4 | Pending |
 | CORE-02 | Phase 5 | Pending |
 | CORE-03 | Phase 5 | Pending |
-| CORE-04 | Phase 3 | Pending |
+| CORE-04 | Phase 3 | Complete |
 | GAME-01 | Phase 6 | Pending |
 | GAME-02 | Phase 7 | Pending |
 | GAME-03 | Phase 7 | Pending |

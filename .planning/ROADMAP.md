@@ -69,7 +69,7 @@ Plans:
 
 Plans:
 - [ ] 03-01-PLAN.md -- Fix conditional compilation blocks and Unity Standard Assets image effect references
-- [ ] 03-02-PLAN.md -- Wire networking for single-player operation
+- [x] 03-02-PLAN.md -- Wire networking for single-player operation
 - [ ] 03-03-PLAN.md -- Iterative compilation error triage and Play mode verification
 
 ### Phase 4: Terrain & World Generation
