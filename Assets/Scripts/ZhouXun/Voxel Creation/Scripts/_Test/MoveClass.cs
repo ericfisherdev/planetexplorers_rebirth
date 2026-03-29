@@ -5,11 +5,6 @@ public class MoveClass : MonoBehaviour
 {
 	//[SerializeField] UIButton btnTest;
 	// Use this for initialization
-	void Start () {
-		//btnTest.enabled = false;
-	}
-
-
 	bool bMove = false;
 	// Update is called once per frame
 	void Update () 

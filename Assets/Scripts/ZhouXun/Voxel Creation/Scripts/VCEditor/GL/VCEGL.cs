@@ -6,10 +6,6 @@ using System.Collections.Generic;
 public class VCEGL : MonoBehaviour
 {
 	public GameObject m_ParentObject;
-	void Awake()
-	{
-
-	}
 	void Start()
 	{
 		CreateLineMaterials();

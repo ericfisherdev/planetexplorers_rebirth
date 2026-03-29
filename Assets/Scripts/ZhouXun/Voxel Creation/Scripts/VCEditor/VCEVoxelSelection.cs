@@ -22,12 +22,6 @@ public class VCEVoxelSelection : MonoBehaviour
 		m_Selection = new Dictionary<int, byte> ();
 	}
 	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
-	
 	public void RebuildSelectionBoxes()
 	{
 		LeastBox.Calculate(m_Selection, ref m_GL.m_Boxes);

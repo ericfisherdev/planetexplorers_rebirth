@@ -13,18 +13,6 @@ public class VCEMsgBox : MonoBehaviour
 	public UISprite m_Icon;
 	public UITweener m_MsgBoxTween;
 	
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
-	
 	private VCEMsgBoxButton m_RespButton;
 	public void OnLBtnClick()
 	{

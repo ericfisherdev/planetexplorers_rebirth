@@ -8,12 +8,6 @@ public class VCEUIPosClip : MonoBehaviour
 	public float m_XMax = 0;
 	public float m_YMin = 0;
 	public float m_YMax = 0;
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
 	void LateUpdate ()
 	{
 		if ( m_Left )

@@ -3,21 +3,11 @@ using System.Collections;
 
 public class AircarftPutForce : MonoBehaviour 
 {
+#pragma warning disable CS0169
 	[SerializeField] float mMaxPower;
+#pragma warning restore CS0169
 	public AircaraftTest mAircaraft;
 
-
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
 
 	float currutPower = 0;
 	void FixedUpdate()

@@ -67,7 +67,7 @@ public class VCEUIMaterialItem : MonoBehaviour
 	public void OnItemClick ()
 	{
 		VCEditor.SelectedMaterial = m_Material;
-		VCEditor.Instance.m_UI.m_MaterialWindow.Reset(m_Material);
+		VCEditor.Instance.m_UI.m_MaterialWindow.ResetWindow(m_Material);
 
 		// If nothing selected, set a primary general brush
 		if ( !VCEditor.SelectedGeneralBrush )
@@ -92,7 +92,7 @@ public class VCEUIMaterialItem : MonoBehaviour
 		if ( VCEAssetMgr.AddMaterialFromTemp(m_Material.m_Guid) )
 		{
 			VCEditor.SelectedMaterial = m_Material;
-			VCEditor.Instance.m_UI.m_MaterialWindow.Reset(m_Material);
+			VCEditor.Instance.m_UI.m_MaterialWindow.ResetWindow(m_Material);
 			VCEditor.Instance.m_UI.m_MaterialList.RefreshMaterialList(VCEditor.Instance.m_UI.m_MatterPopupList.selection);
 			VCEStatusBar.ShowText("Add material".ToLocalizationString() + " [" + m_Material.m_Name + "] " + "from the current ISO".ToLocalizationString() + " !", 6f, true);
 		}

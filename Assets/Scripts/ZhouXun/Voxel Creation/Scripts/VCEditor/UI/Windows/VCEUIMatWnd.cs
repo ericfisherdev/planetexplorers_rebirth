@@ -44,12 +44,6 @@ public class VCEUIMatWnd : MonoBehaviour
 	private VCMatterInfo m_SelectedMatter;
 	
 	
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
-
 	public bool WindowVisible ()
 	{
 		return m_Window.activeInHierarchy;
@@ -364,7 +358,7 @@ public class VCEUIMatWnd : MonoBehaviour
 			m_TempMaterial.CalcGUID();
 		}
 	}
-	public void Reset (VCMaterial target)
+	public void ResetWindow (VCMaterial target)
 	{
 		ResetMaterial();
 		InitMatterList();

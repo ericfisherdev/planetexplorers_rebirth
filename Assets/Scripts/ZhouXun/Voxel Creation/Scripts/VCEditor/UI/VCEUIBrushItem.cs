@@ -8,12 +8,6 @@ public class VCEUIBrushItem : MonoBehaviour
 	public GameObject m_BrushPrefab;
 	public GameObject m_BrushInstance;
 
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

@@ -20,12 +20,6 @@ public class VCEStatusBar : MonoBehaviour
 	{
 		s_Instance = null;
 	}
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

@@ -9,11 +9,6 @@ public class GLAirbrushCursor : GLBehaviour
 	//List<Vector3> m_Vertices = new List<Vector3> ();
 	public VCEFreeAirbrush m_Airbrush;
 	
-	public void Update ()
-	{
-		
-	}
-	
 	void OnGUI ()
 	{
 		GUI.skin = VCEditor.Instance.m_GUISkin;

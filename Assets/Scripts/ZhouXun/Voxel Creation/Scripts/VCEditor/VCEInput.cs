@@ -33,12 +33,6 @@ public class VCEInput : MonoBehaviour
 //	private static float s_LastRightClickTime = -1;
 //	private static Vector3 s_LastRightClickPos = new Vector3 (-100,-100,-100);
 	
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

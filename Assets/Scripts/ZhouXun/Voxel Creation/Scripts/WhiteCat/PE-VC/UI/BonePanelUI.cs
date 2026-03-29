@@ -15,7 +15,6 @@ namespace WhiteCat
 		[SerializeField] List<ButtonGroup> _maleButtons;
 		[SerializeField] List<ButtonGroup> _femaleButtons;
 
-		bool _awaked;
 		VCPArmorPivot _part;
 
         public int ArmorPartIndex

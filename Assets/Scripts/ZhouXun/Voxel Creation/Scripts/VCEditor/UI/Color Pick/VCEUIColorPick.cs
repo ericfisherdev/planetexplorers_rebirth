@@ -84,12 +84,6 @@ public class VCEUIColorPick : MonoBehaviour
 	public UILabel m_BValLabel;
 	public UISprite m_ColorRect;
 	
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

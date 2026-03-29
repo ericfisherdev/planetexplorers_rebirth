@@ -12,7 +12,6 @@ public class AircaraftTest : MonoBehaviour
 	[SerializeField] Transform mBackRight;
 	[SerializeField] float mGrivate = 9.8f;
 	int UpLevel = 0;
-	float speed;
 
 	[SerializeField] float mUpForce_k = 0.2f;
 	[SerializeField] float OtherForceSize = 10.0f; 

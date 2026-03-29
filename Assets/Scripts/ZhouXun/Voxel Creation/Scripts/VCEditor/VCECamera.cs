@@ -344,12 +344,6 @@ public class VCECamera : MonoBehaviour
 			transform.LookAt(_Target, _Up);
 		}
 	}
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
-	
 	// LateUpdate is called once per frame.
 	void LateUpdate ()
 	{
