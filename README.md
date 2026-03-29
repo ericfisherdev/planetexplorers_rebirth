@@ -60,10 +60,6 @@ Planet Explorers Rebirth is a community effort to get the original Planet Explor
 - **Single-player first** — multiplayer networking deferred to v2
 - **Adventure mode** (sandbox) before Story mode — self-contained gameplay loop without mission scripting dependencies
 
-## Project Tracking
-
-Development is tracked via Jira ([PER project](https://ericfisherdev.atlassian.net/jira/software/projects/PER/boards)) with epics per phase and tasks linked in dependency chains.
-
 ## Building
 
 1. Install [Unity Hub](https://unity.com/download) and Unity 6000.3 LTS
