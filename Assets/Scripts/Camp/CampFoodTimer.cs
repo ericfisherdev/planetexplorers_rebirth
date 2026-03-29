@@ -7,14 +7,6 @@ public class CampFoodTimer : MonoBehaviour
 	List<Pathea.CheckSlot> timeSlots;
 	bool HasShow = false;
 	public GameObject foodObj;
-	void Awake()
-	{
-	}
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
 	// Update is called once per frame
 	int index;
 	void Update () 

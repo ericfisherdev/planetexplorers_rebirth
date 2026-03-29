@@ -17,10 +17,6 @@ public class CampBuildEventMgr : MonoBehaviour
 	{
 		Init();
 	}
-	void Start () 
-	{
-	
-	}
 
 	void Init()
 	{

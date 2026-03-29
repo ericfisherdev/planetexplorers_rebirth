@@ -24,7 +24,9 @@ public class RGDemoDataIO : Chunk32DataIO
 		if (File.Exists(s_orgnFilePath))
 		{
 			mOrgnGrassFile = new FileStream(s_orgnFilePath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+#pragma warning disable CA2000 // BinaryReader wraps long-lived mOrgnGrassFile; disposing would close the shared stream
 			BinaryReader _in = new BinaryReader(mOrgnGrassFile);
+#pragma warning restore CA2000
 			
 			
 			// read offsets and lens
@@ -97,10 +99,12 @@ public class RGDemoDataIO : Chunk32DataIO
 					chunk = mReqs.Dequeue();
 				}
 
+#pragma warning disable CA2000 // BinaryReader wraps long-lived mOrgnGrassFile; disposing would close the shared stream
 				BinaryReader _in = new BinaryReader(mOrgnGrassFile);
+#pragma warning restore CA2000
 				INTVECTOR3 chunk32Pos = ChunkPosToPos32(chunk.xIndex, chunk.zIndex);
 				int expands = mEvni.CHUNKSIZE / mEvni.Tile;
-				
+
                 lock(chunk)
                 {
                     for (int _x = chunk32Pos.x; _x < chunk32Pos.x + expands; ++_x)
@@ -237,7 +241,9 @@ public class RGDemoDataIO : Chunk32DataIO
 
 					if (mOrgnGrassFile == null)
 						continue;
+#pragma warning disable CA2000 // BinaryReader wraps long-lived mOrgnGrassFile; disposing would close the shared stream
 					BinaryReader _in = new BinaryReader(mOrgnGrassFile);
+#pragma warning restore CA2000
 					INTVECTOR3 chunk32Pos = ChunkPosToPos32(chunk.xIndex, chunk.zIndex); 
 					int expands = mEvni.CHUNKSIZE / mEvni.Tile;
 

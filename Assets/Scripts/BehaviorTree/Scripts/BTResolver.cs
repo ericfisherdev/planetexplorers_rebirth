@@ -76,8 +76,10 @@ namespace Behave.Runtime
                     XmlDocument xmlDoc = new XmlDocument();
                     XmlReaderSettings settings = new XmlReaderSettings();
                     settings.IgnoreComments = true;
-                    XmlReader reader = XmlReader.Create(new StringReader(asset.text), settings);
-                    xmlDoc.Load(reader);
+                    using (XmlReader reader = XmlReader.Create(new StringReader(asset.text), settings))
+                    {
+                        xmlDoc.Load(reader);
+                    }
 
                     XmlElement root = xmlDoc.SelectSingleNode("Tree") as XmlElement;
                     string library = XmlUtil.GetAttributeString(root, "Library");
