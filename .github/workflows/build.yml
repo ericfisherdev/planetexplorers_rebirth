@@ -7,12 +7,14 @@ on:
       - 'Assets/**/*.cs'
       - 'analyzers/**'
       - '.editorconfig'
+      - '.github/workflows/build.yml'
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - 'Assets/**/*.cs'
       - 'analyzers/**'
       - '.editorconfig'
+      - '.github/workflows/build.yml'
 
 jobs:
   build:
