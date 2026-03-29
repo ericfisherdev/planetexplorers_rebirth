@@ -35,6 +35,8 @@ public class GameClientNetwork : MonoBehaviour
 
 	void Start ()
 	{
+		if (!Pathea.PeGameMgr.IsMulti) return;
+
 		uLink.Network.isAuthoritativeServer = true;
 		uLink.Network.requireSecurityForConnecting = true;
 
@@ -220,6 +222,7 @@ public class GameClientNetwork : MonoBehaviour
 
 	public static void Connect()
 	{
+		if (!Pathea.PeGameMgr.IsMulti) return;
 		MessageBox_N.ShowMaskBox(MsgInfoType.ServerLoginMask, PELocalization.GetString(8000062));
 		ProxyServerRegistered proxyServer = MyServerManager.LocalHost as ProxyServerRegistered;
 		if (null != proxyServer && !proxyServer.IsLan && proxyServer.UseProxy)
