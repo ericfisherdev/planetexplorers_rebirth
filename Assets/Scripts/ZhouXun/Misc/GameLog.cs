@@ -91,12 +91,6 @@ public class GameLog : MonoBehaviour
 	{
 		_bugReportStep = ErrGuiStep.Step_Idle;
 		DontDestroyOnLoad(this);
-	}
-	
-	// Use this for initialization
-	void Start ()
-	{
-		//Application.RegisterLogCallback(HandleLog);
 #if SAVE_GAME_LOG
 		Logs = new List<GameLogNode>();
 #endif

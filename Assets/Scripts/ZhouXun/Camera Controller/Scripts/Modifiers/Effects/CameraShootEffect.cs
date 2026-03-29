@@ -4,7 +4,6 @@ using System.Collections;
 public class CameraShootEffect : CamEffect
 {
     public Vector3 m_Dir;
-    private Vector3 m_TargetPos;
     public Vector3 m_RotDir;
     public AnimationCurve m_Curve;
     public float m_Distance = 1;

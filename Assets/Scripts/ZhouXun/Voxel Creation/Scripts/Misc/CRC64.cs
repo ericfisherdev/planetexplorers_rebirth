@@ -97,8 +97,11 @@ public static class CRC64
 	
     public static ulong Compute(Stream stream)
     {
-		BinaryReader r = new BinaryReader (stream);
-		byte[] data = r.ReadBytes((int)(stream.Length));
+		byte[] data;
+		using (BinaryReader r = new BinaryReader(stream, System.Text.Encoding.Default, leaveOpen: true))
+		{
+			data = r.ReadBytes((int)(stream.Length));
+		}
         ulong crc = 0xffffffffffffffff;
         for (int i = 0; i < data.Length; ++i)
         {

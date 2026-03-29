@@ -20,12 +20,6 @@ public class EnergySheildHandler : MonoBehaviour
 	Vector3 HitPoint3 = Vector3.zero;
 	int Count = 0;
 	
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

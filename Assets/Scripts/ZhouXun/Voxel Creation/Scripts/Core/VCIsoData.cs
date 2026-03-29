@@ -736,7 +736,7 @@ public class VCIsoData
 	{
 		using ( MemoryStream ms_iso = new MemoryStream () )
 		{
-			BinaryWriter w = new BinaryWriter (ms_iso);
+			using BinaryWriter w = new BinaryWriter (ms_iso, System.Text.Encoding.UTF8, leaveOpen: true);
 			
 			w.Write("VCISO");	// w, string
 			
@@ -809,7 +809,7 @@ public class VCIsoData
 			// 
 			using ( MemoryStream ms_zip = new MemoryStream () )
 			{
-				BinaryWriter w_zip = new BinaryWriter (ms_zip);
+				using BinaryWriter w_zip = new BinaryWriter (ms_zip, System.Text.Encoding.UTF8, leaveOpen: true);
 				
 				// Components
 				foreach ( VCComponentData cdata in m_Components )
@@ -856,9 +856,7 @@ public class VCIsoData
 					w.Write((int)(ms_ziped.Length));	// w, int
 					w.Write(ms_ziped.GetBuffer(), 0, (int)(ms_ziped.Length));	// w, byte[]
 				}
-				w_zip.Close();
 			}
-			w.Close();
 			byte [] retval = ms_iso.ToArray();
 			return retval;
 		}
@@ -877,13 +875,12 @@ public class VCIsoData
 		{
 			using ( MemoryStream ms_iso = new MemoryStream (buffer) )
 			{
-				BinaryReader r = new BinaryReader (ms_iso);
+				using BinaryReader r = new BinaryReader (ms_iso, System.Text.Encoding.UTF8, leaveOpen: true);
 				
 				// Header
 				string check_str = r.ReadString();	// r, string
 				if ( check_str != "VCISO" )
 				{
-					r.Close();
 					return false;
 				}
 				int l = 0;
@@ -953,7 +950,7 @@ public class VCIsoData
 									VCMaterial vcmat = new VCMaterial ();
 									vcmat.Import(mat_buffer);
 									//VCEAssetMgr.s_TempMaterials.Add(guid, vcmat);
-                                    VCEAssetMgr.s_TempMaterials[guid] = vcmat;  //log:lz-2016.05.17 Ö±½ÓAdd»á±¨´í£¬key¿ÉÄÜÒÑ´æÔÚ
+                                    VCEAssetMgr.s_TempMaterials[guid] = vcmat;  //log:lz-2016.05.17 Ö±ï¿½ï¿½Addï¿½á±¨ï¿½ï¿½ï¿½ï¿½keyï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½
 									m_Materials[i] = vcmat;
 								}
 							}
@@ -986,7 +983,7 @@ public class VCIsoData
 								{
 									VCDecalAsset vcdcl = new VCDecalAsset ();
 									vcdcl.Import(dcl_buffer);
-                                    //VCEAssetMgr.s_TempDecals.Add(guid, vcdcl);    //log:lz-2016.05.17 Ö±½ÓAdd»á±¨´í£¬key¿ÉÄÜÒÑ´æÔÚ
+                                    //VCEAssetMgr.s_TempDecals.Add(guid, vcdcl);    //log:lz-2016.05.17 Ö±ï¿½ï¿½Addï¿½á±¨ï¿½ï¿½ï¿½ï¿½keyï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½ï¿½
                                     VCEAssetMgr.s_TempDecals[guid]=vcdcl;
 									m_DecalAssets[i] = vcdcl;
 								}
@@ -1014,7 +1011,7 @@ public class VCIsoData
 							ms_zip.Seek((long)(0), SeekOrigin.Begin);
 							IonicZlib.Decompress(ms_zip, ms_unzip);
 							ms_unzip.Seek((long)(0), SeekOrigin.Begin);
-							BinaryReader r_unzip = new BinaryReader (ms_unzip);
+							using BinaryReader r_unzip = new BinaryReader (ms_unzip, System.Text.Encoding.UTF8, leaveOpen: true);
 							
 							// Components
 							for ( int i = 0; i < com_cnt; ++i )
@@ -1062,14 +1059,12 @@ public class VCIsoData
 								val.a = r_unzip.ReadByte();	// unzip, byte
 								m_Colors.Add(key, val);
 							}
-							r_unzip.Close();
 						}
 					}
 					break;
 				}
 				default: return false;
 				}
-				r.Close();
 				return true;
 			}
 		}
@@ -1088,13 +1083,12 @@ public class VCIsoData
 		int size = 0;
 		try
 		{
-			BinaryReader r = new BinaryReader (stream);
-			
+			using BinaryReader r = new BinaryReader (stream, System.Text.Encoding.UTF8, leaveOpen: true);
+
 			// Header
 			string check_str = r.ReadString();	// r, string
 			if ( check_str != "VCISO" )
 			{
-				stream.Close();
 				return 0;
 			}
 			int l = 0;
@@ -1114,7 +1108,6 @@ public class VCIsoData
 			l = r.ReadInt32();	// r, int
 			iso_header.IconTex = r.ReadBytes(l);	// r, byte[]
 			size = (int)(stream.Length);
-			stream.Close();
 
 			iso_header.Author = "";
 			iso_header.Remarks = "";

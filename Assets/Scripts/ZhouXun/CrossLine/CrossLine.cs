@@ -14,12 +14,6 @@ public class CrossLine : MonoBehaviour
 	private float _thickness = 0;
 	private float _seg = 0;
 
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

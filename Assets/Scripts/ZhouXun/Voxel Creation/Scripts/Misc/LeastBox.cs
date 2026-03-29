@@ -13,7 +13,7 @@ public struct IntBox
 	
 	public long Hash
 	{
-		get { return (xMin) | (zMin << 10) | (yMin << 20) | (xMax << 32) | (zMax << 42) | (yMax << 52); }
+		get { return (long)((ushort)xMin) | ((long)((ushort)zMin) << 10) | ((long)((ushort)yMin) << 20) | ((long)((ushort)xMax) << 32) | ((long)((ushort)zMax) << 42) | ((long)((ushort)yMax) << 52); }
 		set
 		{
 			xMin = (short)(value & 0x3ff);

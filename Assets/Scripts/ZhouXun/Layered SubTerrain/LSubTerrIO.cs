@@ -49,27 +49,29 @@ public class LSubTerrIO
 		if (io._orgnSubTerrFile != null)
 		{
 			// Read each subterrain's data offset, len, uncmp-len.
-			BinaryReader br = new BinaryReader(io._orgnSubTerrFile);
 			int orgnLenMax = 0;
 			int orgnUcmpLenMax = 0;
-			io._orgnOfsData[0] = br.ReadInt32();
-			io._orgnUcmpLenData[0] = br.ReadInt32();
-	        for ( int i = 1; i < LSubTerrConstant.XZCount; ++i )
-	        {
-				io._orgnOfsData[i] = br.ReadInt32();
-				io._orgnLenData[i-1] = io._orgnOfsData[i] - io._orgnOfsData[i-1];
-				if(io._orgnOfsData[i-1] > orgnLenMax){
-					orgnLenMax = io._orgnOfsData[i-1];
-				}
+			using ( BinaryReader br = new BinaryReader(io._orgnSubTerrFile, System.Text.Encoding.Default, leaveOpen: true) )
+			{
+				io._orgnOfsData[0] = br.ReadInt32();
+				io._orgnUcmpLenData[0] = br.ReadInt32();
+		        for ( int i = 1; i < LSubTerrConstant.XZCount; ++i )
+		        {
+					io._orgnOfsData[i] = br.ReadInt32();
+					io._orgnLenData[i-1] = io._orgnOfsData[i] - io._orgnOfsData[i-1];
+					if(io._orgnOfsData[i-1] > orgnLenMax){
+						orgnLenMax = io._orgnOfsData[i-1];
+					}
 
-				io._orgnUcmpLenData[i] = br.ReadInt32();
-				if(io._orgnUcmpLenData[i] > orgnUcmpLenMax){
-					orgnUcmpLenMax = io._orgnUcmpLenData[i];
+					io._orgnUcmpLenData[i] = br.ReadInt32();
+					if(io._orgnUcmpLenData[i] > orgnUcmpLenMax){
+						orgnUcmpLenMax = io._orgnUcmpLenData[i];
+					}
+		        }
+				io._orgnLenData[LSubTerrConstant.XZCount - 1] = (int)io._orgnSubTerrFile.Length - io._orgnOfsData[LSubTerrConstant.XZCount - 1];
+				if(io._orgnLenData[LSubTerrConstant.XZCount - 1] > orgnLenMax){
+					orgnLenMax = io._orgnLenData[LSubTerrConstant.XZCount - 1];
 				}
-	        }
-			io._orgnLenData[LSubTerrConstant.XZCount - 1] = (int)io._orgnSubTerrFile.Length - io._orgnOfsData[LSubTerrConstant.XZCount - 1];
-			if(io._orgnLenData[LSubTerrConstant.XZCount - 1] > orgnLenMax){
-				orgnLenMax = io._orgnLenData[LSubTerrConstant.XZCount - 1];
 			}
 
 			io._curDataIdxInBuff = -1;

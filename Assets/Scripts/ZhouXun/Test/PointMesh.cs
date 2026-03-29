@@ -65,9 +65,5 @@ public class PointMesh : MonoBehaviour
 		mf.mesh.uv = uvs;
 	}
 	
-	// Update is called once per frame
-	void Update ()
-	{
-		
-	}
 }
+

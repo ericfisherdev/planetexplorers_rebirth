@@ -17,12 +17,6 @@ public class MeshGen : MonoBehaviour
 		this.enabled = false;
 	}
 	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
-	
 	void OnGUI ()
 	{
 		if ( GUI.Button(new Rect(30,30,100,30), "Re-Generate") )

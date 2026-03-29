@@ -32,9 +32,5 @@ public class UITextureHandler : MonoBehaviour
 		}
 	}
 	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
 }
+

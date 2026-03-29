@@ -384,18 +384,6 @@ public class VCMeshMgr : MonoBehaviour
 	{
 		FreeGameObjects();
 	}
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	// Update is called once per frame
-	void Update ()
-	{
-//		if ( Time.frameCount % 100 == 0 )
-//		{
-//			SetMeshMat(m_MeshMat);
-//		}
-	}
 	#endregion
 }
+
