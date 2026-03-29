@@ -5,23 +5,13 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
+// System.Runtime.InteropServices removed -- no longer using DllImport for LZ4
 //TODO: use memory mapped file
 //TODO: avoid switching from one file to another and vice versa
 
 public delegate void ChunkDataLoadedProcessor(VFVoxelChunkData chunkData, byte[] chunkDataVT, bool fromPool);
 
-public static class LZ4
-{
-	[DllImport("lz4_dll")]
-	public static extern int LZ4_DllLoad();
-	[DllImport("lz4_dll")]
-	public static extern int LZ4_compress(byte[] source, byte[] dest, int isize);
-	[DllImport("lz4_dll")]
-	public static extern int LZ4_uncompress(byte[] source, byte[] dest, int osize);
-	[DllImport("lz4_dll")]
-	public static extern int LZ4_uncompress_unknownOutputSize(byte[] source, byte[] dest, int isize, int maxOutputSize);
-}
+// LZ4 native DllImport removed -- now using ManagedLZ4 (Assets/Stubs/LZ4/ManagedLZ4.cs)
 
 public class VFPieceUnzipBuffer
 {
@@ -44,7 +34,7 @@ public class VFPieceUnzipBuffer
 		if(IsHollow() || IsHitCache(px, py, pz, lod))
 			return;
 
-		unzippedDataLen = LZ4.LZ4_uncompress_unknownOutputSize(zippedDataBuffer, unzippedDataBuffer, zippedDataLen, unzippedDataBuffer.Length);
+		unzippedDataLen = ManagedLZ4.LZ4_uncompress_unknownOutputSize(zippedDataBuffer, unzippedDataBuffer, zippedDataLen, unzippedDataBuffer.Length);
 		if(unzippedDataLen < 0)	{
 			Debug.LogError("[VFDATAReader]Failed to decompress vfdata." + "@"+px + py + pz + lod);
 		} else {
@@ -566,7 +556,7 @@ public class VFDataReader : IVxDataLoader
 			ofs += data.Length;
 		}
 		//Compress
-		_buff.zippedDataLen = LZ4.LZ4_compress(_buff.unzippedDataBuffer, _buff.zippedDataBuffer, _buff.unzippedDataLen);
+		_buff.zippedDataLen = ManagedLZ4.LZ4_compress(_buff.unzippedDataBuffer, _buff.zippedDataBuffer, _buff.unzippedDataLen);
 	}
 	public VFVoxelChunkData ReadChunkImm(IntVector4 cpos) // Read Chunk Data immediately
 	{

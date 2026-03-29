@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using System.Runtime.InteropServices;
+// System.Runtime.InteropServices removed -- no longer using DllImport for LZ4
 
 namespace VoxelMap{
 public class VoxelType
@@ -125,16 +125,7 @@ public class VoxelChunkData
 //128x128的piece数据
 public class VoxelPieceData
 {
-    #region LZ4_DLL
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_DllLoad();
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_compress(byte[] source, byte[] dest, int isize);
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_uncompress(byte[] source, byte[] dest, int osize);
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_uncompress_unknownOutputSize(byte[] source, byte[] dest, int isize, int maxOutputSize);
-    #endregion
+    // LZ4 native DllImport removed -- now using ManagedLZ4 (Assets/Stubs/LZ4/ManagedLZ4.cs)
 
     public VoxelChunkData[] m_chunkData;
     public int m_iOffsetPiece;
@@ -165,7 +156,7 @@ public class VoxelPieceData
 	        //偏移地址 + voxel数据
 	        int _iMaxSize = _totalChunkCount * 4 + _totalChunkCount * (4 * VoxelTerrainConstants.VOXEL_ARRAY_AXIS_SIZE * VoxelTerrainConstants.VOXEL_ARRAY_AXIS_SIZE * VoxelTerrainConstants.VOXEL_ARRAY_AXIS_SIZE); 
 	        byte[] _maxUnzipBytes = new byte[_iMaxSize];
-	        int _unzipSize = LZ4_uncompress_unknownOutputSize(_zipBytes, _maxUnzipBytes, _zipBytes.Length, _maxUnzipBytes.Length);
+	        int _unzipSize = ManagedLZ4.LZ4_uncompress_unknownOutputSize(_zipBytes, _maxUnzipBytes, _zipBytes.Length, _maxUnzipBytes.Length);
 	        byte[] _unzipBytes = new byte[_unzipSize];
 	        Array.Copy(_maxUnzipBytes, _unzipBytes, _unzipSize);
 	
@@ -245,7 +236,7 @@ public class VoxelPieceData
 
         //压缩数据
         byte[] _zipBuf = new byte[_endPos];
-        int _zipSize = LZ4_compress(_buf, _zipBuf, _endPos);
+        int _zipSize = ManagedLZ4.LZ4_compress(_buf, _zipBuf, _endPos);
         _bw.Write(_zipBuf, 0, _zipSize);
     }
 

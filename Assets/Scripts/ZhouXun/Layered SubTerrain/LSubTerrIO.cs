@@ -5,20 +5,13 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
+// System.Runtime.InteropServices removed -- no longer using DllImport for LZ4
 
 // Manage data I/O of the layered-subterrain system.
 // zhouxun
 public class LSubTerrIO
 {
-    #region LZ4_EXTERN
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_compress(byte[] source, byte[] dest, int isize);
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_uncompress(byte[] source, byte[] dest, int osize);
-	[DllImport("lz4_dll")]
-	public static extern int LZ4_uncompress_unknownOutputSize(byte[] source, byte[] dest, int isize, int maxOutputSize);
-    #endregion
+    // LZ4 native DllImport removed -- now using ManagedLZ4 (Assets/Stubs/LZ4/ManagedLZ4.cs)
 	public static string s_orgnFilePath{ 	get{return Path.Combine(OriginalSubTerrainDir, "subter.dat");       }}
 	public static string OriginalSubTerrainDir = null;
 
@@ -123,7 +116,7 @@ public class LSubTerrIO
 			try{
 				_orgnSubTerrFile.Seek(_orgnOfsData[index], SeekOrigin.Begin);
 				_orgnSubTerrFile.Read(_zippedBuff, 0, _orgnLenData[index]);
-				_curDataLenInBuff = LZ4_uncompress_unknownOutputSize(_zippedBuff, _unzippedBuff, _orgnLenData[index], _unzippedBuff.Length);
+				_curDataLenInBuff = ManagedLZ4.LZ4_uncompress_unknownOutputSize(_zippedBuff, _unzippedBuff, _orgnLenData[index], _unzippedBuff.Length);
 				//if(_curDataLenInBuff != m_orgnUcmpLenData[index]){	Debug.LogError("TerData Lenght Not Match:"+_curDataLenInBuff+"|"+m_orgnUcmpLenData[index]); }
 				_curDataIdxInBuff = index;
 			}catch{}
