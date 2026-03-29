@@ -158,7 +158,7 @@ public class CreationDamageController : MonoBehaviour
 				Vector3 throw_direction = ((r.transform.position - explode_center).normalized * UnityEngine.Random.value + UnityEngine.Random.insideUnitSphere * .3F);
 				float throw_strength = Mathf.Pow(m_SceneSetting.EditorWorldSize.sqrMagnitude, 0.2f) * 5f;
 		
-				r.velocity = throw_direction * throw_strength;
+				r.linearVelocity = throw_direction * throw_strength;
 			}
 		}
 	}
@@ -180,7 +180,7 @@ public class CreationDamageController : MonoBehaviour
 				rb.angularVelocity = Vector3.zero;
 
 				float sink_speed = m_SceneSetting.m_VoxelSize * 3f;
-				rb.velocity = Vector3.down * sink_speed;
+				rb.linearVelocity = Vector3.down * sink_speed;
 			}
 		}
 		// Destroy Colliders

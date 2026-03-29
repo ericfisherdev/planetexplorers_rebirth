@@ -207,15 +207,15 @@ public class Projectile : SkillRunner
 		if(runner != null && runner.GetComponent<Rigidbody>() != null)
 		{
 			Vector3 reverseVec = startPos - GetShootPosition(target);
-			float sqrv22mv12 = Mathf.Sqrt(speed * speed - runner.GetComponent<Rigidbody>().velocity.sqrMagnitude);
-			float cos2 = Mathf.Cos(Vector3.Angle(reverseVec, runner.GetComponent<Rigidbody>().velocity) / 180f * Mathf.PI);
-			float temp1 = reverseVec.sqrMagnitude * runner.GetComponent<Rigidbody>().velocity.sqrMagnitude * cos2 * cos2;
+			float sqrv22mv12 = Mathf.Sqrt(speed * speed - runner.GetComponent<Rigidbody>().linearVelocity.sqrMagnitude);
+			float cos2 = Mathf.Cos(Vector3.Angle(reverseVec, runner.GetComponent<Rigidbody>().linearVelocity) / 180f * Mathf.PI);
+			float temp1 = reverseVec.sqrMagnitude * runner.GetComponent<Rigidbody>().linearVelocity.sqrMagnitude * cos2 * cos2;
 			float predictTime;
-			if(Vector3.Angle(reverseVec, runner.GetComponent<Rigidbody>().velocity) <= 90f)
+			if(Vector3.Angle(reverseVec, runner.GetComponent<Rigidbody>().linearVelocity) <= 90f)
 				predictTime = (Mathf.Sqrt(reverseVec.sqrMagnitude + temp1 / sqrv22mv12 / sqrv22mv12) - Mathf.Sqrt(temp1 / sqrv22mv12 / sqrv22mv12)) / sqrv22mv12;
 			else
 				predictTime = (Mathf.Sqrt(reverseVec.sqrMagnitude + temp1 / sqrv22mv12 / sqrv22mv12) + Mathf.Sqrt(temp1 / sqrv22mv12 / sqrv22mv12)) / sqrv22mv12;
-			Vector3 predictPos = GetShootPosition(target) + runner.GetComponent<Rigidbody>().velocity * predictTime;
+			Vector3 predictPos = GetShootPosition(target) + runner.GetComponent<Rigidbody>().linearVelocity * predictTime;
 			return predictPos;
 		}
 		else

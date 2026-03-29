@@ -167,7 +167,7 @@ namespace WhiteCat
 							}
 
 							// 判断应该加速还是减速
-							float currentYSpeed = _controller.rigidbody.velocity.y;
+							float currentYSpeed = _controller.rigidbody.linearVelocity.y;
 							if (currentYSpeed < targetYSpeed - 0.1f) increaseOrDecrease = 1;
 							else if (currentYSpeed > targetYSpeed + 0.1f) increaseOrDecrease = -1;
 							else increaseOrDecrease = 0;

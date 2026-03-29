@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 using System.IO;
 using System.Collections.Generic;
@@ -384,11 +385,11 @@ public class RadioManager : MonoBehaviour
     {
         if (type != NAudioPlayer.SupportFormatType.NULL)
         {
-            WWW www = new WWW("file://" + filePath);
-            yield return www;
-            if (null != www && null != www.bytes && www.bytes.Length > 0)
+            UnityWebRequest www = UnityWebRequest.Get("file://" + filePath);
+            yield return www.SendWebRequest();
+            if (www.result == UnityWebRequest.Result.Success && null != www.downloadHandler.data && www.downloadHandler.data.Length > 0)
             {
-                AudioClip clip = NAudioPlayer.GetClipByType(www.bytes, type);
+                AudioClip clip = NAudioPlayer.GetClipByType(www.downloadHandler.data, type);
                 if (null != clip)
                 {
                     while (clip.loadState == AudioDataLoadState.Loading)
@@ -409,11 +410,11 @@ public class RadioManager : MonoBehaviour
 
     IEnumerator LoadFileByUnity(string filePath)
     {
-        WWW www = new WWW("file://" + filePath);
-        yield return www;
-        if (null != www)
+        UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + filePath, AudioType.UNKNOWN);
+        yield return www.SendWebRequest();
+        if (www.result == UnityWebRequest.Result.Success)
         {
-            AudioClip clip = www.audioClip;
+            AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
             if (null != clip)
             {
                 while (clip.loadState == AudioDataLoadState.Loading)
@@ -421,7 +422,7 @@ public class RadioManager : MonoBehaviour
                 if (clip.loadState == AudioDataLoadState.Loaded)
                 {
                     clip.name = Path.GetFileNameWithoutExtension(filePath);
-                    
+
                 }
             }
             if (!PlaySounds(clip))

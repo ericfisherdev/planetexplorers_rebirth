@@ -1,5 +1,6 @@
 #define MAINMENU_ISO
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -186,7 +187,7 @@ public class TitleMenuGui_N : UIStaticWnd
 
     void OnCreditsBtn()
 	{
-        Application.LoadLevel("GameCredits");
+        SceneManager.LoadScene("GameCredits");
 	}
 	
 	void OnBoardBtn()

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ public class SPTerrainEvent : NetworkInterface
 		instance = this;
         mNoise = new SimplexNoise((long)(RandomMapConfig.RandomMapID + RandomMapConfig.RandSeed));
 
-        if (Application.loadedLevelName.Equals(GameConfig.MainSceneName))
+        if (SceneManager.GetActiveScene().name.Equals(GameConfig.MainSceneName))
         {
             AISpawnPoint.Reset();
             LoadStaticSpawnPoints();
@@ -115,7 +116,7 @@ public class SPTerrainEvent : NetworkInterface
 
     void LoadStaticSpawnPoints()
     {
-        if (Application.loadedLevelName.Equals(GameConfig.MainSceneName))
+        if (SceneManager.GetActiveScene().name.Equals(GameConfig.MainSceneName))
         {
             GameObject obj = new GameObject("StaticPoints");
             obj.transform.parent = transform;

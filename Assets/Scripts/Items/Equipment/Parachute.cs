@@ -29,7 +29,7 @@ public class Parachute : Equipment
 		{
 			if(mGlideActive)
 			{
-				if(mPCM.GetComponent<Rigidbody>().velocity.y < -mTurnOnSpeed)
+				if(mPCM.GetComponent<Rigidbody>().linearVelocity.y < -mTurnOnSpeed)
 					mPCM.GetComponent<Rigidbody>().AddForce(1.5f * Gravity * Vector3.up,ForceMode.Acceleration);
 			}
 		}
@@ -41,7 +41,7 @@ public class Parachute : Equipment
 		{
 			if(mGlideActive)
 			{
-				if(mPCM.GetComponent<Rigidbody>().isKinematic || mPCM.GetComponent<Rigidbody>().velocity.y > -1)
+				if(mPCM.GetComponent<Rigidbody>().isKinematic || mPCM.GetComponent<Rigidbody>().linearVelocity.y > -1)
 				{
 					EndParachute();
 
@@ -50,7 +50,7 @@ public class Parachute : Equipment
 				}
 
 			}
-			else if(mPCM.GetComponent<Rigidbody>().velocity.y < -mTurnOnSpeed)
+			else if(mPCM.GetComponent<Rigidbody>().linearVelocity.y < -mTurnOnSpeed)
 			{
 				StartParachute();
 

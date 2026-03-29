@@ -523,7 +523,7 @@ public partial class VoxelEditor : MonoBehaviour
 	void SaveSceneryObjects()
 	{
 		FindAllSceneryAssetNames ();
-		GameObject[] gos = GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[];
+		GameObject[] gos = GameObject.FindObjectsByType(typeof(GameObject), FindObjectsSortMode.None) as GameObject[];
 		List<GameObject> goToSave = new List<GameObject>();
 		// filter the current GOs and list all the scenery objects.
 		for(int i = 0; i < gos.Length; i++ )

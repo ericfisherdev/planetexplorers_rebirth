@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class SPPlayerSummon : MonoBehaviour
@@ -122,11 +123,11 @@ public class SPPlayerSummon : MonoBehaviour
 
                 int typeID = (int)AiUtil.GetPointType(position);
 
-                if (Application.loadedLevelName.Equals(GameConfig.MainSceneName))
+                if (SceneManager.GetActiveScene().name.Equals(GameConfig.MainSceneName))
                 {
                     pathID = AISpawnDataStory.GetRandomPathIDFromType(typeID, position);
                 }
-                else if (Application.loadedLevelName.Equals(GameConfig.AdventureSceneName))
+                else if (SceneManager.GetActiveScene().name.Equals(GameConfig.AdventureSceneName))
                 {
                     int mapID = AiUtil.GetMapID(position);
                     int areaID = AiUtil.GetAreaID(position);

@@ -131,7 +131,7 @@ namespace WhiteCat
 
 					UIDrivingCtrl.Instance.Show(
 						() => maxHp, () => hp, () => maxEnergy, () => energy,
-						() => { var v = rigidbody.velocity; return Mathf.Sqrt(v.x * v.x + v.z * v.z) * 3.6f; },
+						() => { var v = rigidbody.linearVelocity; return Mathf.Sqrt(v.x * v.x + v.z * v.z) * 3.6f; },
 						() => _jetExhausts.Length > 0 ? _jetRestValue : 0);
 
 					seat.getOffCallback += () =>
@@ -264,9 +264,9 @@ namespace WhiteCat
 
 			_netVelocity = new NetData<Vector3>
 			(
-				last => (rigidbody.velocity - last).sqrMagnitude >= PEVCConfig.instance.minSyncSqrSpeed,
-				() => rigidbody.velocity,
-				value => rigidbody.velocity = value
+				last => (rigidbody.linearVelocity - last).sqrMagnitude >= PEVCConfig.instance.minSyncSqrSpeed,
+				() => rigidbody.linearVelocity,
+				value => rigidbody.linearVelocity = value
 			);
 
 			_netAngularVelocity = new NetData<Vector3>

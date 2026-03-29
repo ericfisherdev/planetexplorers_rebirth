@@ -452,10 +452,10 @@ namespace WhiteCat
 
 			// 限制极速
 
-			float sqrMagnitude = rigidbody.velocity.sqrMagnitude;
+			float sqrMagnitude = rigidbody.linearVelocity.sqrMagnitude;
 			if (sqrMagnitude > PEVCConfig.instance.maxSqrRigidbodySpeed)
 			{
-				rigidbody.velocity = rigidbody.velocity * (PEVCConfig.instance.maxRigidbodySpeed / Mathf.Sqrt(sqrMagnitude));
+				rigidbody.linearVelocity = rigidbody.linearVelocity * (PEVCConfig.instance.maxRigidbodySpeed / Mathf.Sqrt(sqrMagnitude));
 			}
 
 			// 计算阻力系数
@@ -484,11 +484,11 @@ namespace WhiteCat
 
 			_underWaterFactor = count / 8f;
 
-			rigidbody.drag = underWaterFactor * (_underwaterDrag - _standardDrag) + _standardDrag;
-			rigidbody.angularDrag = underWaterFactor * (_underwaterAngularDrag - _standardAngularDrag) + _standardAngularDrag;
+			rigidbody.linearDamping = underWaterFactor * (_underwaterDrag - _standardDrag) + _standardDrag;
+			rigidbody.angularDamping = underWaterFactor * (_underwaterAngularDrag - _standardAngularDrag) + _standardAngularDrag;
 
             // 速度控制
-            _speedScale = PEVCConfig.instance.speedScaleCurve.Evaluate(Vector3.ProjectOnPlane(rigidbody.velocity, Vector3.up).magnitude);
+            _speedScale = PEVCConfig.instance.speedScaleCurve.Evaluate(Vector3.ProjectOnPlane(rigidbody.linearVelocity, Vector3.up).magnitude);
 
 			if (_networkEnabled) UpdateNetwork();
 		}
@@ -519,7 +519,7 @@ namespace WhiteCat
                         _creationController.AddBuildFinishedListener(
                             () =>
                             {
-                                _tempVelocityForLOD = rigidbody.velocity;
+                                _tempVelocityForLOD = rigidbody.linearVelocity;
                                 _tempAngularVelocityForLOD = rigidbody.angularVelocity;
                                 rigidbody.isKinematic = true;
                             }
@@ -544,7 +544,7 @@ namespace WhiteCat
                         () =>
                         {
                             rigidbody.isKinematic = false;
-                            rigidbody.velocity = _tempVelocityForLOD;
+                            rigidbody.linearVelocity = _tempVelocityForLOD;
                             rigidbody.angularVelocity = _tempAngularVelocityForLOD;
                         }
                     );
@@ -622,8 +622,8 @@ namespace WhiteCat
                 else if ((_isFreezed & mask) != 0)
                 {
                     _rigidbody.position = _netPosition.lastData;
-                    _rigidbody.velocity = Vector3.zero;
-                    _rigidbody.drag = float.MaxValue;
+                    _rigidbody.linearVelocity = Vector3.zero;
+                    _rigidbody.linearDamping = float.MaxValue;
                 }
 
                 // rotation
@@ -641,7 +641,7 @@ namespace WhiteCat
                 {
                     _rigidbody.rotation = _netRotation.lastData;
                     rigidbody.angularVelocity = Vector3.zero;
-                    rigidbody.angularDrag = float.MaxValue;
+                    rigidbody.angularDamping = float.MaxValue;
                 }
 			}
 		}

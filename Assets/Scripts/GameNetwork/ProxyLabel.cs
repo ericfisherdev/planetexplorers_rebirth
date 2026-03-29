@@ -67,7 +67,7 @@ public class ProxyLabel : uLink.MonoBehaviour
 	
 	public static void ManualUpdateAll()
 	{
-		ProxyLabel[] labels = FindObjectsOfType(typeof(ProxyLabel)) as ProxyLabel[];
+		ProxyLabel[] labels = FindObjectsByType(typeof(ProxyLabel), FindObjectsSortMode.None) as ProxyLabel[];
 		foreach (ProxyLabel label in labels)
 		{
 			label.ManualUpdate();

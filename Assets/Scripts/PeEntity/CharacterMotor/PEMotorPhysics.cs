@@ -80,7 +80,7 @@ public class PEMotorPhysics : PEMotor
     {
         get
         {
-            return tracker != null ? tracker.velocity : (rigid != null ? rigid.velocity : Vector3.zero);
+            return tracker != null ? tracker.velocity : (rigid != null ? rigid.linearVelocity : Vector3.zero);
         }
     }
 
@@ -281,14 +281,14 @@ public class PEMotorPhysics : PEMotor
                 if (m_Prison == null || m_Prison.CalculateVelocity(ref velocityChange))
                     rigid.AddForce(velocityChange, ForceMode.VelocityChange);
                 else
-                    rigid.velocity = Vector3.zero;
+                    rigid.linearVelocity = Vector3.zero;
 
                 SetFloat("Speed", 0.0f);
             }
             else
             {
                 //rigid.isKinematic = false;
-                Vector3 curVelocity = rigid.velocity;
+                Vector3 curVelocity = rigid.linearVelocity;
                 if (grounded) curVelocity = Util.ProjectOntoPlane(curVelocity, transform.up);
 
                 // Calculate how fast we should be moving
@@ -338,12 +338,12 @@ public class PEMotorPhysics : PEMotor
                 // Apply downwards gravity
                 rigid.AddForce(transform.up * -gravity * rigid.mass);
 
-                Vector3 direction = Util.ProjectOntoPlane(rigid.velocity, transform.up);
-                if (rigid.velocity.sqrMagnitude <= 0.1f * 0.1f)
+                Vector3 direction = Util.ProjectOntoPlane(rigid.linearVelocity, transform.up);
+                if (rigid.linearVelocity.sqrMagnitude <= 0.1f * 0.1f)
                     SetFloat("Speed", 0.0f);
                 else
                 {
-                    float speedValue = PETools.PEUtil.Magnitude(rigid.velocity, false);
+                    float speedValue = PETools.PEUtil.Magnitude(rigid.linearVelocity, false);
                     if (Vector3.Dot(transform.forward, direction.normalized) > 0 || Vector3.Angle(transform.forward, direction.normalized) < 150)
                         SetFloat("Speed", speedValue, 0.15f, Time.deltaTime);
                     else
@@ -411,14 +411,14 @@ public class PEMotorPhysics : PEMotor
         if (velocity.sqrMagnitude > 0.1f * 0.1f)
         {
             if (m_AnimPos == Vector3.zero)
-                rigid.velocity = Vector3.zero;
+                rigid.linearVelocity = Vector3.zero;
 
             m_AnimPos = transform.position + velocity;
         }
         else
         {
             if(m_AnimPos != Vector3.zero)
-                rigid.velocity = Vector3.zero;
+                rigid.linearVelocity = Vector3.zero;
 
             m_AnimPos = Vector3.zero;
         }
@@ -445,7 +445,7 @@ public class PEMotorPhysics : PEMotor
         base.Stop();
 
         if (rigid != null)
-            rigid.velocity = Vector3.zero;
+            rigid.linearVelocity = Vector3.zero;
     }
 
     public override void Reset()
@@ -545,8 +545,8 @@ public class MovementPrison
                 if (velocity.y < -PETools.PEMath.Epsilon)
                     velocity.y = 0.0f;
 
-                if (m_Rigidbody.velocity.y < -PETools.PEMath.Epsilon)
-                    velocity.y = -m_Rigidbody.velocity.y;
+                if (m_Rigidbody.linearVelocity.y < -PETools.PEMath.Epsilon)
+                    velocity.y = -m_Rigidbody.linearVelocity.y;
             }
         }
 
@@ -566,8 +566,8 @@ public class MovementPrison
                 if(velocity.y > PETools.PEMath.Epsilon)
                     velocity.y = 0.0f;
 
-                if (m_Rigidbody.velocity.y > PETools.PEMath.Epsilon)
-                    velocity.y = -m_Rigidbody.velocity.y;
+                if (m_Rigidbody.linearVelocity.y > PETools.PEMath.Epsilon)
+                    velocity.y = -m_Rigidbody.linearVelocity.y;
 
                 float height = VFVoxelWater.self.DownToWaterSurface(top.x, top.y, top.z) ;
                 if(height > PETools.PEMath.Epsilon)

@@ -82,8 +82,6 @@ public class VCAsymmetricGeneralPartData : VCGeneralPartData, IVCMultiphaseCompo
 		{
 			if ( r is TrailRenderer )
 				r.enabled = true;
-			else if ( r is ParticleRenderer )
-				r.enabled = true;
 			else if ( r is ParticleSystemRenderer )
 				r.enabled = true;
 			else if ( r is LineRenderer )
