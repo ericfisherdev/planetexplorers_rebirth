@@ -1,0 +1,39 @@
+# Worktrees
+.worktrees/
+
+# Unity generated
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.pidb
+*.booproj
+
+# Unity-generated project files (our analyzers/*.csproj is intentional)
+/*.csproj
+/*.sln
+Assembly-CSharp*.csproj
+
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Roslyn analyzer reports
+analyzer-report.txt
+analyzer-summary.txt
