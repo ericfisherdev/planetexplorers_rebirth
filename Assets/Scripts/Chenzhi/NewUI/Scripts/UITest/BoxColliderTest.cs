@@ -1,20 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BoxColliderTest : MonoBehaviour 
+public class BoxColliderTest : MonoBehaviour
 {
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
 	[SerializeField] BoxCollider mBgCollider;
 	[SerializeField] BoxCollider mTopCollider;
+#pragma warning restore CS0169
 	//bool isCover = false;
 	//Bounds bounds;
-	// Use this for initialization
-	void Start () 
-	{
-		//bounds = mBgCollider.bounds;
 
-	}
-
-//	Rect rect 
+//	Rect rect
 //	{
 //		get
 //		{
@@ -25,15 +21,4 @@ public class BoxColliderTest : MonoBehaviour
 //			return new Rect(left,top,right,height);
 //		}
 //	}
-
-	// Update is called once per frame
-	void Update () 
-	{
-//		Ray ray = new Ray(mBgCollider.transform.localPosition,Vector3.back);
-//		Debug.DrawRay (mBgCollider.transform.position, Vector3.back * 10, Color.green);
-//		float dis = 100f;
-//		isCover = mTopCollider.bounds.IntersectRay(ray,out dis);
-//		Debug.Log(isCover + " -------------------- ");
-
-	}
 }

@@ -66,10 +66,6 @@ public class SelectItem_N : MonoBehaviour
     public ItemSample ItemSample { get { return mItemSample; } }
     public int Index { get { return mItemIndex; } }
 
-    UISprite mItemSpr;
-    UITexture mItemTex;
-
-
     bool mPutBackFlag = false;
     bool mDiscardFlag = false;
     bool mPutEnable = false;

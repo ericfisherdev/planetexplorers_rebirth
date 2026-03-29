@@ -8,11 +8,6 @@ public class UIOnScrollMouse : MonoBehaviour
 //	
 	//private BoxCollider mBoxClollider;
 
-	// Use this for initialization
-	void Start () 
-	{
-		//mBoxClollider = this.gameObject.GetComponent<BoxCollider>();
-	}
 //	// Update is called once per frame
 //	void LateUpdate() 
 //	{

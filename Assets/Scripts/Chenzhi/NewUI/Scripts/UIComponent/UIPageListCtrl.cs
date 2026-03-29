@@ -331,38 +331,6 @@ public class UIPageListCtrl : MonoBehaviour
 		InitList();
 	}
 
-	void Start() 
-	{
-
-
-// -----------------------------   text code -------------------------------------
-
-//		for (int i=0;i< 2000; i ++)
-//		{
-//
-//			// text.Count must <= mHeaderTexts.Length
-//			List<string> text = new List<string>();
-//			text.Add("server name");
-//			text.Add("123456");
-//			text.Add(i.ToString());
-//
-//			AddItem(text);
-//		}
-//
-//
-//		UpdateList();
-
-// ------------------------------------------------------------------------------
-
-
-	}
-
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-
 	private void BtnLeftEndOnClick()
 	{
 		if(mPagIndex <= 1)

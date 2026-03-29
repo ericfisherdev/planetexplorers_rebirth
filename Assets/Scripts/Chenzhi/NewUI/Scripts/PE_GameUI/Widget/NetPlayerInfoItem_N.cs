@@ -10,8 +10,7 @@ public class NetPlayerInfoItem_N : MonoBehaviour
 	public UILabel	mZPos;
 	
     //Player							mPlayer;
-	NETPlayerShowGui_N		mParent;
-	
+
     //public void SetPlayer(Player netPlayer, NETPlayerShowGui_N parent)
     //{
     //    mPlayer = netPlayer;

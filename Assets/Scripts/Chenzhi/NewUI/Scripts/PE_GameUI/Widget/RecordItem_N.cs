@@ -11,7 +11,6 @@ public class RecordItem_N : MonoBehaviour
 	public UILabel		mGameTimeLabel;
 	public UILabel		mSaveTimeLabel;
 	
-	UISaveLoad		mParent;
 	int					mIndex;
 	
 	public void SetItem(int Index, Texture tex, string area, string playTime

@@ -14,43 +14,8 @@ public class ServantShowItem_N : MonoBehaviour
 	public UISprite		mState;
 
     PeEntity mNpc;
-    EntityInfoCmpt entityInfo;
     public PeEntity NPC { get { return mNpc; } }
 	//bool 				mIsDead;
-	
-	// Update is called once per frame
-	void Update () 
-	{
-        //if(mNpc)
-        //{
-        //    mLife.sliderValue = mNpc.lifePercent;
-        //    mComfort.sliderValue = mNpc.comfortPercent;
-        //    mOxygen.sliderValue = mNpc.oxygenPercent;
-			
-        //    if(mHead.mainTexture != mNpc.GetHeadTex())
-        //        mHead.mainTexture = mNpc.GetHeadTex();
-	
-        //    if (mIsDead != mNpc.dead)
-        //    {
-        //        mIsDead = mNpc.dead;
-        //        mHead.enabled = !mIsDead;
-        //        mDeadSpr.enabled = mIsDead;
-        //    }
-	
-        //    switch (mNpc.AttackMode)
-        //    {
-        //        case EAttackMode.Attack: // attack
-        //            mState.spriteName = "ServantAttack_on";
-        //            break;
-        //        case EAttackMode.Defence: // def
-        //            mState.spriteName = "ServantDef_on";
-        //            break;
-        //        default: // rest
-        //            mState.spriteName = "ServantRest_on";
-        //            break;
-        //    }
-        //}
-	}
 	
 	public void SetNpc(PeEntity npc)
 	{

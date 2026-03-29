@@ -12,8 +12,6 @@ public class OptionItem_N : MonoBehaviour
 	
 	public int mIndex = 0;
 
-    private string m_Description;
-
     #region private methods
     void LBtnDown()
 	{

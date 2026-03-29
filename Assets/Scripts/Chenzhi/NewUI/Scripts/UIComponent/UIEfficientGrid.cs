@@ -212,64 +212,7 @@ public class UIEfficientGrid: MonoBehaviour
 	}
 
 //	private GameObject tempObject = null;
-//	private GameObject tempObjectTop = null; 
-	void Awake()
-	{
-//		if (itemGoPool != null)
-//			itemGoPool.m_GoPrefab = itemPrefab;
-//
-//		tempObject = GameObject.Instantiate(itemPrefab);
-//		tempObject.name = ""
-//		tempObject.transform.parent = transform;
-//		tempObject.transform.localPosition = Vector3.zero;
-//		tempObject.transform.localRotation = Quaternion.identity;
-//		tempObject.transform.localScale = Vector3.one;
-//
-//		{
-//
-//			MonoBehaviour[] scripts = tempObject.GetComponents<MonoBehaviour>();
-//			foreach (MonoBehaviour script in scripts)
-//				Destroy(script);
-//
-//			UIWidget[] widgets = tempObject.GetComponentsInChildren<UIWidget>();
-//			foreach (UIWidget w in widgets)
-//			{
-//				w.enabled = false;
-//			}
-//
-//			Collider[] collders = tempObject.GetComponentsInChildren<Collider>();
-//			foreach (Collider c in collders)
-//				c.enabled = false;
-//
-//			Collider self_collider = tempObject.GetComponent<Collider>();
-//			if (self_collider != null)
-//				self_collider.enabled = false;
-//		}
-//
-//		tempObjectTop = GameObject.Instantiate(itemPrefab);
-//		tempObjectTop.transform.parent = transform;
-//		tempObjectTop.transform.localPosition = Vector3.zero;
-//		tempObjectTop.transform.localRotation = Quaternion.identity;
-//		tempObjectTop.transform.localScale = Vector3.one;
-//
-//		{
-//			MonoBehaviour[] scripts = tempObjectTop.GetComponents<MonoBehaviour>();
-//			foreach (MonoBehaviour script in scripts)
-//				Destroy(script);
-//
-//			UIWidget[] widgets = tempObjectTop.GetComponentsInChildren<UIWidget>();
-//			foreach (UIWidget w in widgets)
-//				w.enabled = false;
-//
-//			Collider[] collders = tempObjectTop.GetComponentsInChildren<Collider>();
-//			foreach (Collider c in collders)
-//				c.enabled = false;
-//
-//			Collider self_collider = tempObjectTop.GetComponent<Collider>();
-//			if (self_collider != null)
-//				self_collider.enabled = false;
-//		}
-	}
+//	private GameObject tempObjectTop = null;
 
 //	private Vector4 old_clip_range = Vector4.zero;
 	float _oldClipRangeX = -10000;

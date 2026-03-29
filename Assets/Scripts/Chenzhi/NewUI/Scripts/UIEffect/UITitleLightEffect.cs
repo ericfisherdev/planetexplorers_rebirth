@@ -5,12 +5,6 @@ namespace PeUIEffect
 {
 	public class UITitleLightEffect : UIEffect 
 	{
-		//UITexture tex;
-		void Awake()
-		{
-			//tex = GetComponent<UITexture>();
-		}
-
 		public override void Play ()
 		{
 			base.Play ();
@@ -21,12 +15,5 @@ namespace PeUIEffect
 			base.End ();
 		} 
 
-		public void Update()
-		{
-			if (m_Runing)
-			{
-				//tex.uvRect = new Rect(
-			}
-		}
 	}
 }
