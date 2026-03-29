@@ -45,10 +45,25 @@ namespace UnityStandardAssets.ImageEffects
     }
 
     // ---------------------------------------------------------------
+    // AAMode  (used by AntialiasingEditor)
+    // ---------------------------------------------------------------
+    public enum AAMode
+    {
+        FXAA2 = 0,
+        FXAA3Console = 1,
+        FXAA1PresetA = 2,
+        FXAA1PresetB = 3,
+        NFAA = 4,
+        SSAA = 5,
+        DLAA = 6,
+    }
+
+    // ---------------------------------------------------------------
     // Antialiasing  (used by UIOption, PECameraMan, AntialiasingEditor)
     // ---------------------------------------------------------------
     public class Antialiasing : MonoBehaviour
     {
+        public Material CurrentAAMaterial() { return null; }
     }
 
     // ---------------------------------------------------------------
@@ -56,6 +71,7 @@ namespace UnityStandardAssets.ImageEffects
     // ---------------------------------------------------------------
     public class DepthOfField : MonoBehaviour
     {
+        public bool Dx11Support() { return false; }
     }
 
     // ---------------------------------------------------------------
@@ -98,6 +114,7 @@ namespace UnityStandardAssets.ImageEffects
     // ---------------------------------------------------------------
     public class CameraMotionBlur : MonoBehaviour
     {
+        public bool Dx11Support() { return false; }
     }
 
     // ---------------------------------------------------------------
@@ -112,6 +129,11 @@ namespace UnityStandardAssets.ImageEffects
     // ---------------------------------------------------------------
     public class ColorCorrectionLookup : MonoBehaviour
     {
+        public string basedOnTempTex = "";
+
+        public bool ValidDimensions(Texture2D tex) { return false; }
+
+        public void Convert(Texture2D tex, string path) { }
     }
 
     // ---------------------------------------------------------------
@@ -133,6 +155,7 @@ namespace UnityStandardAssets.ImageEffects
     // ---------------------------------------------------------------
     public class NoiseAndGrain : MonoBehaviour
     {
+        public bool Dx11Support() { return false; }
     }
 
     // ---------------------------------------------------------------
@@ -140,6 +163,18 @@ namespace UnityStandardAssets.ImageEffects
     // ---------------------------------------------------------------
     public class Tonemapping : MonoBehaviour
     {
+        public enum TonemapperType
+        {
+            SimpleReinhard = 0,
+            UserCurve = 1,
+            Hable = 2,
+            Photographic = 3,
+            OptimizedHejiDawson = 4,
+            AdaptiveReinhard = 5,
+            AdaptiveReinhardAutoWhite = 6,
+        }
+
+        public bool validRenderTextureFormat;
     }
 
     // ---------------------------------------------------------------
