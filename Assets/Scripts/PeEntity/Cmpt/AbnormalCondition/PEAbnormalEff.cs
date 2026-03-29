@@ -52,8 +52,6 @@ public class PEAE_Anim : PEAbnormalEff
 	public string effAnim{ get; set; }
 	public int actionType{ get; set; }
 
-	float original;
-
 	float nextRetryTime;
 
 	public override void Do ()

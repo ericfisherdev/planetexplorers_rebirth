@@ -19,11 +19,6 @@ namespace Pathea
 			}
 		}
 		
-		// Update is called once per frame
-		void Update () {
-			
-		}
-
 		void OnAttack(SkEntity skEntity, float damage)
 		{
 			PeEntity tarEntity = skEntity.GetComponent<PeEntity>();

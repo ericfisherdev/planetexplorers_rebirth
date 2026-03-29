@@ -1265,7 +1265,6 @@ namespace Pathea
 		public string RqAction;
 		public bool hasDone;
 		object Obj;
-		Vector3 m_RqRatePos;
 
 		public Vector3 RqRatePos
 		{

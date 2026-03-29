@@ -853,7 +853,6 @@ namespace Pathea
 		#endregion
 		
 		#region passenger OnVCCarrier
-		PassengerCmpt m_Passenger;
 		public PassengerCmpt Passenger
 		{
 			get

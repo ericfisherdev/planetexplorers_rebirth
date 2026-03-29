@@ -180,8 +180,6 @@ namespace Pathea
 		List<IRechargeableEquipment> m_RechangeableEquipments = new List<IRechargeableEquipment>();
 		Dictionary<Type, Action<PEEquipment>> m_SetEquipmentFunc = new Dictionary<Type, Action<PEEquipment>>();
 
-		float m_CheckIgnorCostTime;
-		
 		bool isMainPlayer { get { return MainPlayer.Instance.entity == Entity ; } }
 
 		List<IWeapon> retList = new List<IWeapon>();
@@ -990,7 +988,7 @@ namespace Pathea
 			} 
 			else 
 			{
-				if(null != m_Gloves && Weapon == m_Gloves)
+				if(null != m_Gloves && (object)Weapon == m_Gloves)
 					ActiveGloves (false);
 				if (null != handChangeEquipment) 
 				{

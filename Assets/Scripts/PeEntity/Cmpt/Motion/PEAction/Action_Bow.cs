@@ -222,8 +222,6 @@ namespace Pathea
 		}
 		
 		int				m_TargetAmmoIndex;
-		AudioController	m_Audio;
-
 		bool 			m_AnimEnd;
 
 		public bool   	m_IgnoreItem = false;

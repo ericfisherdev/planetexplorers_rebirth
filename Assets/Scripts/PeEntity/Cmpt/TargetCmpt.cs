@@ -57,7 +57,6 @@ namespace Pathea
 
         Enemy m_Enemy;
 		Enemy m_Escape;
-		Enemy m_Specified;
 
         IAttack m_Attack = null;
 
@@ -333,7 +332,9 @@ namespace Pathea
             Enemy enemy = m_Enemies.Find(ret => ret != null && ret.entityTarget != null && ret.entityTarget == argEntity);
             if (enemy == null)
             {
+#pragma warning disable CA2000 // Enemy ownership is transferred to m_Enemies list immediately after creation
                 enemy = new Enemy(m_Entity, argEntity);
+#pragma warning restore CA2000
                 AddEnemy(enemy);
             }
 
@@ -360,7 +361,11 @@ namespace Pathea
             if (enemy != null)
                 enemy.AddHatred(hatred);
             else
+            {
+#pragma warning disable CA2000 // Enemy ownership is transferred to m_Enemies list immediately after creation
                 AddEnemy(new Enemy(m_Entity, argEntity, hatred));
+#pragma warning restore CA2000
+            }
 
             if (HatredEvent != null)
                 HatredEvent (m_Entity, argEntity, hatred);
@@ -750,7 +755,6 @@ namespace Pathea
 
 		//float hideDistance = 5.0f;
 		Vector3 direction = Vector3.back;
-		Enemy mHideEnemy;
 		List<Vector3> mdirs= new List<Vector3>();
 
 		void hideDirction(Enemy enemie,Vector3 player)
@@ -1161,7 +1165,9 @@ namespace Pathea
                         {
                             if(!ContainsEnemy(enemy.entityTarget.vehicle.creationPeEntity))
                             {
+#pragma warning disable CA2000 // Enemy ownership is transferred to m_Enemies list immediately after creation
                                 AddEnemy(new Enemy(m_Entity, enemy.entityTarget.vehicle.creationPeEntity));
+#pragma warning restore CA2000
                             }
                         }
 
@@ -1254,8 +1260,9 @@ namespace Pathea
             if (m_Entity == null)
                 return;
 
+#pragma warning disable CA2000 // Enemy ownership is transferred to m_Enemies list via AddEnemy
             Enemy enemy = new Enemy (m_Entity, entity, hatred);
-
+#pragma warning restore CA2000
             AddEnemy(enemy);
 
             if (enemy.ThreatInit < -PETools.PEMath.Epsilon && UnityEngine.Random.value < Mathf.Abs(enemy.ThreatInit) / 100.0f)
@@ -1677,7 +1684,6 @@ namespace Pathea
 		//string m_Name;
 		int[] m_Init;
 		//int[] m_Amount;
-		int[] m_InitChange;
 		Dictionary<int, int> m_InitCover;
 
 		static Dictionary<int, ThreatData> s_ThreatData;
@@ -1771,8 +1777,6 @@ namespace Pathea
 
 	public class CampData
 	{
-		int m_ID;
-		string m_Name;
 		int[] m_Data = null;
 
 		static Dictionary<int, CampData> s_CampData;
@@ -2823,6 +2827,8 @@ namespace Pathea
 
 //            if (m_Entity != null)
 //                m_Entity.StopCoroutine(AssessPath());
+
+            GC.SuppressFinalize(this);
         }
 	}
 

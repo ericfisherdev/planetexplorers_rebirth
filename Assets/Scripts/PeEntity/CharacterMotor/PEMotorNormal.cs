@@ -33,7 +33,7 @@ public class PEMotorNormal : PEMotor
 	}
 	
 	private void UpdateVelocity() {
-		CharacterController controller = GetComponent(typeof(CharacterController)) as CharacterController;
+		CharacterController controller = GetComponent<CharacterController>();
 		Vector3 velocity = controller.velocity;
 		if (firstframe) {
 			velocity = Vector3.zero;

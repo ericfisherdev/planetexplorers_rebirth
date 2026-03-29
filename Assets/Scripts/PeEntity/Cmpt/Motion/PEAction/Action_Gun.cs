@@ -38,10 +38,6 @@ namespace Pathea
 		float			m_HoldFireTime;
 		float			m_LastShootTime;
 
-		Vector3			m_IKAimDirWorld;
-		Vector3			m_IKAimDirLocal;
-		Quaternion 		m_IK;
-
 		PEGun		m_Gun;
 		public PEGun gun
 		{

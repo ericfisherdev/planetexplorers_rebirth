@@ -55,7 +55,6 @@ namespace Pathea
         bool m_IsDark;
         bool m_IsFly;
         bool m_Injury;
-        bool m_IsAttacking;
         bool m_IsWaterSurface;
         bool m_SeriousInjury;
 
