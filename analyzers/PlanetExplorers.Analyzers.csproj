@@ -1,0 +1,212 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PlanetExplorersAnalysis</RootNamespace>
+    <AssemblyName>PlanetExplorersAnalysis</AssemblyName>
+
+    <!-- We only care about diagnostics, not the output assembly -->
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+
+    <!-- Treat all warnings as messages to avoid build failure on legacy code -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <!-- CS0162: unreachable code; CS0168: variable declared but never used;
+         CS0219: variable assigned but never used; CS0414: field assigned but never used;
+         CS0649: field never assigned; CS0618/CS0619: obsolete type usage (GUIText etc.);
+         CS0234: missing namespace member (e.g. UnityEngine.Experimental.Director);
+         CS0104: ambiguous reference (CameraForge.Pose vs UnityEngine.Pose) -->
+    <NoWarn>CS0162;CS0168;CS0219;CS0414;CS0649;CS0618;CS0619;CS0234;CS0104</NoWarn>
+
+    <!-- Suppress assembly output - we only want diagnostics -->
+    <EmitCompilerGeneratedFiles>false</EmitCompilerGeneratedFiles>
+  </PropertyGroup>
+
+  <!-- Game source files -->
+  <ItemGroup>
+    <Compile Include="../Assets/Scripts/**/*.cs" />
+    <Compile Include="../Assets/PeCustomGame/**/*.cs" />
+    <Compile Include="../Assets/Block45/**/*.cs" />
+    <Compile Include="../Assets/Terrain/**/*.cs" />
+    <Compile Include="../Assets/PeAudio/**/*.cs" />
+    <Compile Include="../Assets/PeLauncher/**/*.cs" />
+    <Compile Include="../Assets/PeMap/**/*.cs" />
+    <Compile Include="../Assets/PeWorld/**/*.cs" />
+    <Compile Include="../Assets/Nova Environment/**/*.cs" />
+    <Compile Include="../Assets/Camera Forge/**/*.cs" />
+    <Compile Include="../Assets/PatheaScript/**/*.cs" />
+    <Compile Include="../Assets/GameArchive/**/*.cs" />
+    <Compile Include="../Assets/AppearBuilder/**/*.cs" />
+    <Compile Include="../Assets/PeCamera/**/*.cs" />
+    <Compile Include="../Assets/RedGrass/**/*.cs" />
+  </ItemGroup>
+
+  <!-- Exclude all Unity Editor-only scripts: they require UnityEngine.dll (for
+       ScriptableObject + CustomEditor) alongside the module DLLs, which causes CS0433
+       type-ambiguity errors. Editor scripts are not game runtime code and provide
+       low-value analysis signal relative to the cost of resolving these conflicts. -->
+  <ItemGroup>
+    <Compile Remove="../Assets/Editor/**/*.cs" />
+    <Compile Remove="../Assets/**/Editor/**/*.cs" />
+  </ItemGroup>
+
+  <!-- Exclude specific files with irresolvable hard compile errors:
+       - ProxyLabel.cs: uses GUIText (removed in Unity 2019+, marked [Obsolete(error:true)])
+       - PEAnimatorAudio_Human.cs, PEAnimatorFootDecal.cs: use UnityEngine.Experimental.Director
+         (removed from Unity 6 DLL structure)
+       - PeCamera.cs: CameraForge.Pose vs UnityEngine.Pose ambiguity (CS0104 cannot be
+         suppressed via NoWarn — it is a hard compile error) -->
+  <ItemGroup>
+    <Compile Remove="../Assets/Scripts/GameNetwork/ProxyLabel.cs" />
+    <Compile Remove="../Assets/Scripts/Assist/AnimationStateInfo/PEAnimatorAudio_Human.cs" />
+    <Compile Remove="../Assets/Scripts/Assist/AnimationStateInfo/PEAnimatorFootDecal.cs" />
+    <Compile Remove="../Assets/PeCamera/Scripts/PeCamera.cs" />
+    <!-- Activation.cs uses Microsoft.Win32.Registry (Windows DRM/license check).
+         Not worth bringing in the Win32 package for analysis of dead DRM code. -->
+    <Compile Remove="../Assets/Scripts/ZhouXun/CmdLine/Activation.cs" />
+    <!-- RadioManager.cs uses AudioType.UNKNOWN which is not in the Unity 6 DLL
+         (the value is named AudioType.Unknown in newer APIs). Minor analysis value. -->
+    <Compile Remove="../Assets/Scripts/Chenzhi/NewUI/Scripts/PE_GameUI/PhoneWnd/RadioManager.cs" />
+    <!-- RadioManager.cs uses AudioType.UNKNOWN which is not in the Unity 6 DLL
+         (the value is AudioType.Unknown in the current DLL).
+         UIRadioCtrl.cs depends on RadioManager and is excluded as a consequence. -->
+    <Compile Remove="../Assets/Scripts/Chenzhi/NewUI/Scripts/PE_GameUI/PhoneWnd/RadioManager.cs" />
+    <Compile Remove="../Assets/Scripts/Chenzhi/NewUI/Scripts/PE_GameUI/PhoneWnd/UIRadioCtrl.cs" />
+    <Compile Remove="../Assets/Scripts/Chenzhi/NewUI/Scripts/PE_GameUI/PhoneWnd/UIPhoneWnd.cs" />
+    <Compile Remove="../Assets/Scripts/Chenzhi/NewUI/Scripts/PE_GameUI/PhoneWnd/UIHelpCtrl.cs" />
+  </ItemGroup>
+
+  <!-- Stub implementations (compiled but not analyzed) -->
+  <ItemGroup>
+    <Compile Include="../Assets/Stubs/**/*.cs" />
+  </ItemGroup>
+
+  <!-- Unity managed DLLs for type resolution -->
+  <!-- Note: UnityEngine.dll is intentionally excluded — it re-exports all module types,
+       causing CS0433 ambiguity errors when module DLLs are also referenced. -->
+  <ItemGroup>
+    <Reference Include="UnityEditor">
+      <HintPath>unity-stubs/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>unity-stubs/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>unity-stubs/UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>unity-stubs/UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>unity-stubs/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>unity-stubs/UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>unity-stubs/UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>unity-stubs/UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>unity-stubs/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>unity-stubs/UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>unity-stubs/UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>unity-stubs/UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>unity-stubs/UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>unity-stubs/UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>unity-stubs/UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>unity-stubs/UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>unity-stubs/UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>unity-stubs/UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>unity-stubs/UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>unity-stubs/UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>unity-stubs/UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>unity-stubs/UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>unity-stubs/UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>unity-stubs/UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>unity-stubs/UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>unity-stubs/UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>unity-stubs/UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>unity-stubs/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>unity-stubs/UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>unity-stubs/UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>unity-stubs/UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.MultiplayerModule">
+      <HintPath>unity-stubs/UnityEngine.MultiplayerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>unity-stubs/UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>unity-stubs/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>unity-stubs/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>unity-stubs/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>unity-stubs/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VectorGraphicsModule">
+      <HintPath>unity-stubs/UnityEngine.VectorGraphicsModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <!-- System references for Mono compatibility -->
+  <ItemGroup>
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="System.CodeDom" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>
