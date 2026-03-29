@@ -5,21 +5,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Runtime.InteropServices;
+// System.Runtime.InteropServices removed -- no longer using DllImport for LZ4
 
 
 public class VFPieceDataClone
 {
-#region LZ4_DLL
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_DllLoad();
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_compress(byte[] source, byte[] dest, int isize);
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_uncompress(byte[] source, byte[] dest, int osize);
-    [DllImport("lz4_dll")]
-    public static extern int LZ4_uncompress_unknownOutputSize(byte[] source, byte[] dest, int isize, int maxOutputSize);
-#endregion
+// LZ4 native DllImport removed -- now using ManagedLZ4 (Assets/Stubs/LZ4/ManagedLZ4.cs)
 	public static byte[] unzippedDataBuffer = new byte[VoxelTerrainConstants.VOXEL_NUM_PER_PIECE*VFVoxel.c_VTSize + 256]; // Plus offset data
 	public static int unzippedDataLen = 0;
 	public static IntVector4 unzippedDataDesc = new IntVector4(-1,-1,-1,-1);
@@ -46,7 +37,7 @@ public class VFPieceDataClone
 			return;
 		
 		//int curTick = Environment.TickCount;
-		unzippedDataLen = LZ4_uncompress_unknownOutputSize(_data, unzippedDataBuffer, _data.Length, unzippedDataBuffer.Length);
+		unzippedDataLen = ManagedLZ4.LZ4_uncompress_unknownOutputSize(_data, unzippedDataBuffer, _data.Length, unzippedDataBuffer.Length);
 		if(unzippedDataLen < 0)
 		{
 			Debug.LogError("[VFDATAReaderClone]Failed to decompress vfdata." + "@"+unzippedDataDesc);
