@@ -28,11 +28,6 @@ public class RGDemoEditorSaver : MonoBehaviour
 		SaveCaches();
 	}
 
-	void Awake()
-	{
-
-	}
-	
 	public void SaveCaches()
 	{
 		if (editor == null || editor.isEmpty)
@@ -60,11 +55,10 @@ public class RGDemoEditorSaver : MonoBehaviour
 				continue;
 
 			using (FileStream exsit_file = new FileStream(existFiles[i], FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
+			using (BinaryReader _in = new BinaryReader(exsit_file))
 			{
-                BinaryReader _in = new BinaryReader(exsit_file);
                 int old_ver = _in.ReadInt32();
                 version = old_ver > version ? old_ver : version;
-                exsit_file.Close();
 			}
 		}
 
@@ -72,8 +66,8 @@ public class RGDemoEditorSaver : MonoBehaviour
 
 		// Save the cachse
 		using (FileStream fs = new FileStream(path + "grass_cache_" + version.ToString() + ".gs", FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite))
+		using (BinaryWriter _w = new BinaryWriter(fs))
 		{
-			BinaryWriter _w = new BinaryWriter(fs);
 			RedGrassInstance[] add_grasses = editor.addGrasses;
 			_w.Write(version);
 			_w.Write(add_grasses.Length);
@@ -81,7 +75,6 @@ public class RGDemoEditorSaver : MonoBehaviour
 			{
 				rgi.WriteToStream(_w);
 			}
-			fs.Close();
 		}
 
 		editor.Clear();

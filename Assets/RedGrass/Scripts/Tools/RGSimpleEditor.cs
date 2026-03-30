@@ -52,11 +52,6 @@ namespace RedGrass
 			mAddGrasses = new Dictionary<INTVECTOR3, RedGrassInstance>();
 		}
 
-		void Start()
-		{
-
-		}
-
 		void Update ()
 		{
 

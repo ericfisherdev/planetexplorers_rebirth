@@ -82,6 +82,7 @@ namespace Behave.Runtime
             }
         }
 
+#pragma warning disable UNT0006 // Reset(int) is a domain method, not the Unity Reset message
         public bool Reset(int id)
         {
             if (m_Agents.ContainsKey(id))
@@ -91,7 +92,8 @@ namespace Behave.Runtime
             }
 
             return false;
-        } 
+        }
+#pragma warning restore UNT0006
 
         public bool Stop(int id)
         {
