@@ -15,11 +15,6 @@ public class ModelLodTest : MonoBehaviour
         Load();
     }
 
-    void Update()
-    {
-        //if (m_Obj != null)
-        //    position = m_Obj.transform.position;
-    }
 
     void Load()
     {

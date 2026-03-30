@@ -4,8 +4,6 @@ using Pathea;
 
 public class AudioListenerController : MonoBehaviour 
 {
-    Transform mainPlayerTrans;
-
     void Update()
     {
 		if(PETools.PEUtil.MainCamTransform != null)

@@ -7,7 +7,6 @@ public class PEAnimatorBoneRotate : StateMachineBehaviour
     public float endTime;
     public float rotateSpeed;
 
-    bool m_IsActive;
     float m_RotateSpeed;
     PEBoneRotation m_BoneRoattion;
 

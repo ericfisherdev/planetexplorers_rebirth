@@ -94,28 +94,4 @@ public class PEVision : PEPerception
         radius -= value;
     }
 
-    public void OnDrawGizmosSelected()
-    {
-        //int count = 50;
-
-        //Vector3 rotAxis = transform.TransformDirection(axis) * radius;
-        //Vector3 newVec = Vector3.ProjectOnPlane(Vector3.forward, rotAxis);
-
-        //float tmpAngle = 360.0f / count;
-        //for (int i = 0; i < count; i++)
-        //{
-        //    Vector3 tmpVector3 = Quaternion.AngleAxis(tmpAngle * i, rotAxis) * newVec;
-        //    Vector3 tmpAxis = Vector3.Cross(rotAxis, tmpVector3);
-        //    Vector3 tmpDir = Quaternion.AngleAxis(angle, tmpAxis) * rotAxis;
-
-        //    Gizmos.DrawRay(transform.position, tmpDir);
-
-        //    int j = (i+1)%count;
-        //    Vector3 tmpVec1 = Quaternion.AngleAxis(tmpAngle * j, rotAxis) * newVec;
-        //    Vector3 tmpAxis1 = Vector3.Cross(rotAxis, tmpVec1);
-        //    Vector3 tmpDir1 = Quaternion.AngleAxis(angle, tmpAxis1) * rotAxis;
-
-        //    Gizmos.DrawLine(transform.position + tmpDir, transform.position + tmpDir1);
-        //}
-    }
 }

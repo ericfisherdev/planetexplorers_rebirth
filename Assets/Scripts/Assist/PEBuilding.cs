@@ -19,10 +19,6 @@ public class PEBuilding : MonoBehaviour
 		m_Buildingmap.LoadIn(mTrans);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	public Transform Occupy(int entityId)
 	{

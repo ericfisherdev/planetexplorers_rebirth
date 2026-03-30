@@ -1470,7 +1470,7 @@ namespace PETools
 
         public static bool IsDamageCollider(Collider collider)
         {
-            return collider.gameObject.tag.Equals("Damage");
+            return collider.gameObject.CompareTag("Damage");
         }
 
         public static void IgnoreCollision(GameObject obj1, GameObject obj2, bool isIgnore = true)
