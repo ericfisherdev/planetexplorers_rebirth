@@ -80,12 +80,12 @@ public class VFCreationDataSource : IVxDataSource
 		                        // 7 bit not used
 		
 		// If write one edge's voxel may cause the other edge being modified
-		if ( vx < minIdx && cx > 0 ) { fx = -1; dirtyMask |= 0x11; } else
-		if ( vx >= maxIdx && cx < m_ChunkNumX - 1 ) { fx = 1; dirtyMask |= 0x01; }
-		if ( vy < minIdx && cy > 0 ) { fy = -1; dirtyMask |= 0x22; } else
-		if ( vy >= maxIdx && cy < m_ChunkNumY - 1 ) { fy = 1; dirtyMask |= 0x02; }
-		if ( vz < minIdx && cz > 0 ) { fz = -1; dirtyMask |= 0x44; } else
-		if ( vz >= maxIdx && cz < m_ChunkNumZ - 1 ) { fz = 1; dirtyMask |= 0x04; }
+		if ( vx < minIdx && cx > 0 ) { fx = -1; dirtyMask |= 0x11; }
+		else if ( vx >= maxIdx && cx < m_ChunkNumX - 1 ) { fx = 1; dirtyMask |= 0x01; }
+		if ( vy < minIdx && cy > 0 ) { fy = -1; dirtyMask |= 0x22; }
+		else if ( vy >= maxIdx && cy < m_ChunkNumY - 1 ) { fy = 1; dirtyMask |= 0x02; }
+		if ( vz < minIdx && cz > 0 ) { fz = -1; dirtyMask |= 0x44; }
+		else if ( vz >= maxIdx && cz < m_ChunkNumZ - 1 ) { fz = 1; dirtyMask |= 0x04; }
 		
 		if (dirtyMask != 0x80)
 		{

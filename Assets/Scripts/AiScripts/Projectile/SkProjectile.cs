@@ -431,13 +431,13 @@ namespace Pathea.Projectile
 			{
 				Collider hitCol = colls[i];
 				if (hitCol.transform == null)
-				continue;
-				
+					continue;
+
 				if (hitCol.transform.IsChildOf(transform))
-				continue;
-				
+					continue;
+
 				if (m_Caster != null && hitCol.transform.IsChildOf(m_Caster))
-				continue;
+					continue;
 				
 				if(hitCol.gameObject.CompareTag("EnergyShield"))
 				{

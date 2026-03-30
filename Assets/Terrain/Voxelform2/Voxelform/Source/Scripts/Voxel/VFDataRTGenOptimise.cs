@@ -58,7 +58,9 @@ public partial class VFDataRTGen
 		{
 			float factorValue = GetTownConnectionFactor(x,y,TownConnectionFlatDistance);
 			if(factorValue<1)
-			flatParam = TownConnectionFlatMin;
+			{
+				flatParam = TownConnectionFlatMin;
+			}
 		}
 			
         return flatParam;

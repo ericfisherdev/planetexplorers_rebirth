@@ -122,12 +122,12 @@ public class VFLODDataSource : IVxDataSource
 		
 		// Note: To write at lod boundary will cause wrong chunk writing because cxround/cyround/czround is incorrect.
 		// To write edge voxel will cause neibour chunks being modified
-		if( vx< VFVoxelChunkData.S_MinNoDirtyIdx)	{fx = -1;dirtyMask|=0x11;}else
-		if( vx>=VFVoxelChunkData.S_MaxNoDirtyIdx)	{fx =  1;dirtyMask|=0x01;}
-		if( vy< VFVoxelChunkData.S_MinNoDirtyIdx)	{fy = -1;dirtyMask|=0x22;}else
-		if( vy>=VFVoxelChunkData.S_MaxNoDirtyIdx)	{fy =  1;dirtyMask|=0x02;}
-		if( vz< VFVoxelChunkData.S_MinNoDirtyIdx)	{fz = -1;dirtyMask|=0x44;}else
-		if( vz>=VFVoxelChunkData.S_MaxNoDirtyIdx)	{fz =  1;dirtyMask|=0x04;}
+		if( vx< VFVoxelChunkData.S_MinNoDirtyIdx)	{fx = -1;dirtyMask|=0x11;}
+		else if( vx>=VFVoxelChunkData.S_MaxNoDirtyIdx)	{fx =  1;dirtyMask|=0x01;}
+		if( vy< VFVoxelChunkData.S_MinNoDirtyIdx)	{fy = -1;dirtyMask|=0x22;}
+		else if( vy>=VFVoxelChunkData.S_MaxNoDirtyIdx)	{fy =  1;dirtyMask|=0x02;}
+		if( vz< VFVoxelChunkData.S_MinNoDirtyIdx)	{fz = -1;dirtyMask|=0x44;}
+		else if( vz>=VFVoxelChunkData.S_MaxNoDirtyIdx)	{fz =  1;dirtyMask|=0x04;}
 		
 		if(dirtyMask != 0x80)
 		{

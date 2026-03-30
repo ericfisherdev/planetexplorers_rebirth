@@ -213,7 +213,9 @@ public class VArtifactTownManager:MonoBehaviour
 				townIdData[vs.Key].nextHour = vs.Value.nextHour;
 			}
 			if(MonsterSiege_Town.Instance!=null)
-			MonsterSiege_Town.Instance.OnNewTown(townIdData[vs.Key]);
+			{
+				MonsterSiege_Town.Instance.OnNewTown(townIdData[vs.Key]);
+			}
 		}
 	}
 
@@ -618,7 +620,8 @@ public class VArtifactTownManager:MonoBehaviour
 		int grasslandCount =0;
 		int desertCount =0;
 		for(int xt=-4000;xt<=4000;xt+=64)
-		for(int zt = -4000;zt<=4000;zt+=64){
+		for(int zt = -4000;zt<=4000;zt+=64)
+		{
 			IntVector2 worldXZ = new IntVector2(xt,zt);
 			int height = VFDataRTGen.GetPosHeight(worldXZ,true);
 			if(VFDataRTGen.IsSea(height))
@@ -682,7 +685,8 @@ public class VArtifactTownManager:MonoBehaviour
 
 	void TestNewTerrain(){
 		for(int xt=-4000;xt<=4000;xt+=64)
-		for(int zt = -4000;zt<=4000;zt+=64){
+		for(int zt = -4000;zt<=4000;zt+=64)
+		{
 			IntVector2 worldXZ = new IntVector2(xt,zt);
 			float ftertype = VFDataRTGen.GetfNoise12D1ten(xt,zt);
 			if(ftertype>90f)

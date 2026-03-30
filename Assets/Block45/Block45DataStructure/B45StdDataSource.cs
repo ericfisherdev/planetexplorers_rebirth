@@ -105,12 +105,12 @@ public class B45StdDataSource : IB45DataSource
 		int dirtyMask = 0x80;	// 0,1,2 bit for xyz dirty mask;4,5,6 bit for sign(neg->1);7 bit for current pos(now not used)
 		
 		// If write one edge's voxel may cause the other edge being modified
-		if( vx< minIdx&&cx>0)									{fx = -1;dirtyMask|=0x11;}else
-		if( vx>=maxIdx&&cx<Block45Constants._worldMaxCX-1)	{fx =  1;dirtyMask|=0x01;}
-		if( vy< minIdx&&cy>0)									{fy = -1;dirtyMask|=0x22;}else
-		if( vy>=maxIdx&&cy<Block45Constants._worldMaxCY-1)	{fy =  1;dirtyMask|=0x02;}
-		if( vz< minIdx&&cz>0)									{fz = -1;dirtyMask|=0x44;}else
-		if( vz>=maxIdx&&cz<Block45Constants._worldMaxCZ-1)	{fz =  1;dirtyMask|=0x04;}
+		if( vx< minIdx&&cx>0)									{fx = -1;dirtyMask|=0x11;}
+		else if( vx>=maxIdx&&cx<Block45Constants._worldMaxCX-1)	{fx =  1;dirtyMask|=0x01;}
+		if( vy< minIdx&&cy>0)									{fy = -1;dirtyMask|=0x22;}
+		else if( vy>=maxIdx&&cy<Block45Constants._worldMaxCY-1)	{fy =  1;dirtyMask|=0x02;}
+		if( vz< minIdx&&cz>0)									{fz = -1;dirtyMask|=0x44;}
+		else if( vz>=maxIdx&&cz<Block45Constants._worldMaxCZ-1)	{fz =  1;dirtyMask|=0x04;}
 		
 		if(dirtyMask != 0x80)
 		{

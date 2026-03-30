@@ -282,8 +282,7 @@ namespace SkillSystem
 				{
 					_eventsActFromCol.Add(skEvent);
 				}
-				else
-				if(skEvent._cond._type == SkCond.CondType.TypeNormal)
+				else if(skEvent._cond._type == SkCond.CondType.TypeNormal)
 				{
 					_eventsActInGuide.Add(skEvent);
 				}

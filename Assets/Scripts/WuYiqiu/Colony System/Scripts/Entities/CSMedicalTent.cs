@@ -238,7 +238,9 @@ public class CSMedicalTent:CSHealth
                     for (int i = 0; i < allSickbeds.Length; i++)
                     {
                         if(allSickbeds[i]!=null)
-                        allSickbeds[i].bedLay = pePatient.Lays[i];
+                        {
+                            allSickbeds[i].bedLay = pePatient.Lays[i];
+                        }
                     }
 
                 if (BuildingLogic != null)

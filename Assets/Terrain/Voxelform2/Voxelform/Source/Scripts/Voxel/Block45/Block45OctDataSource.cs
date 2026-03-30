@@ -46,8 +46,7 @@ public class Block45OctDataSource
 				}
 			}
 		}
-		else 
-		if(node._pos.w > lod && node._children != null){
+		else if(node._pos.w > lod && node._children != null){
 			for(int i = 0; i < 8; i++){
 				count += AppendToWrite(node._children[i], bw, lod);
 			}
@@ -157,12 +156,12 @@ public class Block45OctDataSource
 		int dirtyMask = 0x80;	// 0,1,2 bit for xyz dirty mask;4,5,6 bit for sign(neg->1);7 bit for current pos(now not used)
 		
 		// If write one edge's voxel may cause the other edge being modified
-		if( vx< Block45OctNode.S_MinNoDirtyIdx)	{fx = -1;dirtyMask|=0x11;}else
-		if( vx>=Block45OctNode.S_MaxNoDirtyIdx)	{fx =  1;dirtyMask|=0x01;}
-		if( vy< Block45OctNode.S_MinNoDirtyIdx)	{fy = -1;dirtyMask|=0x22;}else
-		if( vy>=Block45OctNode.S_MaxNoDirtyIdx)	{fy =  1;dirtyMask|=0x02;}
-		if( vz< Block45OctNode.S_MinNoDirtyIdx)	{fz = -1;dirtyMask|=0x44;}else
-		if( vz>=Block45OctNode.S_MaxNoDirtyIdx)	{fz =  1;dirtyMask|=0x04;}
+		if( vx< Block45OctNode.S_MinNoDirtyIdx)	{fx = -1;dirtyMask|=0x11;}
+		else if( vx>=Block45OctNode.S_MaxNoDirtyIdx)	{fx =  1;dirtyMask|=0x01;}
+		if( vy< Block45OctNode.S_MinNoDirtyIdx)	{fy = -1;dirtyMask|=0x22;}
+		else if( vy>=Block45OctNode.S_MaxNoDirtyIdx)	{fy =  1;dirtyMask|=0x02;}
+		if( vz< Block45OctNode.S_MinNoDirtyIdx)	{fz = -1;dirtyMask|=0x44;}
+		else if( vz>=Block45OctNode.S_MaxNoDirtyIdx)	{fz =  1;dirtyMask|=0x04;}
 
 		if(dirtyMask != 0x80)
 		{

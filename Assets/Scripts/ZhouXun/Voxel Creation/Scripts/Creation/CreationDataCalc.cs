@@ -449,7 +449,9 @@ public partial class CreationData
 					if (cockpit_cnt == 0)
 						attr.m_Errors.Add("No cockpit".ToLocalizationString());
 					if (cockpit_cnt > 1)
-					attr.m_Errors.Add("Too many cockpits, max is".ToLocalizationString() + " 1");
+					{
+						attr.m_Errors.Add("Too many cockpits, max is".ToLocalizationString() + " 1");
+					}
 					if (propellor_cnt + thruster_cnt == 0)
 						attr.m_Errors.Add("No rotor or thruster".ToLocalizationString());
 					else if (propellor_cnt + thruster_cnt > 32)

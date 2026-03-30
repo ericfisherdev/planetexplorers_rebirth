@@ -167,8 +167,10 @@ namespace Behave.Runtime
 						entity.biologyViewCmpt.ActivateCollider(false);
 					
 					if (entity.motionMgr != null)
-					entity.motionMgr.FreezePhyState(GetType(), true);
-					
+					{
+						entity.motionMgr.FreezePhyState(GetType(), true);
+					}
+
 					if (entity.biologyViewCmpt != null)
 						entity.biologyViewCmpt.ActivateInjured(false);
 					
@@ -190,8 +192,10 @@ namespace Behave.Runtime
 						entity.target.SetEnityCanAttack(false);
 					
 					if(entity.motionMgr != null)
-					entity.motionMgr.FreezePhyState(GetType(), true);
-					
+					{
+						entity.motionMgr.FreezePhyState(GetType(), true);
+					}
+
 					if (entity.enityInfoCmpt != null){
                         entity.enityInfoCmpt.ShowName(false);
                         entity.enityInfoCmpt.ShowMissionMark(false);

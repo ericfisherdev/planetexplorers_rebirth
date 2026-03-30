@@ -148,8 +148,8 @@ public partial class LODOctreeNode
 			int reqLod = (boundsLod+1) > _lod ? _lod : (boundsLod+1);
 			SetFamilyReqLod(reqLod);
 		}
-		else // Contain?
-		if(	minPosView.x <= minPosNode.x && minPosView.y<= minPosNode.y && minPosView.z<= minPosNode.z && 
+		else if( // Contain?
+			minPosView.x <= minPosNode.x && minPosView.y<= minPosNode.y && minPosView.z<= minPosNode.z &&
 			maxPosView.x >= maxPosNode.x && maxPosView.y>= maxPosNode.y && maxPosView.z>= maxPosNode.z )
 		{
 			if(boundsLod > 0)
