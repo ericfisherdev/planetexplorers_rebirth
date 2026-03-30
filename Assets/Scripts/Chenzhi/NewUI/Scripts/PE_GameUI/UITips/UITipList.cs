@@ -96,15 +96,6 @@ public class UITipList : MonoBehaviour
     #region UINITY_INNER_FUNC
 
 
-    void OnGUI()
-    {
-
-    }
-
-    void Awake()
-    {
-    }
-
     List<float> m_DefaultHeight = new List<float>();
     float m_CurDura = 0;
     float m_MotionOffset;

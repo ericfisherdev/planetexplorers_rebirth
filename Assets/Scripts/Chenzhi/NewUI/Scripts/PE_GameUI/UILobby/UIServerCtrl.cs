@@ -105,13 +105,6 @@ public class UIServerCtrl : MonoBehaviour
 			StartFunc();
 	}
 
-	// Update is called once per frame
-	void Update () 
-	{
-
-	}
-
-
 	void SetTeamState(bool IsActive)
 	{
 		float color = 1;

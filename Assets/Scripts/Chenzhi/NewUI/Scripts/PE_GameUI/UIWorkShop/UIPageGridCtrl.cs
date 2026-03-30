@@ -56,11 +56,6 @@ public class UIPageGridCtrl : MonoBehaviour
 	}
 
 
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
     #endregion
 
     #region private methods

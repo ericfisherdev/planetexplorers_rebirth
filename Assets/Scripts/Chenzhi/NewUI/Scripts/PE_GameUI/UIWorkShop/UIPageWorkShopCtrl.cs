@@ -25,9 +25,8 @@ public class UIPageWorkShopCtrl : MonoBehaviour
 	private int mLeftListSelectedIndex = -1;
 	private SteamPreFileAndVoteDetail mSelectedDetail;
     //log:2016.05.17 避免多次顶或踩操作
-    private List<int> m_DingList;   
+    private List<int> m_DingList;
     private List<int> m_CaiList;
-    private uint mGetIdCount;
 	
 
 	void Awake()

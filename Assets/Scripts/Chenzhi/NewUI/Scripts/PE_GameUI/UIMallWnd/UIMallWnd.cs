@@ -39,7 +39,6 @@ public class UIMallWnd : UIBaseWnd
 	int maxPageIndex = 1;
 	public const int GridCount = 12;
 	int maxItemCount = 0;
-	int myPrice;
 
 	void Awake()
 	{

@@ -9,8 +9,4 @@ public class UIFontTest : MonoBehaviour {
 		Debug.Log( label.font.size);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
