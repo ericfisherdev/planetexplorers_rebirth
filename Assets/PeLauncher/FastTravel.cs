@@ -35,7 +35,9 @@ namespace Pathea
 			PeLauncher.Instance.endLaunch = delegate()
 			{
 				if (PeGameMgr.IsMulti && !NetworkInterface.IsClient)
-				return true;
+				{
+					return true;
+				}
 
 				if(bFirstRun){
 					bFirstRun = false;

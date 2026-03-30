@@ -360,7 +360,6 @@ namespace Pathea
 			CostStamina(m_AttackModeIndex);
 			ChangeAttackTarget();
 			if(null != sword && null != sword.m_AttackMode && sword.m_AttackMode.Length > m_AttackModeIndex)
-			if(null != sword && null != sword.m_AttackMode && sword.m_AttackMode.Length > m_AttackModeIndex)
 			{
 				motionMgr.Entity.SendMsg(EMsg.Battle_Attack, sword.m_AttackMode[m_AttackModeIndex]);
 				motionMgr.Entity.SendMsg(EMsg.Battle_OnAttack, sword.m_AttackMode[m_AttackModeIndex], sword.transform, 0);

@@ -32,8 +32,7 @@ public class DetectMemLeak : MonoBehaviour {
 		{
 			if(obj.name.Equals("ocl_mesh"))				nOclMeshs++;
 			if(obj.name.Contains("tree"))				nTreeMeshs++;
-			else
-			if(obj.name.Contains("grass"))				nGrassMeshs++;
+			else if(obj.name.Contains("grass"))				nGrassMeshs++;
 		}
         nChnkGos = Resources.FindObjectsOfTypeAll(typeof(VFVoxelChunkGo)).Length;
 	}

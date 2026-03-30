@@ -119,11 +119,11 @@ public class VCEUIMirrorWnd : MonoBehaviour
 	void GetVectorFromInput ()
 	{
 		if ( !m_InputX.selected )
-		try { m_Vector.x = Convert.ToSingle(m_InputX.text); } catch (Exception) { m_Vector.x = 0; }
+			try { m_Vector.x = Convert.ToSingle(m_InputX.text); } catch (Exception) { m_Vector.x = 0; }
 		if ( !m_InputY.selected )
-		try { m_Vector.y = Convert.ToSingle(m_InputY.text); } catch (Exception) { m_Vector.y = 0; }
+			try { m_Vector.y = Convert.ToSingle(m_InputY.text); } catch (Exception) { m_Vector.y = 0; }
 		if ( !m_InputZ.selected )
-		try { m_Vector.z = Convert.ToSingle(m_InputZ.text); } catch (Exception) { m_Vector.z = 0; }
+			try { m_Vector.z = Convert.ToSingle(m_InputZ.text); } catch (Exception) { m_Vector.z = 0; }
 		ValidateVector();
 	}
 	void ApplyVectorToInput ()

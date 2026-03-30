@@ -347,8 +347,7 @@ namespace Pathea
             {
                 /*Vector3 mStayPos = */PETools.Serialize.ReadVector3(r);
             }
-            else
-            if (ver == VERSION_1)
+            else if (ver == VERSION_1)
             {
                 mFastTravel = r.ReadBoolean();
             }

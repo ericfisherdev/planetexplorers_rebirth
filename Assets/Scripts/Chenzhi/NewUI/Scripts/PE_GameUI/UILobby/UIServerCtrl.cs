@@ -135,7 +135,9 @@ public class UIServerCtrl : MonoBehaviour
 		if(Input.GetMouseButtonUp(0))
 		{
 			if(BtnCreate != null)
-			BtnCreate();
+			{
+				BtnCreate();
+			}
 			mHostCreateCtrl.gameObject.SetActive(true);
 			mHostCreateCtrl.InitMapInfo();
 		}

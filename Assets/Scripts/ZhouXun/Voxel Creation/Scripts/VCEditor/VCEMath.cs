@@ -85,46 +85,52 @@ public static class VCEMath
 		
 		// Find the X-cast Enter
 		if ( xAdder != 0 )
-		for ( float x = xStart; x > -0.1f && x <= VCEditor.s_Scene.m_Setting.m_EditorSize.x + 0.1f; x += xAdder )
 		{
-			float enter = (x - ray.origin.x) / ray.direction.x;
-			Vector3 Hit = ray.origin + ray.direction * enter;
-			if ( iso.GetVoxel(VCIsoData.IPosToKey(Mathf.FloorToInt(Hit.x + xAdder * 0.5f),
-				                                  Mathf.FloorToInt(Hit.y), 
-				                                  Mathf.FloorToInt(Hit.z))).Volume >= minvol )
+			for ( float x = xStart; x > -0.1f && x <= VCEditor.s_Scene.m_Setting.m_EditorSize.x + 0.1f; x += xAdder )
 			{
-				EnterX = enter;
-				break;
+				float enter = (x - ray.origin.x) / ray.direction.x;
+				Vector3 Hit = ray.origin + ray.direction * enter;
+				if ( iso.GetVoxel(VCIsoData.IPosToKey(Mathf.FloorToInt(Hit.x + xAdder * 0.5f),
+					                                  Mathf.FloorToInt(Hit.y),
+					                                  Mathf.FloorToInt(Hit.z))).Volume >= minvol )
+				{
+					EnterX = enter;
+					break;
+				}
 			}
 		}
-		
+
 		// Find the Y-cast Enter
 		if ( yAdder != 0 )
-		for ( float y = yStart; y >= -0.1f && y <= VCEditor.s_Scene.m_Setting.m_EditorSize.y + 0.1f; y += yAdder )
 		{
-			float enter = (y - ray.origin.y) / ray.direction.y;
-			Vector3 Hit = ray.origin + ray.direction * enter;
-			if ( iso.GetVoxel(VCIsoData.IPosToKey(Mathf.FloorToInt(Hit.x),
-				                                  Mathf.FloorToInt(Hit.y + yAdder * 0.5f),
-				                                  Mathf.FloorToInt(Hit.z))).Volume >= minvol )
+			for ( float y = yStart; y >= -0.1f && y <= VCEditor.s_Scene.m_Setting.m_EditorSize.y + 0.1f; y += yAdder )
 			{
-				EnterY = enter;
-				break;
+				float enter = (y - ray.origin.y) / ray.direction.y;
+				Vector3 Hit = ray.origin + ray.direction * enter;
+				if ( iso.GetVoxel(VCIsoData.IPosToKey(Mathf.FloorToInt(Hit.x),
+					                                  Mathf.FloorToInt(Hit.y + yAdder * 0.5f),
+					                                  Mathf.FloorToInt(Hit.z))).Volume >= minvol )
+				{
+					EnterY = enter;
+					break;
+				}
 			}
 		}
-		
+
 		// Find the Z-cast Enter
 		if ( zAdder != 0 )
-		for ( float z = zStart; z >= -0.1f && z <= VCEditor.s_Scene.m_Setting.m_EditorSize.z + 0.1f; z += zAdder )
 		{
-			float enter = (z - ray.origin.z) / ray.direction.z;
-			Vector3 Hit = ray.origin + ray.direction * enter;
-			if ( iso.GetVoxel(VCIsoData.IPosToKey(Mathf.FloorToInt(Hit.x),
-				                                  Mathf.FloorToInt(Hit.y),
-				                                  Mathf.FloorToInt(Hit.z + zAdder * 0.5f))).Volume >= minvol )
+			for ( float z = zStart; z >= -0.1f && z <= VCEditor.s_Scene.m_Setting.m_EditorSize.z + 0.1f; z += zAdder )
 			{
-				EnterZ = enter;
-				break;
+				float enter = (z - ray.origin.z) / ray.direction.z;
+				Vector3 Hit = ray.origin + ray.direction * enter;
+				if ( iso.GetVoxel(VCIsoData.IPosToKey(Mathf.FloorToInt(Hit.x),
+					                                  Mathf.FloorToInt(Hit.y),
+					                                  Mathf.FloorToInt(Hit.z + zAdder * 0.5f))).Volume >= minvol )
+				{
+					EnterZ = enter;
+					break;
+				}
 			}
 		}
 		

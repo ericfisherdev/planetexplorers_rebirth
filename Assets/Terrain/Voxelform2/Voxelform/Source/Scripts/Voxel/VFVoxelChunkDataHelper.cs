@@ -95,19 +95,19 @@ public partial class VFVoxelChunkData : ILODNodeData
 			List<int> lstTmpIndexes = new List<int>(8);
 			for(int z = start; z < end; z++)
 			{
-				if(z< S_MinNoDirtyIdx)	{fz=-1;dirtyMaskZ=0x44;}else
-				if(z>=S_MaxNoDirtyIdx)	{fz= 1;dirtyMaskZ=0x04;}else 
-										{fz= 0;dirtyMaskZ=   0;}
+				if(z< S_MinNoDirtyIdx)	{fz=-1;dirtyMaskZ=0x44;}
+				else if(z>=S_MaxNoDirtyIdx)	{fz= 1;dirtyMaskZ=0x04;}
+				else 					{fz= 0;dirtyMaskZ=   0;}
 				for(int y = start; y < end; y++)
 				{
-					if(y< S_MinNoDirtyIdx)	{fy=-1;dirtyMaskY=0x22;}else
-					if(y>=S_MaxNoDirtyIdx)	{fy= 1;dirtyMaskY=0x02;}else
-											{fy= 0;dirtyMaskY=   0;}
+					if(y< S_MinNoDirtyIdx)	{fy=-1;dirtyMaskY=0x22;}
+					else if(y>=S_MaxNoDirtyIdx)	{fy= 1;dirtyMaskY=0x02;}
+					else					{fy= 0;dirtyMaskY=   0;}
 					for(int x = start; x < end; x++)
 					{
-						if(x< S_MinNoDirtyIdx)	{fx=-1;dirtyMaskX=0x11;}else
-						if(x>=S_MaxNoDirtyIdx)	{fx= 1;dirtyMaskX=0x01;}else
-												{fx= 0;dirtyMaskX=   0;}
+						if(x< S_MinNoDirtyIdx)	{fx=-1;dirtyMaskX=0x11;}
+						else if(x>=S_MaxNoDirtyIdx)	{fx= 1;dirtyMaskX=0x01;}
+						else					{fx= 0;dirtyMaskX=   0;}
 						int dirtyMask = dirtyMaskZ|dirtyMaskY|dirtyMaskX;
 						if(dirtyMask != 0)
 						{
@@ -157,14 +157,11 @@ public partial class VFVoxelChunkData : ILODNodeData
 								// Note: To write at lod boundary will cause wrong chunk writing because cxround/cyround/czround is incorrect.
 								// To write edge voxel will cause neibour chunks being modified
 		if (vx < S_MinNoDirtyIdx) { fx = -1; dirtyMask |= 0x11; }
-		else
-		if (vx >= S_MaxNoDirtyIdx) { fx = 1; dirtyMask |= 0x01; }
+		else if (vx >= S_MaxNoDirtyIdx) { fx = 1; dirtyMask |= 0x01; }
 		if (vy < S_MinNoDirtyIdx) { fy = -1; dirtyMask |= 0x22; }
-		else
-		if (vy >= S_MaxNoDirtyIdx) { fy = 1; dirtyMask |= 0x02; }
+		else if (vy >= S_MaxNoDirtyIdx) { fy = 1; dirtyMask |= 0x02; }
 		if (vz < S_MinNoDirtyIdx) { fz = -1; dirtyMask |= 0x44; }
-		else
-		if (vz >= S_MaxNoDirtyIdx) { fz = 1; dirtyMask |= 0x04; }
+		else if (vz >= S_MaxNoDirtyIdx) { fz = 1; dirtyMask |= 0x04; }
 		if (dirtyMask != 0x80)
 		{
 			for (int i = 1; i < 8; i++)
@@ -193,12 +190,12 @@ public partial class VFVoxelChunkData : ILODNodeData
 		int dirtyMask = 0x80;	// bit 0,1,2 for xyz dirty mask;bit 4,5,6  for sign(neg->1);bit 7 for current pos(now not used)
 		// Note: To write at lod boundary will cause wrong chunk writing because cxround/cyround/czround is incorrect.
 		// To write edge voxel will cause neibour chunks being modified
-		if( vx< S_MinNoDirtyIdx)	{fx = -1;dirtyMask|=0x11;}else
-		if( vx>=S_MaxNoDirtyIdx)	{fx =  1;dirtyMask|=0x01;}
-		if( vy< S_MinNoDirtyIdx)	{fy = -1;dirtyMask|=0x22;}else
-		if( vy>=S_MaxNoDirtyIdx)	{fy =  1;dirtyMask|=0x02;}
-		if( vz< S_MinNoDirtyIdx)	{fz = -1;dirtyMask|=0x44;}else
-		if( vz>=S_MaxNoDirtyIdx)	{fz =  1;dirtyMask|=0x04;}
+		if( vx< S_MinNoDirtyIdx)	{fx = -1;dirtyMask|=0x11;}
+		else if( vx>=S_MaxNoDirtyIdx)	{fx =  1;dirtyMask|=0x01;}
+		if( vy< S_MinNoDirtyIdx)	{fy = -1;dirtyMask|=0x22;}
+		else if( vy>=S_MaxNoDirtyIdx)	{fy =  1;dirtyMask|=0x02;}
+		if( vz< S_MinNoDirtyIdx)	{fz = -1;dirtyMask|=0x44;}
+		else if( vz>=S_MaxNoDirtyIdx)	{fz =  1;dirtyMask|=0x04;}
 		if(dirtyMask != 0x80)
 		{
 			for(int i = 1; i < 8; i++)
