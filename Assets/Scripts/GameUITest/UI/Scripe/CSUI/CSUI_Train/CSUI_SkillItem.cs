@@ -76,15 +76,6 @@ public class CSUI_SkillItem : MonoBehaviour
 		deleteBtn.SetActive(false);
 	}
 
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-
-    }
-
     void OnClick()
     {
         if (Input.GetMouseButtonUp(0))

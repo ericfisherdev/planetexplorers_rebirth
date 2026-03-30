@@ -102,11 +102,6 @@ public class CSUI_PrcoessGrid : MonoBehaviour {
 		InitWnd();
 	}
 
-	void Start () 
-	{
-	
-	}
-	
 	void InitProcess()
 	{
 		SetIcon(m_ProcessInfo.IconName);
@@ -201,10 +196,5 @@ public class CSUI_PrcoessGrid : MonoBehaviour {
 			}
 		}
 		
-	}
-	// Update is called once per frame
-	void Update () 
-	{
-	
 	}
 }

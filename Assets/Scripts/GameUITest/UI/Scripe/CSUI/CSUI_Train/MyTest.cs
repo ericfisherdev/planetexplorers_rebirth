@@ -6,16 +6,6 @@ using Pathea;
 public class MyTest : MonoBehaviour
 {
     public Texture[] linshiyong;
-    // Use this for initialization
-    void Awake()
-    {
-
-    }
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

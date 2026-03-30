@@ -75,7 +75,6 @@ public class CSUI_TradingPost : MonoBehaviour
 
     float m_OpDurNum;
     float m_OpStarTime;
-    float m_LastOpTime;
     float m_CurrentNum;
 
     bool mAddBtnPress = false;
@@ -83,7 +82,6 @@ public class CSUI_TradingPost : MonoBehaviour
 
     bool m_Init = false;
     Vector3 m_PlayerPackagePos;
-    Vector3 m_ColonyPos;
 
 
     #region mono methods

@@ -184,9 +184,5 @@ public class CSUI_MemberMgr : MonoBehaviour
         mInstance = this;
     }
 
-    void Update()
-    {
-
-    }
     #endregion
 }

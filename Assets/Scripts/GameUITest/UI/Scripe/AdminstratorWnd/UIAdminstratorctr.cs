@@ -16,12 +16,6 @@ public class UIAdminstratorctr : MonoBehaviour
 	public static UserAdmin _mUserAdmin=null;
 	public static UserAdmin _mSelfAdmin=null;
 
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-
 	public static void UpdatamPersonel()
 	{
 		//mPersonelInfoList.Clear();

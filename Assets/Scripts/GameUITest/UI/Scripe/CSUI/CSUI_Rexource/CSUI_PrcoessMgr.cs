@@ -67,17 +67,6 @@ public class CSUI_PrcoessMgr : MonoBehaviour {
 		InitWnd();
 	}
 
-	void Start () 
-	{
-		//Test();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
-
 	#region InitFace
 
 	public void InitWnd()

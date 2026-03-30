@@ -9,8 +9,10 @@ public class OperationTip : MonoBehaviour
     public Camera uiCamera;
     [SerializeField]
     private UISprite mOpSprite;
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     private Transform m_OpTipTrans;
+#pragma warning restore CS0169
     [SerializeField]
     private UILabel m_TipLabel;
     [SerializeField]
@@ -149,24 +151,6 @@ public class OperationTip : MonoBehaviour
                 }
             }
         }
-    }
-
-    void LateUpdate()
-    {
-        //切换图片
-
-        // mTimer += Time.deltaTime;
-
-        //if (mPlayCirculation && ((int)(mTimer / mTotalTime)) % 2 == 0)
-        //{
-        //    //mOpSprite.spriteName = mMouseHandBig;
-        //    mOpSprite.MakePixelPerfect();
-        //}
-        //else if (mPlayCirculation && ((int)(mTimer / mTotalTime)) % 2 == 1)
-        //{
-        //    //mOpSprite.spriteName = mMouseHandSmall;
-        //    mOpSprite.MakePixelPerfect();
-        //}
     }
 
     void UpdateMouseIcon()

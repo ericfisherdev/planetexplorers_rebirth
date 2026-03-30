@@ -427,8 +427,10 @@ public class CSUI_Train : MonoBehaviour
     UILabel mMaxStamina;
     [SerializeField]
     UILabel mMaxOxygen;
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     UILabel mTrainingTime;
+#pragma warning restore CS0169
     [SerializeField]
     UILabel mAddHealth;
     [SerializeField]
@@ -443,8 +445,10 @@ public class CSUI_Train : MonoBehaviour
     //预制件
     [SerializeField]
     CSUI_MyNpcItem m_NpcGridPrefab;//NPC
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     CSUI_Grid m_GridPrefab;
+#pragma warning restore CS0169
     [SerializeField]
     CSUI_SkillItem m_StudySkillPrefab;
 

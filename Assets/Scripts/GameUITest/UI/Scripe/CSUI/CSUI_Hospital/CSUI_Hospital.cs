@@ -555,11 +555,6 @@ public class CSUI_Hospital : MonoBehaviour
         }
     }
 
-    void OnEnable()
-    {
-        //ItemProto.Mgr.Instance.Get(1).icon
-    }
-
     //repair
     public UICheckbox m_Checkbox, m_Treatbox, m_Tentbox;
     private List<CSEntity> m_hospitalEnties = null;

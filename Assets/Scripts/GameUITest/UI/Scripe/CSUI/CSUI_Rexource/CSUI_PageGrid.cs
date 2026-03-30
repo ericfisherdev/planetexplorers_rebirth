@@ -78,11 +78,6 @@ public class CSUI_PageGrid : MonoBehaviour
         InitWnd();
     }
 
-    void Start()
-    {
-
-    }
-
     void InitWnd()
     {
         this.m_CheckBox = this.GetComponent<UICheckbox>();
@@ -153,12 +148,6 @@ public class CSUI_PageGrid : MonoBehaviour
             }
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnClickItem()
     {
         if (e_ItemClick != null)
