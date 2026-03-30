@@ -14,27 +14,10 @@ public class UIBuildSaveWndCtrl : UIBaseWnd
 
 	public string IsoName { get { return mInputIsoNmae.text;} }
 
-	void OnEnable ()
-	{
-
-	}
-
 	void OnDisable ()
 	{
 		if (OnWndClosed != null)
 			OnWndClosed();
-	}
-
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
 	}
 
 	public void SetIsoItemContent(Texture contentTexture)

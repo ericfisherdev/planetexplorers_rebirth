@@ -20,36 +20,35 @@ public class NAudioPlayer
     {
         try
         {
-            MemoryStream memoryStream = new MemoryStream(data);
-            WaveStream wave = null;
-
-            switch (type)
+            using (MemoryStream memoryStream = new MemoryStream(data))
+            using (WaveStream wave = CreateWaveStream(memoryStream, type))
+            using (WaveStream waveStream = WaveFormatConversionStream.CreatePcmStream(wave))
             {
-                case SupportFormatType.mp3:
-                    wave = new Mp3FileReader(memoryStream);
-                    break;
-                case SupportFormatType.flac:
-                    wave = new FlacReader(memoryStream);
-                    break;
-                    //case SupportFormatType.wav:
-                    //    wave = new WaveFileReader(memoryStream);
-                    //    break;
-                    //case SupportFormatType.aiff:
-                    //    wave = new AiffFileReader(memoryStream);
-                    //    break;
+                WAV wav = new WAV(AudioMemStream(waveStream).ToArray());
+                Debug.Log(wav);
+                AudioClip audioClip = AudioClip.Create(string.Format("{0}Sound", type.ToString()), wav.SampleCount, 1, wav.Frequency, false);
+                audioClip.SetData(wav.LeftChannel, 0);
+                return audioClip;
             }
-
-            WaveStream waveStream = WaveFormatConversionStream.CreatePcmStream(wave);
-            WAV wav = new WAV(AudioMemStream(waveStream).ToArray());
-            Debug.Log(wav);
-            AudioClip audioClip = AudioClip.Create(string.Format("{0}Sound", type.ToString()), wav.SampleCount, 1, wav.Frequency, false);
-            audioClip.SetData(wav.LeftChannel, 0);
-            return audioClip;
         }
         catch (Exception e)
         {
             Debug.Log("NAudioPlayer.GetClipByType() Error:"+e.Message);
             return null;
+        }
+    }
+
+    private static WaveStream CreateWaveStream(MemoryStream memoryStream, SupportFormatType type)
+    {
+        switch (type)
+        {
+            case SupportFormatType.mp3:
+                return new Mp3FileReader(memoryStream);
+            case SupportFormatType.flac:
+                return new FlacReader(memoryStream);
+            default:
+                Debug.LogWarning("NAudioPlayer: unsupported audio format '" + type + "', returning silent stream");
+                return new SilentWaveStream();
         }
     }
 
@@ -66,6 +65,16 @@ public class NAudioPlayer
         }
         return outputStream;
     }
+}
+
+/// <summary>Zero-length WaveStream returned for unsupported audio formats so callers get a valid object instead of null.</summary>
+internal class SilentWaveStream : WaveStream
+{
+    private static readonly WaveFormat _format = new WaveFormat(44100, 1);
+    public override WaveFormat WaveFormat => _format;
+    public override long Length => 0;
+    public override long Position { get; set; }
+    public override int Read(byte[] buffer, int offset, int count) => 0;
 }
 
 /* From http://answers.unity3d.com/questions/737002/wav-byte-to-audioclip.html */

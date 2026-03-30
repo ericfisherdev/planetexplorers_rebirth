@@ -64,61 +64,6 @@ public class UIMonoRailCtrl : UIBaseWidget
 	int mSelectedLineIndex = -1;
 	
 	// Use this for initialization
-	void Start () 
-	{
-//---------------------------Test code----------------------------------------
-//		for (int j=1;j<4;j++)
-//		{
-//
-//			Railway.Route  ra = new Railway.Route();
-//			ra.mPointData = new List<Railway.Point>();
-//			ra.mID = j;
-//			ra.mName = "Lin" + j.ToString();
-//
-//			for (int i=0;i<4;i++)
-//			{
-//				Railway.Point data = new Railway.Point();
-//				data.mPosition = new Vector3(8200 + i*300,10 ,7800 + 100*i + 100*j);
-//				data.mPointID = i;
-//				data.mName = "satation " + i.ToString();
-//				data.mStopTime = 120;
-//				if (i==0 || i==3)
-//					data.mType = Railway.Point.Type.TrackEnd;
-//				else if (i==1)
-//					data.mType = Railway.Point.Type.TrackStation;
-//				else
-//					data.mType = Railway.Point.Type.TrackJoint;
-//
-//				ra.mPointData.Add(data);
-//			}
-//			AddMonoRail(ra);
-//
-//		}
-//
-//
-//		List<List<Railway.Point>> mTestList = new List<List<Railway.Point>>();
-//		List<Railway.Point> LinePoint = new List<Railway.Point>();
-//		for (int i=0;i<4;i++)
-//		{
-//			Railway.Point data = new Railway.Point();
-//			data.mPosition = new Vector3(8200 + i*300,10 ,7700 + 100*i);
-//			data.mPointID = i;
-//			data.mName = "satation " + i.ToString();
-//			data.mStopTime = 120;
-//			if (i==0 || i==3)
-//				data.mType = Railway.Point.Type.TrackEnd;
-//			else if (i==1)
-//				data.mType = Railway.Point.Type.TrackStation;
-//			else
-//				data.mType = Railway.Point.Type.TrackJoint;
-//			LinePoint.Add(data);
-//		}
-//		mTestList.Add(LinePoint);
-//
-//		ReDrawDisRailLine(mTestList);
-// ---------------------------------------------
-	}
-
 	void Update()
 	{
 		if (GameUI.Instance.mMainPlayer == null)

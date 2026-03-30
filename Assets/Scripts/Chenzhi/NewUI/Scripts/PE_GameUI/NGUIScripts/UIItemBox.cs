@@ -57,11 +57,4 @@ public class UIItemBox : UIBaseWnd
         Hide();
 	}
 	
-	void Update()
-	{
-//		if(null == mOpBox || (null != GameUI.Instance.mMainPlayer && (mOpBox.transform.position - GameUI.Instance.mMainPlayer.position).sqrMagnitude > 16))
-//		{
-//			Hide();
-//		}
-	}
 }

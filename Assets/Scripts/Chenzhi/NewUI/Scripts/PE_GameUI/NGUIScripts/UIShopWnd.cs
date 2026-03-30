@@ -69,7 +69,6 @@ public class UIShopWnd : UIBaseWnd
     public PeEntity npc = null;
 
     float mOpStarTime;
-    float mLastOpTime;
 
     bool mAddBtnPress = false;
     bool mSubBtnPress = false;

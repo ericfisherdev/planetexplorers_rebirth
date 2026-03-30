@@ -28,25 +28,6 @@ namespace GraphMapping
 			PeMappingMgr.Instance.Init(testWorldSize);
 		}
 
-		void Start()
-		{
-//			int lo4,hi4;
-//
-//			hi4 = 4;
-//			Debug.Log(hi4 + "---------------------------------hi4");
-//			lo4 = 3;
-//			Debug.Log(lo4 + "---------------------------------lo4");
-//			byte b = (byte)(lo4 + (hi4<< 4));
-//			Debug.Log(b + "---------------------------------");
-//
-//
-//			hi4 = (b & 0xf0) >> 4;
-//			lo4 = b & 0x0f;
-//			Debug.Log(hi4 + "---------------------------------hi4");
-//			Debug.Log(lo4 + "---------------------------------lo4");
-		}
-
-
 		void Update()
 		{
 			if (mSaveData)

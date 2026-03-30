@@ -616,23 +616,6 @@ public class UIBuildWndContol : UIBaseWnd
 
 //	public Texture _contentTexture; // text code
 	#region prvate class funcs
-	// Use this for initialization
-	void Start () 
-	{
-		// -------------------------------- text code ----------------------------------
-//		for (int i=0;i<45;i++)
-//		{
-//			AddBlockListItem(_contentTexture);
-//			AddVoxelMatListItem("A","Icon");
-//		}
-//		for (int i=0;i<20;i++)
-//		{
-//			AddIsoListItem(_contentTexture);
-//			AddCostListItem("item name","15","A","Icon");
-//		}
-		//----------------------------------------------------------------------------
-	}
-
 	void Update()
 	{
 		if (Pathea.PeCreature.Instance.mainPlayer == null)

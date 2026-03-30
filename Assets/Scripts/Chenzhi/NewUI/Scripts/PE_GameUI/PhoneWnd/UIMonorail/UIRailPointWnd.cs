@@ -3,7 +3,9 @@ using System.Collections;
 
 public class UIRailPointWnd : UIBaseWnd 
 {
-	[SerializeField] UILabel mWndTitle;
+#pragma warning disable CS0169
+	[SerializeField] UILabel mWndTitle; // Inspector-wired
+#pragma warning restore CS0169
 
 
 }

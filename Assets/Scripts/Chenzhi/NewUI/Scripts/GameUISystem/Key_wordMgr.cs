@@ -21,12 +21,6 @@ public class Key_wordMgr : MonoBehaviour
         m_CursorHandler.Type = CursorState.EType.Hand;
     }
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     bool CloseFrontWnd()
     {
         if (UIStateMgr.Instance == null)
@@ -71,7 +65,7 @@ public class Key_wordMgr : MonoBehaviour
             if (wnd == GameUI.Instance.mMissionTrackWnd
                 || wnd == GameUI.Instance.mItemsTrackWnd
                 || wnd == GameUI.Instance.mCustomMissionTrack.missionInterpreter.missionTrackWnd
-                || wnd == GameUI.Instance.mRevive) //lz-2017.01.04 °´escÍË³öµÄÊ±ºò¸´»î½çÃæ²»¹Ø±Õ´íÎó #7975
+                || wnd == GameUI.Instance.mRevive) //lz-2017.01.04 ï¿½ï¿½escï¿½Ë³ï¿½ï¿½ï¿½Ê±ï¿½ò¸´»ï¿½ï¿½ï¿½æ²»ï¿½Ø±Õ´ï¿½ï¿½ï¿½ #7975
                 continue;
             if (wnd.isShow && wnd.Active)
             {
@@ -133,7 +127,7 @@ public class Key_wordMgr : MonoBehaviour
 
         if (GameConfig.IsInVCE)
         {
-            //lz-2016.10.12 ¸ÄÎªÂß¼­°´¼ü
+            //lz-2016.10.12 ï¿½ï¿½Îªï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
             if (PeInput.Get(PeInput.LogicFunction.CreationSystem) && !UICamera.inputHasFocus)
             {
                 // VCEditor.Quit();
@@ -191,7 +185,7 @@ public class Key_wordMgr : MonoBehaviour
 
             if (PeInput.Get(PeInput.LogicFunction.CreationSystem))
             {
-                //lz-2016.10.12 Éä»÷Ä£Ê½²»ÔÊÐí´ò¿ª´´½¨ÏµÍ³
+                //lz-2016.10.12 ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò¿ª´ï¿½ï¿½ï¿½ÏµÍ³
                 if (!VCEditor.s_Active && UISightingTelescope.Instance.CurType == UISightingTelescope.SightingType.Null)
                     VCEditor.Open();
             }
@@ -201,7 +195,7 @@ public class Key_wordMgr : MonoBehaviour
                 KeyFunc_TalkMenuUI();
             }
 
-            //lz-2016.06.28 ¿ì½Ý¼ü´ò¿ªÓÎÏ·²Ëµ¥
+            //lz-2016.06.28 ï¿½ï¿½Ý¼ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½Ëµï¿½
             if (PeInput.Get(PeInput.LogicFunction.GameMenuUI))
             {
                 KeyFunc_GameMenuUI();
@@ -261,7 +255,7 @@ public class Key_wordMgr : MonoBehaviour
                     KeyFunc_QuickBar(9);
                 }
 
-                //lz-2016.08.08 Ôö¼Ó·­Ò³°´¼üµ÷ÓÃ
+                //lz-2016.08.08 ï¿½ï¿½ï¿½Ó·ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 if (PeInput.Get(PeInput.LogicFunction.PrevQuickBar))
                 {
                     KeyFunc_PrevQuickBar();
@@ -362,7 +356,7 @@ public class Key_wordMgr : MonoBehaviour
 
     void KeyFunc_ColonyUI()
     {
-        //lz-2016.08.03 ½Ì³Ì, Custom Ä£Ê½½ûÖ¹´ò¿ª»ùµØUI
+        //lz-2016.08.03 ï¿½Ì³ï¿½, Custom Ä£Ê½ï¿½ï¿½Ö¹ï¿½ò¿ª»ï¿½ï¿½ï¿½UI
         if (!Pathea.PeGameMgr.IsTutorial && !Pathea.PeGameMgr.IsCustom && !Pathea.PeGameMgr.IsMultiCustom)
         {
             GameUI.Instance.mCSUI_MainWndCtrl.ChangeWindowShowState();
@@ -406,20 +400,20 @@ public class Key_wordMgr : MonoBehaviour
         UITalkwithctr.Instance.ShowMenu();
     }
 
-    //lz-2016.06.28 ¿ì½Ý¼ü´ò¿ªÓÎÏ·²Ëµ¥
+    //lz-2016.06.28 ï¿½ï¿½Ý¼ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½Ëµï¿½
     void KeyFunc_GameMenuUI()
     {
         UIGameMenuCtrl.Instance.Show();
     }
 
-    //lz-2016.06.28 ÉÏÒ»Ò³
+    //lz-2016.06.28 ï¿½ï¿½Ò»Ò³
     void KeyFunc_PrevQuickBar()
     {
         if (null != UIMainMidCtrl.Instance)
             UIMainMidCtrl.Instance.OnKeyFunc_PrevQuickBar();
     }
 
-    //lz-2016.06.28 ÏÂÒ»Ò³
+    //lz-2016.06.28 ï¿½ï¿½Ò»Ò³
     void KeyFunc_NextQuickBar()
     {
         if (null != UIMainMidCtrl.Instance)

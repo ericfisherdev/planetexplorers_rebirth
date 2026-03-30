@@ -24,15 +24,8 @@ public class UIMLoginControl : MonoBehaviour
 	public float testNamePos_Y = 4;
 	private int deleteRoleIndex;
 	
-	// Use this for initialization
-	void Start () 
-	{
-
-
-	}
-	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
 		UpdateButtonState();
 		UpdateRolesName();

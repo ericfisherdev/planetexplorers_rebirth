@@ -24,19 +24,6 @@ public class UIDisconnectionLine : MonoBehaviour
 	private List<UISprite> mSprStageList = new List<UISprite>();
 	private List<UITiledSprite> mTsLineList = new List<UITiledSprite>();
 
-	// Use this for initialization
-	void Start () 
-	{
-	    
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-
-
 	public UIRailStation FindStation(int stationID)
 	{
 		UIRailStation station = mStationList.Find(
