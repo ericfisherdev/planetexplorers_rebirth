@@ -74,6 +74,8 @@ public class VArtifactTown
     }
     public List<VATownNpcInfo> GetNpcList()
     {
+        if (VAUnits == null || VAUnits.Count == 0 || VAUnits[0] == null || VAUnits[0].npcPosInfo == null)
+            return new List<VATownNpcInfo>();
         return VAUnits[0].npcPosInfo.Values.ToList();
     }
 //	public List<VABuildingInfo> buildingList

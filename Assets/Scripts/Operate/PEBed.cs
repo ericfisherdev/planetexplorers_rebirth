@@ -10,7 +10,7 @@ namespace Pathea.Operate
 
         public override List<Operation_Single> GetSingles()
         {
-            return (sleeps == null || sleeps.Length == 0) ? null : new List<Operation_Single>(sleeps);
+            return (sleeps == null || sleeps.Length == 0) ? new List<Operation_Single>() : new List<Operation_Single>(sleeps);
         }
     }
 }

@@ -32,18 +32,14 @@ namespace Pathea.Operate
 
         public Operation_Single GetStartOperate(EOperationMask mask)
         {
-            if (GetSingles() != null)
-                return GetSingles().Find(ret => ret != null && ret.CanOperateMask(mask));
-            else
-                return null;
+            var singles = GetSingles();
+            return singles.Find(ret => ret != null && ret.CanOperateMask(mask));
         }
 
 		Operation_Single GetStopOperate(IOperator oper, EOperationMask mask)
         {
-            if (GetSingles() != null)
-                return GetSingles().Find(ret => ret != null && ret.m_Mask == mask && ret.ContainsOperator(oper));
-            else
-                return null;
+            var singles = GetSingles();
+            return singles.Find(ret => ret != null && ret.m_Mask == mask && ret.ContainsOperator(oper));
         }
 
         public override bool CanOperate(Transform trans)
@@ -65,15 +61,13 @@ namespace Pathea.Operate
         public override EOperationMask GetOperateMask()
         {
             EOperationMask tmpMask = EOperationMask.None;
+            var singles = GetSingles();
 
-            if (GetSingles() != null)
+            foreach (Operation_Single single in singles)
             {
-				foreach (Operation_Single single in GetSingles())
+                if (single != null)
                 {
-                    if (single != null)
-                    {
-                        tmpMask |= single.m_Mask;
-                    }
+                    tmpMask |= single.m_Mask;
                 }
             }
 
@@ -82,13 +76,12 @@ namespace Pathea.Operate
 
         public override bool CanOperateMask(EOperationMask mask)
         {
-            if (GetSingles() != null)
+            var singles = GetSingles();
+
+            foreach (Operation_Single single in singles)
             {
-				foreach (Operation_Single single in GetSingles())
-                {
-                    if (single != null && single.CanOperateMask(mask))
-                        return true;
-                }
+                if (single != null && single.CanOperateMask(mask))
+                    return true;
             }
 
             return false;
@@ -96,13 +89,12 @@ namespace Pathea.Operate
 
         public override bool ContainsOperator(IOperator oper)
         {
-            if (GetSingles() != null)
+            var singles = GetSingles();
+
+            foreach (Operation_Single single in singles)
             {
-				foreach (Operation_Single single in GetSingles())
-                {
-                    if (single != null && single.ContainsOperator(oper))
-                        return true;
-                }
+                if (single != null && single.ContainsOperator(oper))
+                    return true;
             }
 
             return false;

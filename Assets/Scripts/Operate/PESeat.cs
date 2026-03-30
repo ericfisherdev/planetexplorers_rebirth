@@ -13,7 +13,7 @@ namespace Pathea.Operate
 		
 		public override List<Operation_Single> GetSingles()
 		{
-			return (sits == null || sits.Length == 0) ? null : new List<Operation_Single>(sits);
+			return (sits == null || sits.Length == 0) ? new List<Operation_Single>() : new List<Operation_Single>(sits);
 		}
 	}
 }

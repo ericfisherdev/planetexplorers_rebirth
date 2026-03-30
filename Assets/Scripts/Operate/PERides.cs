@@ -12,7 +12,7 @@ namespace Pathea.Operate
         PERide[] Rides;
         public override List<Operation_Single> GetSingles()
         {
-            return (Rides == null || Rides.Length == 0) ? null : new List<Operation_Single>(Rides);
+            return (Rides == null || Rides.Length == 0) ? new List<Operation_Single>() : new List<Operation_Single>(Rides);
         }
 
         public PERide GetUseable()

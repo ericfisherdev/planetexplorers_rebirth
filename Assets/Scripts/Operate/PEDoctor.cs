@@ -10,7 +10,7 @@ namespace Pathea.Operate
 		
 		public override List<Operation_Single> GetSingles()
 		{
-			return new List<Operation_Single>(Doctors);
+			return (Doctors == null || Doctors.Length == 0) ? new List<Operation_Single>() : new List<Operation_Single>(Doctors);
 		}
 
 	}
