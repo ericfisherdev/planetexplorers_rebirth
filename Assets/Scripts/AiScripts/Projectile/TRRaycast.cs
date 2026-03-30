@@ -35,7 +35,7 @@ public class TRRaycast : Trajectory
         foreach (RaycastHit hitInfo in hitsInfos)
         {
             Collider collider = hitInfo.collider;
-			if (collider == null || collider.tag == "WorldCollider" || collider.transform.IsChildOf(transform) || m_Emitter != null && collider.transform.IsChildOf(m_Emitter))
+			if (collider == null || collider.CompareTag("WorldCollider") || collider.transform.IsChildOf(transform) || m_Emitter != null && collider.transform.IsChildOf(m_Emitter))
 				continue;
 			PEDefenceTrigger defencetrigger = collider.GetComponent<PEDefenceTrigger>();
 			PECapsuleHitResult result;

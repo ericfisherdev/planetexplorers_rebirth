@@ -7,7 +7,9 @@ public delegate void CollisionDelegate(Collider src, Collision dst);
 public class PETrigger : MonoBehaviour
 {
     event TriggerDelegate TriggerEnterEvent;
+#pragma warning disable CS0067 // TriggerStayEvent has subscribers but invocation is currently disabled
     event TriggerDelegate TriggerStayEvent;
+#pragma warning restore CS0067
     event TriggerDelegate TriggerExitEvent;
 
     bool m_AddRigidBody;

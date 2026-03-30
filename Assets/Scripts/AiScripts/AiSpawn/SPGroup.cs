@@ -66,11 +66,6 @@ public class SPGroup : CommonInterface
         //AiManager.Manager.RegisterGroup(this);
 	}
 
-    void OnDestroy()
-    {
-        //AiManager.Manager.RemoveGroup(this);
-    }
-
     #endregion
 
     public void SetOwenerView()

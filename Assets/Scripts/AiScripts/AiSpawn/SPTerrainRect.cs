@@ -10,7 +10,6 @@ public class SPTerrainRect : MonoBehaviour
 	List<SPPoint> mPoints;
 	List<IntVector2> mMeshNodes;
 	List<IntVector2> mCaveNodes;
-	List<Vector3> mEventPosition;
 
     SimplexNoise mNoise;
 

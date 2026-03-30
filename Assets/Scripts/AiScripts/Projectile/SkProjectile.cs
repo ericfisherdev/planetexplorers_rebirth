@@ -391,7 +391,7 @@ namespace Pathea.Projectile
                     if (m_Caster != null && hit.transform.IsChildOf(m_Caster))
                         continue;
 
-					if(hit.collider.gameObject.tag == "EnergyShield")
+					if(hit.collider.gameObject.CompareTag("EnergyShield"))
                     {
 						EnergySheildHandler shield = hit.collider.GetComponent<EnergySheildHandler>();
                         if(shield != null)
@@ -439,7 +439,7 @@ namespace Pathea.Projectile
 				if (m_Caster != null && hitCol.transform.IsChildOf(m_Caster))
 				continue;
 				
-				if(hitCol.gameObject.tag == "EnergyShield")
+				if(hitCol.gameObject.CompareTag("EnergyShield"))
 				{
 					EnergySheildHandler shield = hitCol.GetComponent<EnergySheildHandler>();
 					if(shield != null)
@@ -779,7 +779,7 @@ namespace Pathea.Projectile
 					PECapsuleHitResult hitResult = GetHitResult(transform, other);
 					if(null != hitResult)
 					{
-						if(other.gameObject.tag == "EnergyShield")
+						if(other.gameObject.CompareTag("EnergyShield"))
 						{							
 							EnergySheildHandler shield = other.GetComponent<EnergySheildHandler>();
 							if(shield != null)

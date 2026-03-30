@@ -7,7 +7,6 @@ public class PRLaser : Projectile
     public float intervalTime;
 
     Collider myCollider;
-	float nextStandardTime;
 
     public new void Start()
     {

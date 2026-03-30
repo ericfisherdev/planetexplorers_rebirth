@@ -61,7 +61,7 @@ public class Trajectory : MonoBehaviour
         if (c == null || c.isTrigger)
             return true;
 
-        if (c.tag == "WorldCollider")
+        if (c.CompareTag("WorldCollider"))
             return true;
 
         if (c.transform.IsChildOf(transform))

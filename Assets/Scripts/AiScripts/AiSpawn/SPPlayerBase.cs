@@ -142,7 +142,6 @@ public class SPPlayerBase : SPAutomatic
     public BaseTimer[] timers;
 
     BaseTimer mCurrentTimer;
-    BaseTimer mLastTimer;
 
     BaseTimer mRecordTimer;
 

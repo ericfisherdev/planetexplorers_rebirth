@@ -7,7 +7,7 @@ public class SPGroupStatic : SPGroup
 	{
 		foreach (Transform ite in transform) 
 		{
-			if(ite.tag != "AIPoint")
+			if(!ite.CompareTag("AIPoint"))
 				continue;
 
             while (!AiUtil.CheckCorrectPosition(ite.position, AiUtil.groundedLayer))
