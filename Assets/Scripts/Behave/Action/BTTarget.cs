@@ -608,7 +608,6 @@ namespace Behave.Runtime.Action
             public Vector3 m_Local = Vector3.zero;
         }
 
-        Data m_Data;
         Vector3 m_Local;
 
         Vector3 GetLocalCenterPos()

@@ -11,7 +11,6 @@ namespace Behave.Runtime.Action
     [BehaveAction(typeof(BTSwitchAttackGroup), "SwitchAttackGroup")]
     public class BTSwitchAttackGroup : BTNormalGroup
     {
-        float m_LastCheckTime;
 
         BehaveResult Tick(Tree sender)
         {
@@ -266,7 +265,6 @@ namespace Behave.Runtime.Action
     public class BTEscapeGroup : BTNormalGroup
     {
         //float m_StartTime;
-        float m_EscapeTime;
         float m_LastRandomTime;
 
         Vector3 m_CurEscapeposition;

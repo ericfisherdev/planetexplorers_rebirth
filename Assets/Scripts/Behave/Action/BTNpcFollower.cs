@@ -161,11 +161,9 @@ namespace Behave.Runtime
             public float StandRadiu = 2.0f;
 
             //Vector3 m_LastAnchor;
-            Vector3 m_LastPatrol;
             bool m_Init = false;
             bool m_Reached;
             bool m_Calculated;
-            bool m_StandPatorl;
 
             bool m_CalculatedDir;
 
@@ -177,8 +175,6 @@ namespace Behave.Runtime
             static float maxRunRadius = 24.0f;
             static float minSprintRadius = 24.0f;
             //static float maxSprintRadius = 40.0f;
-
-            GameObject mObj;
 
             public void Init()
             {

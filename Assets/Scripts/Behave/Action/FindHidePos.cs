@@ -4,9 +4,8 @@ using System.Collections.Generic;
 
 namespace Pathea
 {
-	public class FindHidePos  
+	public class FindHidePos
 	{
-		Transform _player;
 		//float _radius;
 
 		static float PLAYER_R = 3.0f;
