@@ -81,7 +81,9 @@ public class CSUI_Storage : MonoBehaviour
 
 	// History
 	[SerializeField] UITable	m_HistoryRootUI;
+#pragma warning disable CS0169
 	[SerializeField] UILabel	m_HistoryPrefab;
+#pragma warning restore CS0169
 	[SerializeField] CSUI_SubStorageHistory		m_SubHistoryPrefab;
 	//private List<UILabel>		m_HistoryLbs = new List<UILabel>();
 	private List<CSUI_SubStorageHistory>  m_SubHistorys = new List<CSUI_SubStorageHistory>();
@@ -389,12 +391,6 @@ public class CSUI_Storage : MonoBehaviour
 	void OnDestroy()
 	{
 		StorageMainUI.OpStatusEvent -= OnStorageMainOpStateEvent;
-	}
-	
-	void OnEnable()
-	{
-		//UpdateStorageMenu();
-
 	}
 	
 	// Use this for initialization

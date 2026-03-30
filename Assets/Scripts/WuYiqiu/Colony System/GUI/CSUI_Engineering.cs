@@ -609,11 +609,6 @@ public class CSUI_Engineering : MonoBehaviour
         m_SubEngneering.onRecycleItemChanged = OnRecycleItemChanged;
     }
 
-    // Use this for initialization
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {

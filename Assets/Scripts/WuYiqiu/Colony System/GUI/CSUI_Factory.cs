@@ -863,11 +863,6 @@ public class CSUI_Factory : MonoBehaviour
 
     #region UNITY_FUNC
 
-    void Awake()
-    {
-
-    }
-
     // Use this for initialization
     void Start()
     {

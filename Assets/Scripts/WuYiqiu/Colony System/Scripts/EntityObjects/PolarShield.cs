@@ -124,9 +124,6 @@ public class PolarShield:MonoBehaviour
 
 	}
 
-	void Start(){
-	}
-
     int counter=0;
 	void Update () 
 	{

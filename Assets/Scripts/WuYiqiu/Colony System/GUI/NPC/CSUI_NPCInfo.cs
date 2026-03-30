@@ -60,12 +60,16 @@ public class CSUI_NPCInfo : MonoBehaviour
     UILabel mLbEnergyBuff;
     [SerializeField]
     UILabel mLbAttack;
+#pragma warning disable CS0169
     [SerializeField]
     UILabel mLbAttackBuff;
+#pragma warning restore CS0169
     [SerializeField]
     UILabel mLbDefense;
+#pragma warning disable CS0169
     [SerializeField]
     UILabel mLbDefenseBuff;
+#pragma warning restore CS0169
   
 
     [SerializeField]

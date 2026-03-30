@@ -260,9 +260,6 @@ public class CSMedicalTent:CSHealth
     {
         get { return gameLogic.GetComponent<CSBuildingLogic>(); }
     }
-    // Counter Script
-    private CounterScript m_Counter;
-
     public CSTentInfo m_TInfo;
     public CSTentInfo Info
     {

@@ -81,11 +81,13 @@ public class PeGrassDataIO_Story : Chunk32DataIO
 		{
 			if (mOrgnGrassFile[i] == null)
 				continue;
-			
-			BinaryReader _in = new BinaryReader(mOrgnGrassFile[i]);
+
+			using (BinaryReader _in = new BinaryReader(mOrgnGrassFile[i], System.Text.Encoding.Default, leaveOpen: true))
+			{
 			for (int j = 0; j < mEvni.XZTileCount; ++j)
 			{
 				mOrgnOfsData[i,j]  = _in.ReadInt32();
+            }
             }
         }
 
@@ -172,8 +174,8 @@ public class PeGrassDataIO_Story : Chunk32DataIO
 
 				if (file_index != -1 && mOrgnGrassFile[file_index] != null)
 				{
-					BinaryReader _in = new BinaryReader(mOrgnGrassFile[file_index]);
-
+					using (BinaryReader _in = new BinaryReader(mOrgnGrassFile[file_index], System.Text.Encoding.Default, leaveOpen: true))
+					{
 					int expands = mEvni.CHUNKSIZE / mEvni.Tile;
 
                     lock(chunk)
@@ -207,6 +209,7 @@ public class PeGrassDataIO_Story : Chunk32DataIO
                             }
                         }
                     }
+					}
 				}
 	        }
 		}
@@ -357,8 +360,8 @@ public class PeGrassDataIO_Story : Chunk32DataIO
 
                         if (file_index != -1 && mOrgnGrassFile[file_index] != null)
                         {
-                            BinaryReader _in = new BinaryReader(mOrgnGrassFile[file_index]);
-
+                            using (BinaryReader _in = new BinaryReader(mOrgnGrassFile[file_index], System.Text.Encoding.Default, leaveOpen: true))
+                            {
                             int expands = mEvni.CHUNKSIZE / mEvni.Tile;
 
                             lock(chunk)
@@ -391,6 +394,7 @@ public class PeGrassDataIO_Story : Chunk32DataIO
                                         }
                                     }
                                 }
+                            }
                             }
                         }
                     }

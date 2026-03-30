@@ -89,12 +89,6 @@ public class CSUI_NPCOccupation : MonoBehaviour
         _activate();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdatePopupList()
     {
         if (!m_Active)

@@ -22,9 +22,6 @@ public class CSAutocycleMgr:MonoBehaviour
 		mInstance = this;
 	}
 
-	void Start(){
-	}
-
 	double lastTime=-1;
 	int counter = 1;
 	//test

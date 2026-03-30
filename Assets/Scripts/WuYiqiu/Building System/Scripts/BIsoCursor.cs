@@ -125,11 +125,6 @@ public class BIsoCursor : MonoBehaviour
 		output_function(ISO.m_Voxels, OriginTransform.position);
 	}
 
-	void Start ()
-	{
-		//Edges = Bound.GetComponentsInChildren<LineRenderer>(true);
-	}
-
 	void SetBoundSizeOfBlock (Vector3 size, GameObject go)
 	{
 		//Edges = Bound.GetComponentsInChildren<LineRenderer>(true);

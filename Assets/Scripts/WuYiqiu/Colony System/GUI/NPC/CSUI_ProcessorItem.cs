@@ -15,17 +15,6 @@ public class CSUI_ProcessorItem : MonoBehaviour {
         UIEventListener.Get(this.gameObject).onDoubleClick = (go) => this.OnDoubleClickEvent(go);
 	}
 
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-
 	ProcessorInfo m_info;
 	public ProcessorInfo Info
 	{

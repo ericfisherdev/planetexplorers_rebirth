@@ -17,12 +17,6 @@ public class CSUI_EntityState : MonoBehaviour
 
 	public CSEntity		m_RefCommon;
 
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{

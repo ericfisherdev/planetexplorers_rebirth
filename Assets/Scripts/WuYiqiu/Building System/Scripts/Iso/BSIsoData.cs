@@ -307,7 +307,8 @@ public class BSIsoData
 		iso_header.Init();
 		try
 		{
-			BinaryReader r = new BinaryReader (stream);
+			using (BinaryReader r = new BinaryReader (stream, System.Text.Encoding.UTF8, leaveOpen: true))
+			{
 
 			// Header
 			string check_str = r.ReadString();	// r, string
@@ -408,6 +409,7 @@ public class BSIsoData
 			len = (int)(stream.Length);
 			stream.Close();
 
+			}
 		}
 		catch (System.Exception)
 		{

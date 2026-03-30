@@ -36,11 +36,6 @@ public class CSUI_Processor : MonoBehaviour {
 		}
 	}
 	
-	void Start () 
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{

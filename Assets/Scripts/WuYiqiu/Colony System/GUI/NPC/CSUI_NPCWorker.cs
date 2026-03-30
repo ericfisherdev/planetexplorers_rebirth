@@ -129,20 +129,9 @@ public class CSUI_NPCWorker : MonoBehaviour
         _activate();
     }
 
-    void Awake()
-    {
-
-    }
-
     void OnDestroy()
     {
         CSPersonnel.UnregisterOccupaChangedListener(OnOccupationChange);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void UpdateWorkRoom()

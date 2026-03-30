@@ -86,12 +86,6 @@ public class CSUI_NPCFollower : MonoBehaviour
 		_activate();
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-
 	#region CALL_BACK
 
 	void OnPopupListClick()

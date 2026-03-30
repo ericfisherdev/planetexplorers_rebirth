@@ -13,13 +13,5 @@ public class CSUI_BuildingIcon : MonoBehaviour
 	
 	public string  IconName  		{ get{ return m_Icon.spriteName; } set { m_Icon.spriteName = value; } }
 	
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
+

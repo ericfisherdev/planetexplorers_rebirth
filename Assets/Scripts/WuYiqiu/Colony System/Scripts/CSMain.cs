@@ -413,23 +413,6 @@ public class CSMain : MonoBehaviour
         }
     }
 
-    void OnGUI()
-    {
-        //		if (GUI.Button(new Rect(400, 100, 100, 30), " Test"))
-        //		{
-        //			foreach ( CSSimulator csf in s_MgCreator.SimulatorMgr.Simulators.Values)
-        //			{
-        //				csf.Hp -= 100;
-        //			}
-        //		}
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
 	
 	double lastCycle=-9999;

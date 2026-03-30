@@ -22,12 +22,6 @@ public class BSGizmoTriggerEvent : MonoBehaviour
 		m_Rigidbodys.Clear();
 	}
 
-	void OnTriggerEnter(Collider other)
-	{
-
-
-	}
-
 	void OnTriggerStay (Collider other)
 	{
 		Rigidbody body = other.gameObject.GetComponent<Rigidbody>();

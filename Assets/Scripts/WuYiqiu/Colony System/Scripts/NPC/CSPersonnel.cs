@@ -676,7 +676,9 @@ public partial class CSPersonnel : PersonnelBase
 	#region Event_About
 
 	public delegate void StateChangedDel (CSPersonnel person, int prvState);
+#pragma warning disable CS0067
 	static event StateChangedDel m_StateChangedListener;
+#pragma warning restore CS0067
 
 	public static void RegisterStateChangedListener (StateChangedDel listener)
 	{
@@ -997,7 +999,7 @@ public partial class CSPersonnel : PersonnelBase
 
 		if ( mgCreator.Assembly != null)
         {
-            //lz-2016.07.25 °Ñ»ùµØºËÐÄºÍÒÀÀµÕâ¸öºËÐÄµÄËùÒÔÉè±¸Ìí¼Óµ½Ñ²ÂßÁÐ±í
+            //lz-2016.07.25 ï¿½Ñ»ï¿½ï¿½Øºï¿½ï¿½Äºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è±¸ï¿½ï¿½ï¿½Óµï¿½Ñ²ï¿½ï¿½ï¿½Ð±ï¿½
             enties.Add(mgCreator.Assembly);
             foreach (KeyValuePair<CSConst.ObjectType, List<CSCommon>> kv in mgCreator.Assembly.m_BelongObjectsMap)
             {

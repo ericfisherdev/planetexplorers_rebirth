@@ -46,7 +46,7 @@ public class CSUI_ChargingGrid : MonoBehaviour
 		if (null == energy||itemObj.protoData.unchargeable)
         {
             if (m_bUseMsgBox)
-                //lz-2016.10.24 °Ñ¶Ô»°¿òµÄÌáÊ¾¸Ä³É×óÉÏ½ÇÌáÊ¾
+                //lz-2016.10.24 ï¿½Ñ¶Ô»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ä³ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½Ê¾
                 PeTipMsg.Register(PELocalization.GetString(8000094),PeTipMsg.EMsgLevel.Error);
             else
                 CSUI_MainWndCtrl.ShowStatusBar(PELocalization.GetString(8000094), Color.red);
@@ -56,7 +56,7 @@ public class CSUI_ChargingGrid : MonoBehaviour
         if ((!(energy is ItemAsset.EnergySmall)) && !m_bCanChargeLargedItem)
         {
             if (m_bUseMsgBox)
-                //lz-2016.10.24 °Ñ¶Ô»°¿òµÄÌáÊ¾¸Ä³É×óÉÏ½ÇÌáÊ¾
+                //lz-2016.10.24 ï¿½Ñ¶Ô»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ä³ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½Ê¾
                 PeTipMsg.Register(PELocalization.GetString(8000095), PeTipMsg.EMsgLevel.Warning);
             else
                 CSUI_MainWndCtrl.ShowStatusBar(PELocalization.GetString(8000095), Color.red);
@@ -136,7 +136,7 @@ public class CSUI_ChargingGrid : MonoBehaviour
 
     void OnDropItem(Grid_N grid)
     {
-        //lz-2016.10.25 ÒòÎª¶àÈËÔÝÊ±Ö»Ö§³Ö´Ó±³°üÖÐÍÏµ½³äµçÖÐ£¬ËùÒÔÍ³Ò»¶àÈËºÍµ¥ÈË£¬±ÜÃâ³öÏÖÏÔÊ¾ÎÊÌâ
+        //lz-2016.10.25 ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Ö»Ö§ï¿½Ö´Ó±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½Í³Ò»ï¿½ï¿½ï¿½ËºÍµï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
         if (SelectItem_N.Instance.Place != ItemPlaceType.IPT_Bag)
             return;
 
@@ -260,12 +260,6 @@ public class CSUI_ChargingGrid : MonoBehaviour
         m_Grid.onLeftMouseClicked = OnLeftMouseClicked;
         m_Grid.onRightMouseClicked = OnRightMouseClicked;
         m_Grid.onRemoveOriginItem = OnRemoveOriginItem;
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-
     }
 
     // Update is called once per frame

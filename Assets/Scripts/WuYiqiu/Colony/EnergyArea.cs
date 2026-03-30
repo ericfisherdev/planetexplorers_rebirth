@@ -14,13 +14,5 @@ public class EnergyArea : MonoBehaviour
 	public float energyScale	{ get { return _handler.m_EnergyScale; }  set { _handler.m_EnergyScale = value; } }	
 	
 	
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
+
