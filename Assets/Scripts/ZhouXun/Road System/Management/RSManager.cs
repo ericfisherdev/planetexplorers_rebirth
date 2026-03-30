@@ -18,9 +18,5 @@ public class RSManager : MonoBehaviour
 		s_Instance = null;
 	}
 	
-	// Update is called once per frame
-	void Update ()
-	{
-
-	}
 }
+

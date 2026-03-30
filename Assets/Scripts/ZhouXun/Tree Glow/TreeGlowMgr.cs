@@ -14,12 +14,6 @@ public class TreeGlowMgr : MonoBehaviour
 {
 	public List<TreeGlowNode> TreeGlowList;
 	
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

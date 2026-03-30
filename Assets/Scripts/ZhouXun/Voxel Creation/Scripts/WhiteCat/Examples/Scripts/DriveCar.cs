@@ -54,7 +54,6 @@ public class DriveCar : MonoBehaviour
 	Vector3 originalCarLocalPosition;
 	Vector3 carLocalPosition;
 	Quaternion originalCarLocalRotation;
-	Quaternion carTargetRotation;
 
 	struct Barrier
 	{

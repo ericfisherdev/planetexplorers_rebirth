@@ -37,12 +37,6 @@ public class VCMatManager : MonoBehaviour
 		this.m_mapMatRefCounters = new Dictionary<ulong, int> ();
 	}
 	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
-	
 	// On destroy
 	void OnDestroy ()
 	{

@@ -9,12 +9,6 @@ public class UITreeGridDebugger : MonoBehaviour
 
 	public bool m_AddChild = false;
 
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

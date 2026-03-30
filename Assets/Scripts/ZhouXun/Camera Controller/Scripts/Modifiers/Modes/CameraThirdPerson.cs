@@ -39,8 +39,6 @@ public class CameraThirdPerson : CameraYawPitchRoll
     public float m_OffsetZDis = 0;
     public float m_OffsetYDis = 0;
     public float m_OffsetXDis = 0;
-	Vector3 m_CharacterOriginalPos;
-
     public bool m_EnableFov = true;
     public ECamKey m_FovAxis = ECamKey.CK_MouseWheel;
     public float m_FovSensitivity = 2;

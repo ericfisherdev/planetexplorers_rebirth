@@ -29,12 +29,6 @@ public class VCEHoloBoard : GLBehaviour
 		m_FadeFactorWanted = 0;
 	}
 
-	// Use this for initialization
-	void Start ()
-	{
-
-	}
-
 	void OnEnable()
 	{
 		Update();

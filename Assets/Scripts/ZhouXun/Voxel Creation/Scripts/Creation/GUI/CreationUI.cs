@@ -20,12 +20,6 @@ public class CreationUI : MonoBehaviour
 		s_Instance = null;
 	}
 	
-	// Update is called once per frame
-	void Update ()
-	{
-	
-	}
-
 	public MissileLockerUI MissileLockObject (Transform target)
 	{
 		MissileLockerUI ml = MissileLockerUI.Instantiate(m_MissileLockerPrefab) as MissileLockerUI;

@@ -34,11 +34,6 @@ public class VCEUIFastCreateWnd : MonoBehaviour
 		m_BackButton.gameObject.SetActive(false);
 	}
 
-	void OnDestroy()
-	{
-
-	}
-
 	public bool WindowVisible ()
 	{
 		return m_Window.activeInHierarchy;

@@ -12,7 +12,6 @@ namespace WhiteCat
 
 		BoatController _controller;
 		Direction _forceDirection;
-		Vector3 _forceApplyPoint;
 		Vector3 _localAngularDirection;
 		float _maxForce;
 		bool _rotateRight;

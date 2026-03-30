@@ -19,9 +19,9 @@ public class ParticleScaler : MonoBehaviour
 		prevScale = particleScale;
 	}
 
-	void Update () 
+#if UNITY_EDITOR
+	void Update ()
 	{
-#if UNITY_EDITOR 
 		//check if we need to update
 		if (prevScale != particleScale && particleScale > 0)
 		{
@@ -41,8 +41,8 @@ public class ParticleScaler : MonoBehaviour
 
 			prevScale = particleScale;
 		}
-#endif
 	}
+#endif
 
 	void ScaleShurikenSystems(float scaleFactor)
 	{

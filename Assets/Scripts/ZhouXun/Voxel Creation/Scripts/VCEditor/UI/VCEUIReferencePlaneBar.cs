@@ -6,12 +6,6 @@ public class VCEUIReferencePlaneBar : MonoBehaviour
 	public UISlider m_Slider;
 	public UILabel m_Label;
 	
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
-	
 	// Update is called once per frame
 	void Update ()
 	{

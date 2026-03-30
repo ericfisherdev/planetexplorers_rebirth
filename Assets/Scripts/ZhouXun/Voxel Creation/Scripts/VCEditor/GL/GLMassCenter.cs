@@ -43,15 +43,5 @@ public class GLMassCenter : GLBehaviour
 		GL.End();
 	}
 
-	void OnGUI ()
-	{
-//		if ( VCEditor.Instance.m_UI.m_ISOTab.isChecked )
-//			return;
-//		if ( VCEditor.Instance.m_UI.m_PaintTab.isChecked )
-//			return;
-//		GUI.skin = GSkin;
-//		GUI.color = Color.yellow;
-//		Vector3 screen_pos = VCEditor.Instance.m_MainCamera.WorldToScreenPoint(transform.position);
-//		GUI.Label(new Rect(Mathf.Round(screen_pos.x*0.2f+1)*5, Mathf.Round((Screen.height - screen_pos.y)*0.2f+1)*5, 150, 50), "Mass Center", "CursorText2");
-	}
 }
+
