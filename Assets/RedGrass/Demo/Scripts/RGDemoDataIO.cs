@@ -90,18 +90,18 @@ public class RGDemoDataIO : Chunk32DataIO
 	{
 		try
 		{
+#pragma warning disable CA2000 // BinaryReader wraps long-lived mOrgnGrassFile; disposing would close the shared stream
+			BinaryReader _in = new BinaryReader(mOrgnGrassFile);
+#pragma warning restore CA2000
 			while (mReqs.Count != 0)
 			{
 				RedGrass.RGChunk chunk = null;
-				
+
 				lock(mReqs)
 				{
 					chunk = mReqs.Dequeue();
 				}
 
-#pragma warning disable CA2000 // BinaryReader wraps long-lived mOrgnGrassFile; disposing would close the shared stream
-				BinaryReader _in = new BinaryReader(mOrgnGrassFile);
-#pragma warning restore CA2000
 				INTVECTOR3 chunk32Pos = ChunkPosToPos32(chunk.xIndex, chunk.zIndex);
 				int expands = mEvni.CHUNKSIZE / mEvni.Tile;
 
@@ -228,6 +228,15 @@ public class RGDemoDataIO : Chunk32DataIO
 					continue;
 				}
 
+				if (mOrgnGrassFile == null)
+				{
+					Thread.Sleep(10);
+					continue;
+				}
+
+#pragma warning disable CA2000 // BinaryReader wraps long-lived mOrgnGrassFile; disposing would close the shared stream
+				BinaryReader _in = new BinaryReader(mOrgnGrassFile);
+#pragma warning restore CA2000
 				while (true)
 				{
 					RedGrass.RGChunk chunk = null;
@@ -239,11 +248,6 @@ public class RGDemoDataIO : Chunk32DataIO
 						chunk = mReqs.Dequeue();
 					}
 
-					if (mOrgnGrassFile == null)
-						continue;
-#pragma warning disable CA2000 // BinaryReader wraps long-lived mOrgnGrassFile; disposing would close the shared stream
-					BinaryReader _in = new BinaryReader(mOrgnGrassFile);
-#pragma warning restore CA2000
 					INTVECTOR3 chunk32Pos = ChunkPosToPos32(chunk.xIndex, chunk.zIndex); 
 					int expands = mEvni.CHUNKSIZE / mEvni.Tile;
 
