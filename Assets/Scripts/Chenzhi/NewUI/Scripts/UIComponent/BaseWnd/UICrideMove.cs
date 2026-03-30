@@ -19,12 +19,6 @@ public class UICrideMove : MonoBehaviour
 	bool mIsMove = false;
 	Color mGuangColor;
 	//Color mBgColor = new Color(0.6f,0.6f,0.6f,1);
-	// Use this for initialization
-	void Start () 
-	{
-
-	}
-	
 	void Update()
 	{
 		if (!mCanMove)

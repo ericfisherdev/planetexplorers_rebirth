@@ -22,19 +22,6 @@ public class UIListItemCtrl : MonoBehaviour
 	private int[] mItemWith;
 	bool IsSelected = false;
 
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-
-	}
-
-
 	public void SetIconActive(bool isActive)
 	{
 		if(mItemIco == null)

@@ -24,11 +24,6 @@ public class BuildGui_N : UIStaticWnd
 		mInstance = this;
 	}
 	
-	void Update()
-	{
-		
-	}
-	
 	void OnOpWndChange()
 	{
 		mOperationWnd.SetActive(!mOperationWnd.activeSelf);

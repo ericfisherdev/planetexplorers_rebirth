@@ -15,7 +15,6 @@ public class ScrollItem : MonoBehaviour
 	public int mIndex = 0;
 	
 	float lastValue = 0;
-    private string m_Description;
 
     #region private methods
     void Update ()

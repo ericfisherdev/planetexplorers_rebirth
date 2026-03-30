@@ -19,18 +19,6 @@ public class UIListHeaderItem : MonoBehaviour
 	public GameObject mSortDefault;
 	public bool mCanSort;
 
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-	
-	}
-
 	public void Init(string text,float pos_x,int width,int index)
 	{
 		mText.text = text;

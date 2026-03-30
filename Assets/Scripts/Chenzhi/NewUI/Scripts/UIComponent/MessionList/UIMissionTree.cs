@@ -17,23 +17,6 @@ public class UIMissionTree : UIComponent
     public delegate void BaseMsgEvent(object sender);
     public event BaseMsgEvent e_ChangeSelectedNode = null;
 
-    // Use this for initialization
-    void Start()
-    {
-        // test code
-        //		for (int i=0;i<5;i++)
-        //		{
-        //			UIMissionNode nodetest = AddMissionNode(null,"node_1" + i.ToString());
-        //			//if (i == 1 || i==0)
-        //			{
-        //				for (int j=0;j<4;j++)
-        //				{
-        //					AddMissionNode(nodetest,"child",false,false,true);
-        //				}
-        //			}
-        //		}
-    }
-
     #region public methods
     public void Clear()
     {

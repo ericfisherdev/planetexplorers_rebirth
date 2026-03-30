@@ -13,11 +13,6 @@ public class UITweenBufferAlpha : UITweener
 
 	//GameObject mGo = null;
 
-	void Awake ()
-	{
-		
-	}
-
 	override protected void OnUpdate (float factor, bool isFinished) 
 	{
 		if (refreshWidget)
