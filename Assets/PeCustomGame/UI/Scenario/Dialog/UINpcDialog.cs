@@ -31,9 +31,5 @@ public class UINpcDialog : MonoBehaviour
         dialogInterpreter.Close();
     }
 
-    void OnDestroy ()
-    {
-
-    }
-
 }
+

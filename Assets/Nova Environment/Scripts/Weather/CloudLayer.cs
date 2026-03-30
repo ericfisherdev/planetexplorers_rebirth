@@ -32,7 +32,6 @@ namespace NovaEnv
 			} 
 		}
 
-		GameObject LayerModel;
 		public Material LayerMat;
 
 		Vector3 CloudOffset = Vector3.zero;

@@ -32,7 +32,6 @@ public class B45ChunkData{
 	private LODOctreeNode _node = null;
 	public BlockVectorNode _bvNode;
 	private IntVector4 _chunkPosLod = new IntVector4(0,0,0,-1);
-	private IntVector4 OldChunkPos;	// Var for onlinePlay
 	private B45ChunkGo _goChunk = null;// chunkGo will be destroyed at condition:1:Hollow; 2:new GoAttached; 3:Destroyed by lod node updating
 	public int _maskTrans = 0;	// This var should be put into ChunkGo, but for the sake of threading, it is here.
 	public int svn_key;

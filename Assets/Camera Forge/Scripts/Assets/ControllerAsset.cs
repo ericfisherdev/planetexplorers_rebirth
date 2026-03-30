@@ -60,8 +60,8 @@ namespace CameraForge
 		{
 			controller = new Controller (this.name);
 			using (MemoryStream ms = new MemoryStream (data))
+			using (BinaryReader r = new BinaryReader (ms))
 			{
-				BinaryReader r = new BinaryReader (ms);
 				string header = r.ReadString();
 				if (header == "ControllerAsset")
 				{

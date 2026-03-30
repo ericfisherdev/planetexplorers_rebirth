@@ -54,8 +54,8 @@ namespace CameraForge
 			if (modifier == null || bCreate)
 				modifier = new Modifier (this.name);
 			using (MemoryStream ms = new MemoryStream (data))
+			using (BinaryReader r = new BinaryReader (ms))
 			{
-				BinaryReader r = new BinaryReader (ms);
 				string header = r.ReadString();
 				if (header == "ModifierAsset")
 				{
