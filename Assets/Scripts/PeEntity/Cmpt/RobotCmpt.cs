@@ -28,11 +28,6 @@ namespace Pathea
 			
 		//}
 		
-		// Update is called once per frame
-		void Update () {
-			
-		}
-
 		public override void OnDestroy()
 		{
 			base.OnDestroy();

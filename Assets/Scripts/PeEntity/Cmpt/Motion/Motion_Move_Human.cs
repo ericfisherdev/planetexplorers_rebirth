@@ -72,7 +72,6 @@ namespace Pathea
         Vector3             m_MoveDestination;
 
 		//Water
-		float				m_InWaterLevel;
 		bool				m_HeadInWater = true;
 		AudioController		m_SwimmingSound;
 

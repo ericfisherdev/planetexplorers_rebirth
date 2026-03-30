@@ -10,8 +10,8 @@ public class PEMotorAnimator : PEMotor
 
     Rigidbody rigid;
 
-    Vector3 deltaPosition;
-    Quaternion rootRotation;
+
+
 
     Locomotion locomotion;
 

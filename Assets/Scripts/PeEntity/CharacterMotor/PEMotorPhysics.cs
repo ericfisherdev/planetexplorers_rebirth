@@ -28,8 +28,6 @@ public class PEMotorPhysics : PEMotor
     SteerAgent m_Steer;
 #endif
 
-    bool animMoving;
-
     bool m_AnimRotation = false;
     Vector3 m_AnimPos = Vector3.zero;
     Quaternion m_AnimRot = Quaternion.identity;

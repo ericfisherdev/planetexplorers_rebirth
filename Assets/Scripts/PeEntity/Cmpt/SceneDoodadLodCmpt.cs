@@ -8,7 +8,9 @@ namespace Pathea
 {
 	// For doodad additional save data
 	public class SceneDoodadLodCmpt : LodCmpt, IPeMsg {
+#pragma warning disable CS0067 // commonDeathEvent is subscribed to by external systems (MonsterEntityCreator, DoodadEntityCreator) but never raised here
 		public static event Action<SkEntity, SkEntity> commonDeathEvent;
+#pragma warning restore CS0067
 
 		protected SceneObjAdditionalSaveData _additionalData = new SceneObjAdditionalSaveData();
 		// Ver use byte to fit with boolean(1 byte), >=2 because boolean is 0 or 1;

@@ -194,9 +194,11 @@ namespace Pathea
 
         #endregion
 
+#pragma warning disable UNT0006 // IAgent.Reset(Tree) is not a Unity message — it satisfies the Behave.Runtime.IAgent interface
         public void Reset(Behave.Runtime.Tree sender)
         {
         }
+#pragma warning restore UNT0006
 
         public int SelectTopPriority(Behave.Runtime.Tree sender, params int[] IDs)
         {

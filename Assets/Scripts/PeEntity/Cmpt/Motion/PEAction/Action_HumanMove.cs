@@ -31,9 +31,7 @@ namespace Pathea
 		Vector3 	m_Target;
 		MoveType 	m_MoveType;
 		bool		m_EndFlag;
-		Vector3		m_LastMoveDir;
 		Vector3		m_LastVelocity;
-		bool		m_InputMove;
 		Vector3		m_LookDir;
 		bool		m_RestLookDir;
 		float		m_SpeedScale;
@@ -254,7 +252,6 @@ namespace Pathea
 		Vector3 	m_Target;
 		bool		m_EndFlag;
 		bool		m_FastRotat;
-		Vector3		m_LastVelocity;
 		MoveType	m_MoveType;
 
 		float 		m_SpeedScale;
@@ -1140,7 +1137,7 @@ namespace Pathea
 
             if (entity)
             {
-                //lz-2017.02.23 ±¸·ÝÍæ¼ÒÔ­±¾µÄIKµü´ú´ÎÊý£¬ÉèÖÃÎª×øÆïÅäÖÃµÄµü´ú´ÎÊý
+                //lz-2017.02.23 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½IKï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 _fullbodyBipedIK = entity.GetComponentInChildren<FullBodyBipedIK>();
                 if (_fullbodyBipedIK && null!= _fullbodyBipedIK.solver)
                 {
@@ -1150,7 +1147,7 @@ namespace Pathea
             }
 
 
-            //lz-2017.02.15 ±£Ö¤Operator¹ØÏµ½¨Á¢
+            //lz-2017.02.15 ï¿½ï¿½Ö¤Operatorï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½
             if (entity && entity.operateCmpt)
             {
                 if (_monsterEntity && _monsterEntity.biologyViewCmpt && _monsterEntity.biologyViewCmpt.biologyViewRoot && _monsterEntity.biologyViewCmpt.biologyViewRoot.modelController)
@@ -1175,13 +1172,13 @@ namespace Pathea
                 }
             }
 
-            //lz-2016.12.22 ¿ªÊ¼ÐÐÎª¹Ø±ÕÅö×²
+            //lz-2016.12.22 ï¿½ï¿½Ê¼ï¿½ï¿½Îªï¿½Ø±ï¿½ï¿½ï¿½×²
             viewCmpt.ActivateCollider(false);
 
-            //lz-2017.02.14 ÊÍ·ÅÎïÀíÅö×²
+            //lz-2017.02.14 ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×²
             motionMgr.FreezePhyState(GetType(), true);
 
-            //lz-2017.02.21 ¹Ø±ÕÍæ¼ÒºÍ¹ÖÎïGroundIK
+            //lz-2017.02.21 ï¿½Ø±ï¿½ï¿½ï¿½ÒºÍ¹ï¿½ï¿½ï¿½GroundIK
             if (null != motionMgr.Entity.IKCmpt)
                 motionMgr.Entity.IKCmpt.EnableGroundFBBIK = false;
 
@@ -1190,7 +1187,7 @@ namespace Pathea
 
             if (_monsterEntity) {  _monsterID = _monsterEntity.Id; }
 
-            //lz-2017.02.14 ×ö¶¯×÷
+            //lz-2017.02.14 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (null != anim)
             {
                 _animName = paramVQSNS.strAnima;
@@ -1198,7 +1195,7 @@ namespace Pathea
                 anim.SetBool(_animName, true);
             }
 
-            //lz-2017.02.14 ¿ªÆôIK
+            //lz-2017.02.14 ï¿½ï¿½ï¿½ï¿½IK
             if (entity && _monsterEntity)
             {
                 m_Interaction = new Interaction_Ride();
@@ -1215,29 +1212,29 @@ namespace Pathea
                 _ridePosTrans = _monsterEntity.biologyViewCmpt.GetModelTransform(paramVQSNS.boneStr);
             }
 
-            //lz-2017.02.15 Èç¹ûÖ´ÐÐÕâ¸öÐÐÎªµÄentityÊÇÎÒ£¬¾Í×ßÑ±·þÁ÷³Ì
+            //lz-2017.02.15 ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½entityï¿½ï¿½ï¿½Ò£ï¿½ï¿½ï¿½ï¿½ï¿½Ñ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (entity && entity.Id == MainPlayer.Instance.entityId)
             {
                 if (_ridePosTrans && _monsterEntity)
                 {
 
                     _tameMonsterMgr = entity.gameObject.AddComponent<TameMonsterManager>();
-                    //lw:ÆÁ±ÎÑ±·þ¹ý³Ì
+                    //lw:ï¿½ï¿½ï¿½ï¿½Ñ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     _tameMonsterMgr.LoadTameSucceed(entity, _monsterEntity, _ridePosTrans, _monsterEntity.monstermountCtrl.ctrlType != ECtrlType.Mount);
 
 
                     //if (_monsterEntity.monstermountCtrl.ctrlType == ECtrlType.Mount)
                     //{
-                    //    //lz-2017.02.14 ÒÑ¾­Ñ±·þµÄ¼ÓÔØÑ±·þ³É¹¦
+                    //    //lz-2017.02.14 ï¿½Ñ¾ï¿½Ñ±ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ñ±ï¿½ï¿½ï¿½É¹ï¿½
                     //    _tameMonsterMgr.LoadTameSucceed(entity, _monsterEntity, _ridePosTrans);
                     //}
                     //else
                     //{
-                    //    //lz-2017.02.14 Ã»ÓÐÑ±·þµÄ¿ªÊ¼Ñ±·þ
+                    //    //lz-2017.02.14 Ã»ï¿½ï¿½Ñ±ï¿½ï¿½ï¿½Ä¿ï¿½Ê¼Ñ±ï¿½ï¿½
                     //    _tameMonsterMgr.StartTame(entity, _monsterEntity, _ridePosTrans);
                     //}
 
-                    //lz-2017.02.17 ¶àÈË½¨Á¢×øÆïºÍÍæ¼ÒµÄ¹ØÏµ
+                    //lz-2017.02.17 ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒµÄ¹ï¿½Ïµ
                     if (PeGameMgr.IsMulti)
                         PlayerNetwork.RequestAddRideMonster(_monsterID);
                 }
@@ -1251,7 +1248,7 @@ namespace Pathea
         {
             if (!_endAction)
             {
-                //lz - 2017.02.16 ±¾µØÄ£ÄâÆäËûÍæ¼ÒÒÆ¶¯
+                //lz - 2017.02.16 ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
                 if (!_enityIsMe && null != _ridePosTrans)
                 {
                     entity.peTrans.position = _ridePosTrans.position + TameMonsterConfig.instance.IkRideOffset;
@@ -1259,7 +1256,7 @@ namespace Pathea
 
                 if (_enityIsMe)
                 { 
-                    //lz-2017.02.17 ÌØÊâÇé¿ö½áÊøÐÐÎª
+                    //lz-2017.02.17 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª
                     if (null == _monsterEntity || _monsterEntity.IsDeath() || _monsterEntity.isRagdoll || null == entity || entity.IsDeath() || entity.isRagdoll)
                     {
                         if (entity && _ride) _ride.StopOperate(entity.operateCmpt, EOperationMask.Ride);
@@ -1278,11 +1275,11 @@ namespace Pathea
 
         void OnEndAction()
         {
-            //lz-2017.02.14 ÈÎºÎÇé¿öÏÂ½áÊøÐÐÎª£¬¶¼°ÑOperateµÄ¹ØÏµÖØÖÃ
+            //lz-2017.02.14 ï¿½Îºï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Operateï¿½Ä¹ï¿½Ïµï¿½ï¿½ï¿½ï¿½
             if (entity && entity.operateCmpt) entity.operateCmpt.Operate = null;
             if (_ride) _ride.Operator = null;
 
-            //lz-2017.02.15 Èç¹ûÖ´ÐÐÕâ¸öÐÐÎªµÄentityÊÇÎÒ£¬¾Í½áÊøÑ±·þÁ÷³Ì
+            //lz-2017.02.15 ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½entityï¿½ï¿½ï¿½Ò£ï¿½ï¿½Í½ï¿½ï¿½ï¿½Ñ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (_enityIsMe)
             {
                 if (_tameMonsterMgr)
@@ -1291,49 +1288,49 @@ namespace Pathea
                     GameObject.Destroy(_tameMonsterMgr);
                 }
 
-                //lz-2017.02.17 ÊÇ×Ô¼º¾Í½áÊøÐÐÎª¾Í½âÉ¢×øÆï
+                //lz-2017.02.17 ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Í½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Í½ï¿½É¢ï¿½ï¿½ï¿½ï¿½
                 if (entity && entity.mountCmpt) entity.mountCmpt.DelMount();
 
-                //lz-2017.02.17 ¶àÈË½âÉ¢
+                //lz-2017.02.17 ï¿½ï¿½ï¿½Ë½ï¿½É¢
                 if (PeGameMgr.IsMulti)
                     PlayerNetwork.RequestDelMountMonster(_monsterID);
             }
 
-            //lz-2017.02.23 »Ö¸´Ô­±¾µÄIKµü´ú´ÎÊý
+            //lz-2017.02.23 ï¿½Ö¸ï¿½Ô­ï¿½ï¿½ï¿½ï¿½IKï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (_fullbodyBipedIK && null != _fullbodyBipedIK.solver)
             {
                 _fullbodyBipedIK.solver.iterations = _backupIKIterations;
             }
 
-            //lz-2017.02.14 ½áÊøIK
+            //lz-2017.02.14 ï¿½ï¿½ï¿½ï¿½IK
             if (null != m_Interaction)
             {
                 m_Interaction.EndInteraction();
                 m_Interaction = null;
             }
 
-            //lz-2017.02.14 ¹Ø±Õ¶¯×÷
+            //lz-2017.02.14 ï¿½Ø±Õ¶ï¿½ï¿½ï¿½
             if (null != anim)
                 anim.SetBool(_animName, false);
 
-            //lz-2017.02.16 Èç¹ûÊÇÎÒ×Ô¼º¾ÍÏÂÀ´
+            //lz-2017.02.16 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (_enityIsMe)
             {
                 if (trans && _monsterEntity && _monsterEntity.peTrans && _monsterEntity.peTrans.realTrans)
                 {
                     //Vector3 standPos = Vector3.zero;
 
-                    //lw:ÔÚ×øÆï±³ÉÏÏÂ×øÆï
+                    //lw:ï¿½ï¿½ï¿½ï¿½ï¿½ï±³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     trans.position = new Vector3(trans.position.x, trans.position.y + _monsterEntity.peTrans.bound.size.y * 0.5f, trans.position.z);
 
-                    ////lz-2016.12.30 ÏÈ³¢ÊÔÊ¹ÓÃµÚÒ»ÖÖ·½·¨ÕÒÒ»°²È«µÄÏÂ×øÆïµÄÎ»ÖÃ
+                    ////lz-2016.12.30 ï¿½È³ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½Ò»ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
                     //if (PETools.PEUtil.GetNearbySafetyPos(_monsterEntity.peTrans, PETools.PEUtil.GetOffRideMask, PETools.PEUtil.Standlayer, ref standPos))
                     //{
                     //    trans.position = standPos;
                     //}
                     //else
                     //{
-                    //    //lz-2016.12.30 Èç¹ûµÚÒ»ÖÖÃ»ÕÒµ½¾ÍÊ¹ÓÃµÚ¶þÖÖ
+                    //    //lz-2016.12.30 ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ã»ï¿½Òµï¿½ï¿½ï¿½Ê¹ï¿½ÃµÚ¶ï¿½ï¿½ï¿½
                     //    float minRadus = Mathf.Max(_monsterEntity.peTrans.bound.size.x, _monsterEntity.peTrans.bound.size.z);
                     //    standPos = PETools.PEUtil.GetEmptyPositionOnGround(_monsterEntity.peTrans.position + _monsterEntity.peTrans.bound.center, minRadus, minRadus + 3);
 
@@ -1347,14 +1344,14 @@ namespace Pathea
 
             motionMgr.SetMaskState(PEActionMask.Ride, false);
 
-            //lz-2017.02.21  ¹Ø±ÕÍæ¼ÒºÍ¹ÖÎïGroundIK
+            //lz-2017.02.21  ï¿½Ø±ï¿½ï¿½ï¿½ÒºÍ¹ï¿½ï¿½ï¿½GroundIK
             if (null != motionMgr.Entity.IKCmpt)
                 motionMgr.Entity.IKCmpt.EnableGroundFBBIK = true;
 
             if (null != _monsterEntity.IKCmpt)
                 _monsterEntity.IKCmpt.ikEnable = true;
 
-            //lz-2016.12.22 ½áÊøÐÐÎª¹Ø±ÕÅö×²
+            //lz-2016.12.22 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ø±ï¿½ï¿½ï¿½×²
             viewCmpt.ActivateCollider(true);
 
             _endAction = true;
