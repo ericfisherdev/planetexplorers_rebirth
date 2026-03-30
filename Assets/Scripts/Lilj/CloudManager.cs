@@ -38,32 +38,6 @@ public class CloudManager : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 	
-	void Update ()
-	{
-        //if(mPlayer == null)
-        //{
-        //    mPlayer = PlayerFactory.mMainPlayer;
-        //    return;
-        //}
-		
-        //if(Time.time - mLastCheckTime > CheckDt)
-        //{
-        //    mLastCheckTime = Time.time;
-        //    Vector3 playerPos = mPlayer.transform.position;
-        //    foreach(int key in mUnInstantiateList)
-        //    {
-        //        if(Vector3.Distance(playerPos,s_tblCloudList[key].mPosition) < ShowCloudDis)//CheckAddState
-        //        {
-        //            CreateCloud(s_tblCloudList[key]);
-        //            mUnInstantiateList.Remove(key);
-        //            break;
-        //        }
-        //    }
-        //    foreach(CloudController cc in mClouds)//CheckActiveState
-        //        cc.gameObject.SetActive(Vector3.Distance(playerPos,cc.transform.position) < ShowCloudDis);
-        //}
-	}
-	
 	void CreateCloud(Cloud3D cloud)
 	{
 		UnityEngine.Object obj = Resources.Load("Prefab/Cloud/" + cloud.mPerfabName);

@@ -55,9 +55,9 @@ public class WeaponTrail : MonoBehaviour {
 
     void Awake() {
 
-        MeshFilter meshF = GetComponent(typeof(MeshFilter)) as MeshFilter;
+        MeshFilter meshF = GetComponent<MeshFilter>();
         mesh = meshF.mesh;
-        meshRenderer = GetComponent(typeof(MeshRenderer)) as MeshRenderer;
+        meshRenderer = GetComponent<MeshRenderer>();
         trailMaterial = meshRenderer.material;
 
     }

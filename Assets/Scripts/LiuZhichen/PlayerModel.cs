@@ -43,14 +43,6 @@ public class PlayerModel :MonoBehaviour//,IPlayerModel
 		}
 	}
 
-	void Awake()
-	{
-//			mAppearData = new AppearData();
-//			mClothed = new AvatarData();
-//			mNude = new AvatarData();
-//			mNude.SetFemaleBody();
-	}
-
 	public void BuildModel()
 	{
 		AppearBuilder.Build(mModeRoot, mAppearData, CurrentParts);

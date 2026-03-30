@@ -28,10 +28,12 @@ public class UIMapSelectWnd : UIBaseWnd
 
     [SerializeField]
     UILabel mLbName;
+#pragma warning disable CS0169 // Inspector-wired via [SerializeField]
     [SerializeField]
     UILabel mLbExtension;
     [SerializeField]
     UILabel mLbLastWriteTime;
+#pragma warning restore CS0169
     [SerializeField]
     UILabel mLbMapSize;
     [SerializeField]
@@ -91,37 +93,6 @@ public class UIMapSelectWnd : UIBaseWnd
 
         mMapTexture.gameObject.SetActive(false);
     }
-
-    void Start()
-    {
-
-//        Pathea.CustomGameData.Mgr.Instance.Load(mLbPathvalve.text);
-//        mCustomGameData = Pathea.CustomGameData.Mgr.Instance.GetCustomGameList();
-//		
-//
-//		for (int i = 0; i < mCustomGameData.Count; i++)
-//		{
-//			Pathea.CustomGameData data = mCustomGameData[i];
-//			ItemInfo Info = new ItemInfo();
-//			
-//			Info.type = ItemType.it_map;
-//			Info.text = data.name;
-//			Info.MapTexture = data.screenshot;
-//			Info.size = data.size;
-//			Info.dataIndex = i;
-//			
-//			PlayerDesc[] humanDescs = data.humanDescs;
-//			foreach (PlayerDesc desc in humanDescs)
-//				Info.roles.Add(desc.Name);
-//			
-//			mInfoList.Add(Info);
-//		}
-//
-//        // GetDirectory(mLbPathvalve.text);
-//        EnableBack(mLbPathvalve.text);
-//        Reflsh();
-    }
-
 
     void Reflsh()
     {

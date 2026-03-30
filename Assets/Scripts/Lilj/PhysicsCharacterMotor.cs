@@ -68,7 +68,6 @@ public class PhysicsCharacterMotor : MonoBehaviour
 	}
 	
 	private Vector3 m_desiredMovementDirection;
-	private Vector3 m_desiredFacingDirection;
 
 	public Vector3 desiredMovementDirection {
 		get { return m_desiredMovementDirection; }

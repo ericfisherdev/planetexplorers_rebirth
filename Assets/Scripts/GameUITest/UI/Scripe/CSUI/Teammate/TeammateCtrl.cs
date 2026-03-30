@@ -15,10 +15,6 @@ public class TeammateCtrl : MonoBehaviour
 
     List<TeammateItemCtrl> mTeammateItemList = new List<TeammateItemCtrl>();
 
-    PeEntity mSelf;
-
-    int mSelfTeamID;
-
     const int PerColumnCount = 8;
 
     bool mDoDestroy = false;

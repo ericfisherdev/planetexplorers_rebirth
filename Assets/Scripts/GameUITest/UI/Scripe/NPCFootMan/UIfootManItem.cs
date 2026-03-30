@@ -153,8 +153,6 @@ public class UIfootManItem : MonoBehaviour
         this.UpdateWorkState();
     }
 
-    float mReviveTimer;
-
     public float ReviveTimer
     {
         // get { return mReviveTimer; }
