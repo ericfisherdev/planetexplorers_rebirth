@@ -10,26 +10,28 @@ namespace Pathea.Operate
     {
         [SerializeField]
         PERide[] Rides;
-        public override List<Operation_Single> Singles
+        public override List<Operation_Single> GetSingles()
         {
-            get { return (Rides == null || Rides.Length == 0) ? null : new List<Operation_Single>(Rides); }
+            return (Rides == null || Rides.Length == 0) ? null : new List<Operation_Single>(Rides);
         }
 
         public PERide GetUseable()
         {
-            for (int i = 0; i < Singles.Count; i++)
+            var singles = GetSingles();
+            for (int i = 0; i < singles.Count; i++)
             {
-                if (Singles[i].CanOperate(null))
-                    return Singles[i] as PERide;
+                if (singles[i].CanOperate(null))
+                    return singles[i] as PERide;
             }
             return null;
         }
 
         public bool HasRide()
         {
-            for (int i = 0; i < Singles.Count; i++)
+            var singles = GetSingles();
+            for (int i = 0; i < singles.Count; i++)
             {
-                if (Singles[i].CanOperate(null))
+                if (singles[i].CanOperate(null))
                     return true;
             }
             return false;
@@ -37,9 +39,10 @@ namespace Pathea.Operate
 
         public bool HasOperater(IOperator op)
         {
-            for (int i = 0; i < Singles.Count; i++)
+            var singles = GetSingles();
+            for (int i = 0; i < singles.Count; i++)
             {
-                if (Singles[i].ContainsOperator(op))
+                if (singles[i].ContainsOperator(op))
                     return true;
             }
             return false;
@@ -47,10 +50,11 @@ namespace Pathea.Operate
 
         public PERide GetRideByOperater(Pathea.OperateCmpt op)
         {
-            for (int i = 0; i < Singles.Count; i++)
+            var singles = GetSingles();
+            for (int i = 0; i < singles.Count; i++)
             {
-                if (Singles[i].ContainsOperator(op))
-                    return (PERide)Singles[i];
+                if (singles[i].ContainsOperator(op))
+                    return (PERide)singles[i];
             }
             return null;
         }

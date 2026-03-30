@@ -38,8 +38,8 @@ public class B45ChunkData{
 	public int svn_key_ba;
 	public List<UpdateVector> updateVectors;
 	public List<UVKeyCount> uvVersionKeys;
-	public int[] UpdateDatas { get { return updateVectors.Select(iter => iter.Data).ToArray(); } }
-	
+	public int[] GetUpdateDatas() { return updateVectors.Select(iter => iter.Data).ToArray(); }
+
 	private int _buildStep;
 	private bool _bNoVerts = false;
 	private bool _bFromPool = false;
@@ -572,7 +572,7 @@ public class B45ChunkDataBase{
 	public int svn_key_ba;
 	public List<UpdateVector> updateVectors;
 	public List<UVKeyCount> uvVersionKeys;
-	public int[] UpdateDatas { get { return updateVectors.Select(iter => iter.Data).ToArray(); } }
+	public int[] GetUpdateDatas() { return updateVectors.Select(iter => iter.Data).ToArray(); }
 	public byte[] _chunkData;	//tmp public
 
 	public static void WriteChunkBase(uLink.BitStream stream, object obj, params object[] codecOptions)

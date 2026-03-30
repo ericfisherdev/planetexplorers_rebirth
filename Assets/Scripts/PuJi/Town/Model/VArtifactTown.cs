@@ -72,9 +72,9 @@ public class VArtifactTown
         get { return type; }
         set { type = value; }
     }
-    public List<VATownNpcInfo> npcList
+    public List<VATownNpcInfo> GetNpcList()
     {
-        get { return VAUnits[0].npcPosInfo.Values.ToList(); }
+        return VAUnits[0].npcPosInfo.Values.ToList();
     }
 //	public List<VABuildingInfo> buildingList
 //	{

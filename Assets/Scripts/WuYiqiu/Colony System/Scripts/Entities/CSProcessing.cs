@@ -576,9 +576,9 @@ public class CSProcessing: CSCommon
         get { return Data.mTaskTable; }
     }
     //npc
-    public List<CSPersonnel> allProcessor
+    public List<CSPersonnel> GetAllProcessors()
     {
-        get { return m_Workers.ToList(); }
+        return m_Workers.ToList();
     }
 
     public delegate void TaskEvent();

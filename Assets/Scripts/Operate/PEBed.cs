@@ -8,9 +8,9 @@ namespace Pathea.Operate
     {
         public PESleep[] sleeps;
 
-        public override List<Operation_Single> Singles
+        public override List<Operation_Single> GetSingles()
         {
-            get { return (sleeps==null || sleeps.Length == 0) ? null : new List<Operation_Single>(sleeps); }
+            return (sleeps == null || sleeps.Length == 0) ? null : new List<Operation_Single>(sleeps);
         }
     }
 }

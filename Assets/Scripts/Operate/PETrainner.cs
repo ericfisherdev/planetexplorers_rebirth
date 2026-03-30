@@ -8,9 +8,9 @@ namespace Pathea.Operate
 	{
 		public PEPractice[] Instructors;
 		
-		public override List<Operation_Single> Singles
+		public override List<Operation_Single> GetSingles()
 		{
-			get { return new List<Operation_Single>(Instructors); }
+			return new List<Operation_Single>(Instructors);
 		}
 
 	}

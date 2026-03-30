@@ -8,9 +8,9 @@ namespace Pathea.Operate
 	{
 		public PELay[] Lays;
 		
-		public override List<Operation_Single> Singles
+		public override List<Operation_Single> GetSingles()
 		{
-			get { return new List<Operation_Single>(Lays); }
+			return new List<Operation_Single>(Lays);
 		}
 	}
 }
