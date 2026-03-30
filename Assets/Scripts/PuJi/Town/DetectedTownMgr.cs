@@ -54,9 +54,9 @@ public class DetectedTownMgr : Pathea.MonoLikeSingleton<DetectedTownMgr>
     public Dictionary<IntVector2, DetectedTown> DTownsDict = new Dictionary<IntVector2, DetectedTown>();
 
 
-    public List<DetectedTown> AllTowns
+    public List<DetectedTown> GetAllTowns()
     {
-        get { return DTownsDict.Values.ToList(); }
+        return DTownsDict.Values.ToList();
     }
     public DetectedTown GetTown(IntVector2 posCenter)
     {

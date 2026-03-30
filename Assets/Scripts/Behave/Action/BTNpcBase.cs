@@ -622,7 +622,7 @@ namespace Behave.Runtime
                         if (m_Storage != null && m_Storage.gameLogic != null)
                         {
                             m_Tables = m_Storage.gameLogic.GetComponent<PETable>() as IOperation;
-                            m_Table = m_Storage.gameLogic.GetComponent<PETable>().Singles.Find(ret => ret != null && ret.CanOperateMask(EOperationMask.Eat)) as IOperation;
+                            m_Table = m_Storage.gameLogic.GetComponent<PETable>().GetSingles().Find(ret => ret != null && ret.CanOperateMask(EOperationMask.Eat)) as IOperation;
                         }
                     }
                 }
@@ -681,7 +681,7 @@ namespace Behave.Runtime
                 {
                     // m_Table = m_Storage.gameLogic.GetComponent<PETable>() as IOperation;
                     m_Tables = m_Storage.gameLogic.GetComponent<PETable>() as IOperation;
-                    m_Table = m_Storage.gameLogic.GetComponent<PETable>().Singles.Find(ret => ret != null && ret.CanOperateMask(EOperationMask.Eat)) as IOperation;
+                    m_Table = m_Storage.gameLogic.GetComponent<PETable>().GetSingles().Find(ret => ret != null && ret.CanOperateMask(EOperationMask.Eat)) as IOperation;
                 }
             }
 
@@ -3811,7 +3811,7 @@ namespace Behave.Runtime
             PETrainner trainer = Trainner as PETrainner;
             if (trainer != null)
             {
-                mInstructor = trainer.Singles[index];
+                mInstructor = trainer.GetSingles()[index];
             }
         }
 
@@ -3985,7 +3985,7 @@ namespace Behave.Runtime
             PETrainner trainer = Trainner as PETrainner;
             if (trainer != null)
             {
-                mTrainee = trainer.Singles[index];
+                mTrainee = trainer.GetSingles()[index];
             }
         }
 

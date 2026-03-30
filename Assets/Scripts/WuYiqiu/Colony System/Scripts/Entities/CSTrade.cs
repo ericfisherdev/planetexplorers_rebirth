@@ -574,7 +574,7 @@ public class CSTrade:CSElectric
     public PeEntity GetTownNpc(VArtifactTown vat)
     {
         PeEntity npc = new PeEntity();
-        //List<VATownNpcInfo> npcList = vat.npcList;
+        //List<VATownNpcInfo> npcList = vat.GetNpcList();
         //foreach (VATownNpcInfo vaNpc in npcList)
         //{
         //    //--to do:

@@ -9,7 +9,7 @@ namespace Pathea.Operate
         Bounds m_Bounds;
         Bounds m_OperateBounds;
 
-		public abstract List<Operation_Single> Singles { get; }
+		public abstract List<Operation_Single> GetSingles();
 
         public Bounds LocalBounds {
             get{
@@ -32,18 +32,14 @@ namespace Pathea.Operate
 
         public Operation_Single GetStartOperate(EOperationMask mask)
         {
-            if (Singles != null)
-                return Singles.Find(ret => ret != null && ret.CanOperateMask(mask));
-            else
-                return null;
+            var singles = GetSingles();
+            return singles.Find(ret => ret != null && ret.CanOperateMask(mask));
         }
 
 		Operation_Single GetStopOperate(IOperator oper, EOperationMask mask)
         {
-            if (Singles != null)
-                return Singles.Find(ret => ret != null && ret.m_Mask == mask && ret.ContainsOperator(oper));
-            else
-                return null;
+            var singles = GetSingles();
+            return singles.Find(ret => ret != null && ret.m_Mask == mask && ret.ContainsOperator(oper));
         }
 
         public override bool CanOperate(Transform trans)
@@ -53,7 +49,7 @@ namespace Pathea.Operate
 
 		public override bool IsIdle()
         {
-			foreach (Operation_Single single in Singles)
+			foreach (Operation_Single single in GetSingles())
             {
 				if (!single.IsIdle())
                     return false;
@@ -65,15 +61,13 @@ namespace Pathea.Operate
         public override EOperationMask GetOperateMask()
         {
             EOperationMask tmpMask = EOperationMask.None;
+            var singles = GetSingles();
 
-            if (Singles != null)
+            foreach (Operation_Single single in singles)
             {
-				foreach (Operation_Single single in Singles)
+                if (single != null)
                 {
-                    if (single != null)
-                    {
-                        tmpMask |= single.m_Mask;
-                    }
+                    tmpMask |= single.m_Mask;
                 }
             }
 
@@ -82,13 +76,12 @@ namespace Pathea.Operate
 
         public override bool CanOperateMask(EOperationMask mask)
         {
-            if (Singles != null)
+            var singles = GetSingles();
+
+            foreach (Operation_Single single in singles)
             {
-				foreach (Operation_Single single in Singles)
-                {
-                    if (single != null && single.CanOperateMask(mask))
-                        return true;
-                }
+                if (single != null && single.CanOperateMask(mask))
+                    return true;
             }
 
             return false;
@@ -96,13 +89,12 @@ namespace Pathea.Operate
 
         public override bool ContainsOperator(IOperator oper)
         {
-            if (Singles != null)
+            var singles = GetSingles();
+
+            foreach (Operation_Single single in singles)
             {
-				foreach (Operation_Single single in Singles)
-                {
-                    if (single != null && single.ContainsOperator(oper))
-                        return true;
-                }
+                if (single != null && single.ContainsOperator(oper))
+                    return true;
             }
 
             return false;
