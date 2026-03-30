@@ -332,10 +332,14 @@ namespace Pathea
             Enemy enemy = m_Enemies.Find(ret => ret != null && ret.entityTarget != null && ret.entityTarget == argEntity);
             if (enemy == null)
             {
-#pragma warning disable CA2000 // Enemy ownership is transferred to m_Enemies list immediately after creation
+#pragma warning disable CA2000 // Enemy is disposed on TryAddEnemy failure; ownership transfers to m_Enemies on success
                 enemy = new Enemy(m_Entity, argEntity);
 #pragma warning restore CA2000
-                AddEnemy(enemy);
+                if (!TryAddEnemy(enemy))
+                {
+                    enemy.Dispose();
+                    return;
+                }
             }
 
             enemy.OnDamage(hatred);
@@ -362,9 +366,11 @@ namespace Pathea
                 enemy.AddHatred(hatred);
             else
             {
-#pragma warning disable CA2000 // Enemy ownership is transferred to m_Enemies list immediately after creation
-                AddEnemy(new Enemy(m_Entity, argEntity, hatred));
+#pragma warning disable CA2000 // Enemy is disposed on TryAddEnemy failure; ownership transfers to m_Enemies on success
+                Enemy newEnemy = new Enemy(m_Entity, argEntity, hatred);
 #pragma warning restore CA2000
+                if (!TryAddEnemy(newEnemy))
+                    newEnemy.Dispose();
             }
 
             if (HatredEvent != null)
@@ -600,14 +606,16 @@ namespace Pathea
             return false;
 		}
 
-		void AddEnemy (Enemy enemy)
+		bool TryAddEnemy (Enemy enemy)
 		{
 			if (IsDeath ())
-				return;
+				return false;
 
 			if (!m_Enemies.Contains (enemy)) {
 				m_Enemies.Add (enemy);
+				return true;
 			}
+			return false;
 		}
 
         bool ContainsAction(Type type)
@@ -1165,9 +1173,11 @@ namespace Pathea
                         {
                             if(!ContainsEnemy(enemy.entityTarget.vehicle.creationPeEntity))
                             {
-#pragma warning disable CA2000 // Enemy ownership is transferred to m_Enemies list immediately after creation
-                                AddEnemy(new Enemy(m_Entity, enemy.entityTarget.vehicle.creationPeEntity));
+#pragma warning disable CA2000 // Enemy is disposed on TryAddEnemy failure; ownership transfers to m_Enemies on success
+                                Enemy vehicleEnemy = new Enemy(m_Entity, enemy.entityTarget.vehicle.creationPeEntity);
 #pragma warning restore CA2000
+                                if (!TryAddEnemy(vehicleEnemy))
+                                    vehicleEnemy.Dispose();
                             }
                         }
 
@@ -1260,10 +1270,14 @@ namespace Pathea
             if (m_Entity == null)
                 return;
 
-#pragma warning disable CA2000 // Enemy ownership is transferred to m_Enemies list via AddEnemy
+#pragma warning disable CA2000 // Enemy is disposed on TryAddEnemy failure; ownership transfers to m_Enemies on success
             Enemy enemy = new Enemy (m_Entity, entity, hatred);
 #pragma warning restore CA2000
-            AddEnemy(enemy);
+            if (!TryAddEnemy(enemy))
+            {
+                enemy.Dispose();
+                return;
+            }
 
             if (enemy.ThreatInit < -PETools.PEMath.Epsilon && UnityEngine.Random.value < Mathf.Abs(enemy.ThreatInit) / 100.0f)
                 SetEscape(entity);
